@@ -1,0 +1,97 @@
+/* ============================================================
+   FTHTrading / legal — Design Tokens
+   3-band color system: Band A (deep steel) / Band B (accent sky)
+   / Band C (working paper). Serif Georgia body, sans Inter UI.
+   ============================================================ */
+
+:root {
+  /* ── Band A: deep steel (nav, hero, footer) ─────────────── */
+  --band-a-bg:            #0b1e3f;   /* deep navy */
+  --band-a-bg-2:          #142a52;   /* lighter navy for gradients */
+  --band-a-fg:            #f4efe4;   /* warm cream on dark */
+  --band-a-fg-dim:        #b7c2d4;   /* dim caption color */
+  --band-a-rule:          #2e4370;   /* rule / divider */
+
+  /* ── Band B: accent sky (highlights, links, CTAs) ───────── */
+  --band-b-bg:            #edf3fb;
+  --band-b-accent:        #2f6cc9;   /* action blue */
+  --band-b-accent-strong: #1e4f9c;   /* hover / active */
+  --band-b-accent-soft:   #dfeaf9;   /* pill bg */
+
+  /* ── Band C: working paper (content) ────────────────────── */
+  --band-c-bg:            #faf7f2;   /* warm paper */
+  --band-c-bg-alt:        #ffffff;   /* clean white for cards */
+  --band-c-fg:            #1c1f26;   /* body text */
+  --band-c-fg-dim:        #5b6472;   /* muted */
+  --band-c-rule:          #d9d3c7;   /* rule on paper */
+  --band-c-code-bg:       #f0ece2;
+
+  /* ── Semantic (status / severity) ───────────────────────── */
+  --sev-critical:         #a01c1c;   /* deep red */
+  --sev-critical-bg:      #fce9e9;
+  --sev-high:             #b45309;   /* dark amber */
+  --sev-high-bg:          #fbeecd;
+  --sev-medium:           #8b6d1d;   /* olive */
+  --sev-medium-bg:        #f7efd6;
+  --sev-low:              #2c6b3f;   /* muted forest */
+  --sev-low-bg:           #dcecdd;
+  --sev-info:             #2f6cc9;   /* action blue */
+  --sev-info-bg:          #dfeaf9;
+  --sev-clean:            #2c6b3f;
+  --sev-clean-bg:         #dcecdd;
+
+  /* ── License badges ─────────────────────────────────────── */
+  --lic-public:           #2c6b3f;
+  --lic-public-bg:        #dcecdd;
+  --lic-sec:              #1e4f9c;
+  --lic-sec-bg:           #dfeaf9;
+  --lic-industry:         #6b4a1d;
+  --lic-industry-bg:      #f4e8cf;
+  --lic-internal:         #4a3d5c;
+  --lic-internal-bg:      #ebe5f2;
+
+  /* ── Category chips ─────────────────────────────────────── */
+  --cat-corpus:           #1e4f9c;
+  --cat-corpus-bg:        #dfeaf9;
+  --cat-dd:               #a01c1c;
+  --cat-dd-bg:            #fce9e9;
+  --cat-templates:        #2c6b3f;
+  --cat-templates-bg:     #dcecdd;
+  --cat-filings:          #6b4a1d;
+  --cat-filings-bg:       #f4e8cf;
+  --cat-workflow:         #4a3d5c;
+  --cat-workflow-bg:      #ebe5f2;
+
+  /* ── Type ───────────────────────────────────────────────── */
+  --font-serif:           Georgia, "Times New Roman", "Iowan Old Style", serif;
+  --font-sans:            "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono:            "SF Mono", Menlo, Consolas, "Courier New", monospace;
+
+  --fs-hero:              clamp(2.2rem, 4vw + 1rem, 3.4rem);
+  --fs-h1:                clamp(1.6rem, 2vw + 0.8rem, 2.2rem);
+  --fs-h2:                1.55rem;
+  --fs-h3:                1.2rem;
+  --fs-body:              1rem;
+  --fs-small:             0.87rem;
+  --fs-tiny:              0.78rem;
+
+  --lh-tight:             1.2;
+  --lh-body:              1.65;
+
+  /* ── Spacing scale ──────────────────────────────────────── */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4rem;
+
+  /* ── Layout ─────────────────────────────────────────────── */
+  --max-content-w:        980px;
+  --sidebar-w:            280px;
+  --page-radius:          6px;
+  --shadow-card:          0 1px 2px rgba(11,30,63,0.06), 0 8px 24px rgba(11,30,63,0.08);
+  --shadow-hero:          0 8px 30px rgba(11,30,63,0.15);
+}

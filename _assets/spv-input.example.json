@@ -1,0 +1,96 @@
+{
+  "tool": "legal_spv_in_a_box",
+  "arguments": {
+    "llcName": "Riverside Yield Fund I LLC",
+    "jurisdiction": "WY",
+    "formationDate": "2026-09-01",
+    "effectiveDate": "2026-09-01",
+    "registeredAgentName": "Wyoming Corporate Services Inc.",
+    "registeredAgentAddress": "32 N Gould St, Ste R, Sheridan, WY 82801",
+    "principalOfficeAddress": "1234 Main St, Sheridan, WY 82801",
+    "organizerName": "Jane Doe",
+
+    "managerName": "Riverside Capital Management LLC",
+    "managerAddress": "500 Peachtree St NE, Suite 2100, Atlanta, GA 30308",
+    "managerType": "limited liability company",
+    "managerJurisdiction": "Delaware",
+
+    "offeringSizeMax": 10000000,
+    "offeringSizeMin": 500000,
+    "purchasePricePerUnit": 1000,
+    "minimumInvestment": 25000,
+    "securityType": "Class A Units",
+    "totalAuthorizedUnits": 10000,
+
+    "useOfProceedsSummary": "The Issuer intends to acquire a portfolio of income-producing commercial real estate assets in the southeastern United States, held through wholly-owned subsidiary entities. Proceeds will fund acquisition consideration, closing costs, initial reserves, and offering expenses.",
+    "useOfProceedsItems": [
+      { "category": "Asset acquisition consideration", "amount": 8000000, "percentage": 80, "notes": "per executed LOIs and pipeline" },
+      { "category": "Working capital reserves", "amount": 1000000, "percentage": 10, "notes": "10% target reserve floor" },
+      { "category": "Manager acquisition fee", "amount": 500000, "percentage": 5, "notes": "one-time at closing per Op Agmt" },
+      { "category": "Offering + closing expenses", "amount": 500000, "percentage": 5, "notes": "legal, accounting, Blue Sky, closing costs" }
+    ],
+    "offeringExpensesAmount": 75000,
+    "reserveAmount": 1000000,
+    "managerFeeAmount": 500000,
+
+    "businessNarrative": "The Issuer will pursue a value-add strategy in Class B multi-family and small-format retail assets located in secondary and tertiary markets in the Southeast, targeting a 5-7 year hold with an anticipated cash-on-cash yield of 7-9% during operating years and a target IRR of 14-18%. The Manager has a 12-year track record in the target markets with $180M of prior transaction volume across 47 assets.",
+    "materialAgreements": "Master Services Agreement with Riverside Property Services LLC (an affiliate of the Manager), effective on first acquisition. Standard third-party asset management agreements for individual assets to be entered at each acquisition.",
+    "keyMetricsTable": [
+      { "metric": "Target IRR (net to LPs)", "value": "14-18%", "source": "Manager projection" },
+      { "metric": "Target hold period", "value": "5-7 years", "source": "Investment strategy" },
+      { "metric": "Target cash-on-cash (operating years)", "value": "7-9%", "source": "Manager projection" }
+    ],
+
+    "keyPersonnel": [
+      {
+        "name": "Alex Smith",
+        "title": "Managing Member",
+        "biography": "Alex Smith has 15 years of commercial real estate investment experience across the Southeast, including 12 years as Managing Principal at Riverside Capital Partners. Prior to founding Riverside, Alex spent 3 years as VP of Acquisitions at [Prior Firm]. B.S. Real Estate, University of Georgia; MBA, Emory Goizueta.",
+        "years_experience": 15
+      }
+    ],
+    "managerNarrative": "Riverside Capital Management LLC is a Delaware limited liability company formed in 2014 to serve as the manager of Riverside-sponsored investment vehicles. Riverside is registered as an exempt reporting adviser under Section 203(m) of the Investment Advisers Act.",
+    "managerCompensationSummary": "The Manager receives (i) a one-time acquisition fee of $500,000 payable at initial closing, (ii) an annual management fee of 1.5% of committed capital during the investment period and 1.5% of invested capital thereafter, (iii) a 20% carried interest above an 8% preferred return with catch-up, and (iv) reimbursement of reasonable out-of-pocket expenses.",
+
+    "votingRights": "One vote per Unit on all matters submitted to a vote of Members.",
+    "distributionRights": "Pro rata based on Units, distributed quarterly to the extent of Available Cash after establishing reasonable Reserves as determined by the Manager. Tax distributions in advance of general distributions to enable Members to satisfy estimated tax liability on allocated income.",
+    "distributionPolicy": "quarterly to the extent of Available Cash",
+    "liquidationPreference": "None. Single class of membership interest.",
+
+    "initialMembers": [
+      {
+        "name": "Riverside Capital Management LLC",
+        "address": "500 Peachtree St NE, Suite 2100, Atlanta, GA 30308",
+        "capital_contribution": 1000,
+        "units": 100
+      }
+    ],
+
+    "taxClassification": "partnership",
+    "fiscalYearEnd": "12-31",
+    "acceptsBenefitPlanInvestors": false,
+    "intendedPlanAssetPosition": "not_applicable",
+
+    "contactName": "Alex Smith",
+    "contactTitle": "Managing Member",
+    "contactEmail": "investors@riverside.example",
+    "contactPhone": "+1 (404) 555-0100",
+    "contactAddress": "500 Peachtree St NE, Suite 2100, Atlanta, GA 30308",
+
+    "isBrokerDealerEngaged": false,
+    "usesLeverage": true,
+    "usesDigitalAssets": false,
+    "hasInternationalComponent": false,
+    "isStartup": false,
+    "assetClass": "real_estate",
+
+    "statesWithInvestors": ["WY", "GA", "FL", "CA", "NY"],
+    "firstSaleDate": "2026-10-01",
+
+    "covered_persons_summary": "Riverside Capital Management LLC (Manager); Alex Smith (Managing Member of Manager and Managing Member of Issuer). Reasonable inquiry completed as of the date hereof; no Rule 506(d) disqualifying events identified.",
+    "any_disqualifying_events": false,
+
+    "authorizedSignatoryName": "Alex Smith",
+    "authorizedSignatoryTitle": "Managing Member"
+  }
+}

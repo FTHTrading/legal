@@ -1,0 +1,39 @@
+/* ============================================================
+   Print stylesheet — export as PDF for offline reference
+   ============================================================ */
+
+@media print {
+  body {
+    background: white;
+    color: black;
+    font-size: 10.5pt;
+    line-height: 1.4;
+  }
+  .topbar, .footer, .toc { display: none; }
+  .hero {
+    background: white !important;
+    color: black !important;
+    padding: 0 0 1rem 0 !important;
+    border-bottom: 2px solid black !important;
+  }
+  .hero-inner { padding-left: 0 !important; }
+  .hero h1, .hero .eyebrow, .hero .lede { color: black !important; }
+  .hero .hero-stat .num { color: black !important; }
+  .page {
+    grid-template-columns: 1fr !important;
+    max-width: none !important;
+    padding: 0 !important;
+    gap: 0 !important;
+  }
+  .content section {
+    page-break-inside: avoid;
+    margin-bottom: 1.5rem !important;
+  }
+  h2, h3, h4 { page-break-after: avoid; }
+  table, .card, .callout, pre { page-break-inside: avoid; box-shadow: none !important; }
+  a { color: black !important; text-decoration: none !important; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #555; }
+  a[href^="#"]::after, a[href^="javascript"]::after { content: ""; }
+  pre { background: #f4f4f4 !important; color: black !important; border: 1px solid #ccc; }
+  th { background: #ddd !important; color: black !important; }
+}
