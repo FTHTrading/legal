@@ -106,7 +106,7 @@
 <p>The attestation is typically signed by a licensed appraiser, an independent administrator, or a specialized attestation firm (e.g., BDO, Grant Thornton, Withum for the reserve-attestation market). The signed attestation is often posted publicly (or committed to on-chain) so token holders can verify without asking permission.</p>
 
 <h2>5. Transfer restrictions &mdash; why "permissionless" is a myth for real securities</h2>
-<p>Every US-regulated RWA token embeds transfer restrictions. A token issued under Regulation D 506(c) cannot legally trade freely; it can only be transferred to another accredited investor after a 1-year holding period (under Rule 144), and even then only with issuer consent and typically with an attorney opinion letter.</p>
+<p>US-regulated RWA tokens typically embed transfer restrictions. A token issued under Regulation D 506(c) is a "restricted security" under Rule 144(a)(3) and cannot be resold freely at issuance. Under Rule 144(b)(1)(ii), a non-affiliate of a non-reporting issuer may resell without volume, manner-of-sale, or current-public-information conditions after a one-year holding period &mdash; but the operating agreement or subscription document commonly imposes additional contractual restrictions (accredited-only transferees, issuer consent, opinion-of-counsel requirement). Section 4(a)(7) is a separate statutory resale exemption that has an accredited-purchaser condition; do not conflate it with Rule 144.</p>
 <p>The two dominant technical standards enforce this at the smart-contract level:</p>
 <ul>
   <li><strong>ERC-3643 (T-REX).</strong> Every token holder must have an on-chain identity (ONCHAINID) with verifiable claims (accredited status, KYC, jurisdiction). Every transfer is validated against a set of compliance modules before it executes. If the transferee doesn't have the required claims, the transfer reverts.</li>
@@ -168,7 +168,8 @@
   <div class="footer-inner">
     <div>
       <h4>Unykorn Legal</h4>
-      <p>&copy; 2026 Unykorn LLC. Not legal advice.</p>
+      <p><p><a href="/notice/">Notice &mdash; Not Legal Advice</a> &middot; Last reviewed 2026-08-08.</p>
+      <p style="margin-top: 0.5rem;">&copy; 2026 Unykorn LLC. Not legal advice.</p>
     </div>
     <div>
       <h4>Sections</h4>

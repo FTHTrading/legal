@@ -121,7 +121,7 @@
 <h2>6. The compliance layer &mdash; what changes vs. traditional</h2>
 <p>A tokenized real-estate offering adds three requirements on top of a traditional 506(c) SPV raise:</p>
 <ul>
-  <li><strong>On-chain transfer restrictions.</strong> The token must enforce the 1-year holding period, accredited-only transferability, and Manager consent. ERC-3643 with compliance modules is the standard implementation.</li>
+  <li><strong>On-chain transfer restrictions (where the operating agreement calls for them).</strong> Compliance modules commonly enforce the restrictions the sponsor and counsel elect &mdash; accredited-only transferees, issuer consent, holding-period gating tied to Rule 144(b)(1)(ii). Note that Rule 144 itself imposes no accredited-purchaser condition on a non-affiliate of a non-reporting issuer after one year; accredited-only resale is a contractual feature (or reflects reliance on Section 4(a)(7)). ERC-3643 with configured compliance modules is a common implementation.</li>
   <li><strong>ONCHAINID identity.</strong> Every token holder must have an on-chain identity claim proving accredited status. Verification is typically outsourced to a claim issuer (Verite, ONCHAINID, Circle Verite).</li>
   <li><strong>State securities-agent status for the token infrastructure provider.</strong> The technical vendor (Securitize, INX, Prometheum, Texture Capital) often takes on registered broker-dealer or transfer-agent status. Confirm before selecting.</li>
 </ul>
@@ -148,7 +148,8 @@
 
 <footer class="footer">
   <div class="footer-inner">
-    <div><h4>Unykorn Legal</h4><p>&copy; 2026 Unykorn LLC. Not legal advice.</p></div>
+    <div><h4>Unykorn Legal</h4><p><p><a href="/notice/">Notice &mdash; Not Legal Advice</a> &middot; Last reviewed 2026-08-08.</p>
+      <p style="margin-top: 0.5rem;">&copy; 2026 Unykorn LLC. Not legal advice.</p></div>
     <div><h4>Sections</h4><p><a href="/library/">Library</a> &middot; <a href="/lexicon/">Lexicon</a> &middot; <a href="/jurisdictions/">Jurisdictions</a></p><p><a href="/smart-contracts/">Smart Contracts</a> &middot; <a href="/deals/">Deals</a> &middot; <a href="/system/">System</a></p></div>
     <div><h4>Source</h4><p><a href="https://github.com/FTHTrading/legal">Repository</a></p></div>
   </div>

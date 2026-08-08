@@ -41,10 +41,10 @@
 <h2>Permissioned Security Token Standards</h2>
 
 <div class="card">
-  <h3><span class="badge b-cat-templates">ERC-3643</span> Tokeny T-REX &mdash; Permissioned Security Tokens <span class="badge b-lic-industry">GPL-3.0</span></h3>
+  <h3><span class="badge b-cat-templates">ERC-3643</span> T-REX &mdash; Permissioned Security Tokens <span class="badge b-lic-industry">GPL-3.0</span></h3>
   <p>The dominant standard for regulated security tokens. Every holder requires an on-chain identity (ONCHAINID) with verifiable claims. Every transfer is validated against configurable compliance modules (jurisdiction, accreditation, transfer amount, holding period) before execution.</p>
   <p><strong>Use for:</strong> Reg D 506(c) tokens, MiCA asset-referenced tokens, tokenized fund shares with KYC-gated participation.</p>
-  <p><strong>Canonical:</strong> <a href="https://github.com/TokenySolutions/T-REX">github.com/TokenySolutions/T-REX</a></p>
+  <p><strong>Canonical:</strong> <a href="https://github.com/ERC-3643/ERC-3643">github.com/ERC-3643/ERC-3643</a> &mdash; note the original <code>TokenySolutions/T-REX</code> repo was archived 28 October 2025.</p>
   <div class="meta">Adopted by: Securitize, INX, Prometheum, Backed, multiple institutional issuers. EIP-3643 approved 2023.</div>
 </div>
 
@@ -52,7 +52,7 @@
   <h3><span class="badge b-cat-templates">ERC-1400</span> Partitioned Security Tokens <span class="badge b-lic-industry">Apache-2.0</span></h3>
   <p>Earlier security-token standard supporting partitioning (multiple tranches with different rules), forced transfers, operator control, and document management on-chain. Widely implemented despite non-final EIP status.</p>
   <p><strong>Use for:</strong> Multi-tranche debt securities, tokenized preferred equity, structured products with holder-class distinctions.</p>
-  <p><strong>Canonical:</strong> <a href="https://github.com/ethereum/eips/issues/1411">EIP-1400</a> (spec); <a href="https://github.com/ConsenSys/UniversalToken">ConsenSys UniversalToken</a> (reference impl)</p>
+  <p><strong>Canonical:</strong> <a href="https://github.com/ethereum/eips/issues/1411">EIP-1400</a> (spec). Note: the historical <code>ConsenSys/UniversalToken</code> reference implementation was <strong>archived 25 March 2025</strong>. There is no currently-maintained canonical reference implementation.</p>
 </div>
 
 <h2>Convertible &amp; Pre-Issuance Instruments</h2>
@@ -65,16 +65,16 @@
 </div>
 
 <div class="card">
-  <h3><span class="badge b-cat-templates">Token Warrant</span> Rights to Future Tokens <span class="badge b-lic-industry">Apache-2.0</span></h3>
+  <h3><span class="badge b-cat-templates">Token Warrant</span> Rights to Future Tokens <span class="badge b-lic-internal">License varies</span></h3>
   <p>Convertible instrument giving the holder the right to receive tokens on a defined trigger event (typically token generation event or protocol launch). Typically issued alongside an equity SAFE for hybrid equity+token deals.</p>
   <p><strong>Use for:</strong> Venture financings of companies building token-based protocols where the company entity is separate from the token issuer.</p>
-  <p><strong>Reference:</strong> <a href="https://github.com/a16z/token-warrant-templates">a16z Token Warrant Templates</a></p>
+  <p><strong>Reference:</strong> No single canonical open repository currently maintained. Historical a16z Crypto Legal Templates repo is no longer resolving at the previously-published URL; check a16z Crypto Publications for current published forms.</p>
 </div>
 
 <div class="card">
-  <h3><span class="badge b-cat-templates">SAFE</span> Simple Agreement for Future Equity <span class="badge b-lic-public">CC0</span></h3>
+  <h3><span class="badge b-cat-templates">SAFE</span> Simple Agreement for Future Equity <span class="badge b-lic-internal">Publicly available (no open-source grant)</span></h3>
   <p>Y Combinator's convertible-instrument standard for early-stage equity financings. Post-money and pre-money variants. Not debt; converts to equity on a defined trigger event (typically priced round).</p>
-  <p><strong>Use for:</strong> Pre-seed and seed rounds; entity-level financing complement to token warrants.</p>
+  <p><strong>Note:</strong> The SAFE is publicly available on Y Combinator's documents page, but YC does <em>not</em> publish it under an open-source license; the documents page disclaims responsibility and grants no license. Firms typically treat the forms as industry-standard practice while relying on counsel for the actual execution version.</p>
   <p><strong>Reference:</strong> <a href="https://www.ycombinator.com/documents">Y Combinator SAFE Documents</a></p>
 </div>
 
@@ -88,7 +88,7 @@
 </div>
 
 <div class="card">
-  <h3><span class="badge b-cat-templates">Morpho Blue</span> Isolated Lending Vaults <span class="badge b-lic-industry">BUSL-1.1</span></h3>
+  <h3><span class="badge b-cat-templates">Morpho Blue</span> Isolated Lending Vaults <span class="badge b-lic-industry">GPL-2.0-or-later</span></h3>
   <p>Permissionless isolated lending-market factory. Each market has its own collateral asset, borrow asset, LLTV, oracle, and IRM. Non-upgradeable; minimalist trust model. MetaMorpho vaults on top provide managed exposure across multiple markets.</p>
   <p><strong>Use for:</strong> On-chain private-credit markets, RWA-collateralized lending, institutional yield strategies.</p>
   <p><strong>Canonical:</strong> <a href="https://github.com/morpho-org/morpho-blue">github.com/morpho-org/morpho-blue</a></p>
@@ -97,7 +97,7 @@
 <h2>Custody &amp; Multi-Sig</h2>
 
 <div class="card">
-  <h3><span class="badge b-cat-templates">Safe (Gnosis Safe)</span> Multi-Sig Wallet <span class="badge b-lic-industry">GPL-3.0</span></h3>
+  <h3><span class="badge b-cat-templates">Safe (Gnosis Safe)</span> Multi-Sig Wallet <span class="badge b-lic-industry">LGPL-3.0 (contracts)</span></h3>
   <p>The dominant multi-signature wallet standard. Configurable m-of-n approval, modules for extended functionality (spending limits, session keys, delegation), and formal-verification history. Foundation of institutional on-chain custody.</p>
   <p><strong>Use for:</strong> SPV treasury custody, DAO treasuries, multi-approver spending controls, guardian-based recovery.</p>
   <p><strong>Canonical:</strong> <a href="https://github.com/safe-global/safe-smart-account">github.com/safe-global/safe-smart-account</a></p>
@@ -122,16 +122,17 @@
 <h2>Distribution Waterfalls</h2>
 
 <div class="card">
-  <h3><span class="badge b-cat-templates">0xSplits</span> Configurable Payment Splits <span class="badge b-lic-industry">Apache-2.0</span></h3>
+  <h3><span class="badge b-cat-templates">0xSplits</span> Configurable Payment Splits <span class="badge b-lic-industry">GPL-3.0</span></h3>
   <p>Immutable smart contract that receives payments and distributes them per configured recipient shares. Supports controlled + immutable variants, and split-of-splits patterns. Battle-tested in NFT royalty and creator-economy contexts.</p>
   <p><strong>Use for:</strong> Fund distribution waterfalls (pref return + catch-up + carried interest), royalty splits among creators/rightholders.</p>
   <p><strong>Canonical:</strong> <a href="https://github.com/0xSplits">github.com/0xSplits</a></p>
 </div>
 
 <div class="card">
-  <h3><span class="badge b-cat-templates">Superfluid Streams</span> Continuous Payment Streaming <span class="badge b-lic-industry">MIT</span></h3>
+  <h3><span class="badge b-cat-templates">Superfluid Streams</span> Continuous Payment Streaming <span class="badge b-critical">AGPL-3.0 (contracts) / MIT (SDK only)</span></h3>
   <p>Constant-flow money-streaming primitive. Recipient balance updates in real time based on stream rate. Enables continuous-vesting, salary-streaming, and subscription patterns without discrete transactions.</p>
   <p><strong>Use for:</strong> Investor distribution streaming (in stablecoin), employee compensation flows, subscription revenue.</p>
+  <p><strong>Load-bearing license warning:</strong> the actual streaming contracts (<code>ethereum-contracts</code>) are <strong>AGPL-3.0</strong>, not MIT. Only the client SDK is MIT. Embedding the contracts in a proprietary or white-label stack triggers AGPL network-copyleft &mdash; the entire product would need to be released under AGPL. This is the single most common license mistake in this category; treat it as a hard warning before adoption.</p>
   <p><strong>Canonical:</strong> <a href="https://github.com/superfluid-finance/protocol-monorepo">github.com/superfluid-finance/protocol-monorepo</a></p>
 </div>
 
@@ -145,10 +146,11 @@
 </div>
 
 <div class="card">
-  <h3><span class="badge b-cat-templates">Sablier</span> Streaming Token Distributions <span class="badge b-lic-industry">GPL-3.0</span></h3>
+  <h3><span class="badge b-cat-templates">Sablier</span> Streaming Token Distributions <span class="badge b-high">GPL-3.0 (relicensed from BUSL 13 July 2026)</span></h3>
   <p>Advanced streaming and vesting primitive with LockUp (cliff), LockUp Dynamic (custom curve), and LockUp Tranched (staged) variants. Cancelable + transferable streams; audit-verified.</p>
   <p><strong>Use for:</strong> Sophisticated vesting programs, employee token grants with custom curves, tokenized-payroll systems.</p>
-  <p><strong>Canonical:</strong> <a href="https://github.com/sablier-labs">github.com/sablier-labs</a></p>
+  <p><strong>Status:</strong> the monorepo is no longer actively maintained and is not accepting pull requests. GPL-3.0 imposes strong copyleft &mdash; not suitable for embedding in a proprietary or white-label product without releasing the whole stack.</p>
+  <p><strong>Canonical org:</strong> <a href="https://github.com/sablier-labs">github.com/sablier-labs</a></p>
 </div>
 
 <h2>Identity &amp; Compliance</h2>
@@ -161,10 +163,10 @@
 </div>
 
 <div class="card">
-  <h3><span class="badge b-cat-templates">Circle Verite</span> Verifiable Credentials <span class="badge b-lic-industry">Apache-2.0</span></h3>
-  <p>W3C Verifiable Credentials framework for privacy-preserving KYC + accreditation attestation. Selective-disclosure enabled. Interoperable with ONCHAINID and DID-based identity systems.</p>
-  <p><strong>Use for:</strong> Cross-protocol compliance credentials, privacy-preserving accreditation, cross-chain identity portability.</p>
-  <p><strong>Canonical:</strong> <a href="https://github.com/centrehq/verite">github.com/centrehq/verite</a></p>
+  <h3><span class="badge b-cat-templates">Circle Verite</span> Verifiable Credentials <span class="badge b-critical">Deprecated (archived April 2025)</span></h3>
+  <p>W3C Verifiable Credentials framework for privacy-preserving KYC + accreditation attestation. Both Verite repositories were <strong>archived 4 April 2025</strong>; the product is no longer maintained. Actual license was MIT (not Apache as previously listed).</p>
+  <p><strong>Do not adopt for new work.</strong> Consider alternatives: ONCHAINID (GPL-3.0) for permissioned tokens; Ethereum Attestation Service (EAS, MIT) for general attestations; W3C DIDs + verifiable credentials via other frameworks (Sovrin/Aries, Veramo).</p>
+  <p><strong>Historical repo:</strong> <a href="https://github.com/centrehq/verite">github.com/centrehq/verite</a> (archived)</p>
 </div>
 
 <h2>Governance</h2>
@@ -179,9 +181,10 @@
 <h2>Bridges &amp; Cross-Chain</h2>
 
 <div class="card">
-  <h3><span class="badge b-cat-templates">Chainlink CCIP</span> Cross-Chain Interoperability Protocol <span class="badge b-lic-industry">Custom</span></h3>
+  <h3><span class="badge b-cat-templates">Chainlink CCIP</span> Cross-Chain Interoperability Protocol <span class="badge b-lic-industry">BUSL-1.1</span></h3>
   <p>Permissioned cross-chain messaging and token-transfer standard. Programmable token transfers between supported chains with integrated risk-management network. Reference for institutional cross-chain applications.</p>
-  <p><strong>Use for:</strong> Multi-chain token distribution, cross-chain RWA settlement, unified compliance across chain deployments.</p>
+  <p><strong>Use for:</strong> Multi-chain token distribution, cross-chain RWA settlement, unified compliance across chain deployments. BUSL restricts competing hosted use during the source-available period.</p>
+  <p><strong>Also relevant:</strong> Chainlink Functions <strong>sunset 30 June 2026</strong> — if your integration path referenced Functions, migrate to CCIP or an alternative.</p>
   <p><strong>Canonical:</strong> <a href="https://docs.chain.link/ccip">docs.chain.link/ccip</a></p>
 </div>
 
@@ -203,7 +206,8 @@
 
 <footer class="footer">
   <div class="footer-inner">
-    <div><h4>Unykorn Legal</h4><p>&copy; 2026 Unykorn LLC. Not legal advice.</p></div>
+    <div><h4>Unykorn Legal</h4><p><p><a href="/notice/">Notice &mdash; Not Legal Advice</a> &middot; Last reviewed 2026-08-08.</p>
+      <p style="margin-top: 0.5rem;">&copy; 2026 Unykorn LLC. Not legal advice.</p></div>
     <div><h4>Sections</h4><p><a href="/library/">Library</a> &middot; <a href="/lexicon/">Lexicon</a> &middot; <a href="/jurisdictions/">Jurisdictions</a></p><p><a href="/smart-contracts/">Smart Contracts</a> &middot; <a href="/deals/">Deals</a> &middot; <a href="/system/">System</a></p></div>
     <div><h4>Source</h4><p><a href="https://github.com/FTHTrading/legal">Repository</a></p></div>
   </div>
