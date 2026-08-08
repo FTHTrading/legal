@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contract Law Primer &mdash; Unykorn Legal</title>
+<meta name="description" content="The essential contract-law concepts every operator needs to read agreements critically: offer, acceptance, consideration, capacity, statute of frauds, UCC vs common law, breach and remedies." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../_ds/tokens.css" />
+<link rel="stylesheet" href="../_ds/layout.css" />
+<link rel="stylesheet" href="../_ds/components.css" />
+<link rel="stylesheet" href="../_ds/shell.css" />
+<link rel="stylesheet" href="../_ds/print.css" media="print" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="/" class="topbar-brand">Unykorn&nbsp;<span class="mark">Legal</span></a>
+    <nav class="topbar-nav"><a href="/library/">Library</a><a href="/lexicon/">Lexicon</a><a href="/jurisdictions/">Jurisdictions</a><a href="/smart-contracts/">Smart Contracts</a><a href="/deals/">Deals</a><a href="/system/">System</a></nav>
+  </div>
+</header>
+
+<nav class="crumbs"><a href="/">Home</a><span class="sep">/</span><a href="/library/">Library</a><span class="sep">/</span><span class="current">Contract Law Primer</span></nav>
+
+<section class="subhero">
+  <div class="subhero-inner">
+    <div class="eyebrow">Foundation Brief &middot; ~15 min read</div>
+    <h1>Contract Law Primer</h1>
+    <p class="lede">Enough contract law to read every operating agreement, subscription document, and smart-contract audit critically. Not a substitute for law school. Sufficient to know when to escalate to counsel.</p>
+  </div>
+</section>
+
+<main class="content-wide">
+
+<h2>1. The four elements of a valid contract</h2>
+<p>Under US common law, a contract requires four elements to be enforceable:</p>
+<ol>
+  <li><strong>Offer.</strong> A definite proposal to enter into an agreement on specified terms.</li>
+  <li><strong>Acceptance.</strong> Unqualified assent to the offer's terms. A counteroffer is a rejection + new offer.</li>
+  <li><strong>Consideration.</strong> Something of value exchanged by each party. Money, goods, services, or a promise to do (or not do) something. A gratuitous promise generally is not enforceable.</li>
+  <li><strong>Mutual assent + capacity.</strong> Both parties must intend to be bound, and both must have legal capacity (age of majority, mental competence, corporate authority).</li>
+</ol>
+<p>Missing any element = no contract. This is the framework courts apply to every contested agreement.</p>
+
+<h2>2. UCC vs common law</h2>
+<p>Two bodies of contract law apply to different transactions:</p>
+<div class="split">
+  <div class="col do">
+    <h3>Common Law</h3>
+    <p>Governs services, real estate, employment, licenses. Origin: English common law, developed by courts. Modified by statute in some areas but the default framework is judge-made.</p>
+    <p><strong>Key features:</strong> "mirror image" rule for acceptance, statute of frauds for certain agreements, strict enforcement of stated terms.</p>
+  </div>
+  <div class="col do">
+    <h3>UCC Article 2</h3>
+    <p>Uniform Commercial Code &mdash; governs sales of goods. Adopted in all US states with minor variations. More flexible than common law.</p>
+    <p><strong>Key features:</strong> "battle of the forms" rule allows contracts even with mismatched terms; gap-fillers for missing terms; merchant-specific rules; warranty of merchantability implied by default.</p>
+  </div>
+</div>
+
+<h2>3. The Statute of Frauds &mdash; which contracts must be in writing</h2>
+<p>Some contracts are only enforceable if in writing signed by the party charged. The categories (mnemonic: MY LEGS):</p>
+<ul>
+  <li><strong>M</strong>arriage &mdash; prenuptial agreements</li>
+  <li><strong>Y</strong>ear &mdash; contracts not performable within 1 year</li>
+  <li><strong>L</strong>and &mdash; sale or interest in real estate</li>
+  <li><strong>E</strong>xecutor &mdash; promise to pay estate debt from personal funds</li>
+  <li><strong>G</strong>oods &mdash; sale of goods valued at $500 or more (UCC)</li>
+  <li><strong>S</strong>uretyship &mdash; promise to answer for another's debt</li>
+</ul>
+<p>Modern digital signatures (e-signature under E-SIGN Act and UETA) satisfy the writing requirement for all of these except a small handful of state-specific exclusions (wills, family court orders).</p>
+
+<h2>4. Boilerplate that actually matters</h2>
+<p>Every operating agreement, subscription agreement, and services contract has a "General Provisions" or "Miscellaneous" section that most people skim. These clauses have outsized impact when things go wrong.</p>
+<table>
+  <thead><tr><th>Clause</th><th>What it does</th><th>Watch for</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Governing Law</strong></td><td>Which state's law applies</td><td>Delaware for corporate; NY for financial contracts; sponsor's home state for real estate</td></tr>
+    <tr><td><strong>Forum / Venue</strong></td><td>Where lawsuits must be filed</td><td>Exclusive jurisdiction clause locks you into a specific court</td></tr>
+    <tr><td><strong>Waiver of Jury Trial</strong></td><td>Judge-only decision, not jury</td><td>Common in commercial agreements; unenforceable in some states/contexts</td></tr>
+    <tr><td><strong>Arbitration</strong></td><td>Private dispute resolution outside courts</td><td>Choice of arbitrator matters (JAMS, AAA); confidential; often faster + more expensive per hour</td></tr>
+    <tr><td><strong>Attorney's Fees / Prevailing Party</strong></td><td>Loser pays winner's legal fees</td><td>Default is each side pays own; this clause changes it</td></tr>
+    <tr><td><strong>Notice</strong></td><td>How formal notices must be delivered</td><td>Certified mail + email + physical address. Failure to comply invalidates the notice.</td></tr>
+    <tr><td><strong>Merger / Integration</strong></td><td>Prior negotiations / discussions are excluded</td><td>Kills reliance on oral promises, side letters, or emails not in the final contract</td></tr>
+    <tr><td><strong>Amendment</strong></td><td>How the contract can be changed</td><td>"In writing signed by both" is standard; watch for "in writing signed by the Manager" only</td></tr>
+    <tr><td><strong>Severability</strong></td><td>Invalid clause doesn't kill the whole contract</td><td>Standard; but pay attention to how "materially adverse" is defined</td></tr>
+    <tr><td><strong>Force Majeure</strong></td><td>Excuse performance for events beyond control</td><td>Post-COVID versions specifically enumerate pandemics; watch for what's excluded</td></tr>
+  </tbody>
+</table>
+
+<h2>5. Breach and remedies</h2>
+<p>Not every failure to perform is a "breach" that entitles the other party to damages. The tiers:</p>
+<ul>
+  <li><strong>Immaterial breach.</strong> Technical non-compliance with minor terms. Non-breaching party may recover incidental damages but must continue performance.</li>
+  <li><strong>Material breach.</strong> Goes to the essence of the bargain. Non-breaching party may suspend performance, sue for damages, or terminate.</li>
+  <li><strong>Anticipatory breach.</strong> One party clearly signals it will not perform before performance is due. Other party may treat as immediate breach.</li>
+  <li><strong>Fundamental / total breach.</strong> Non-breaching party is entitled to full contract-price damages, restitution, and (in some cases) consequential damages.</li>
+</ul>
+<p>Remedies available (varies by jurisdiction and contract):</p>
+<ol>
+  <li><strong>Expectation damages.</strong> Put the non-breaching party in the position they would have been in had the contract been performed. This is the default measure.</li>
+  <li><strong>Reliance damages.</strong> Reimburse expenses incurred in reliance on the contract.</li>
+  <li><strong>Restitution.</strong> Return any benefit conferred on the breaching party (unjust enrichment).</li>
+  <li><strong>Specific performance.</strong> Court orders the breaching party to actually perform. Only available for unique goods/services (real estate, custom-built assets); not available for services requiring personal skill.</li>
+  <li><strong>Liquidated damages.</strong> Pre-agreed damage amount specified in the contract. Enforceable if reasonable estimate at time of contracting; unenforceable if a "penalty."</li>
+  <li><strong>Rescission + restitution.</strong> Unwind the contract entirely, return everything to the pre-contract state.</li>
+</ol>
+
+<h2>6. Reading a securities-adjacent contract</h2>
+<p>When reviewing an operating agreement, subscription document, PPM, or smart-contract audit, apply this checklist:</p>
+<ul>
+  <li><strong>Who are the parties?</strong> Named entities are the ones bound. If it says "Manager" but doesn't specify which entity, that's a defect.</li>
+  <li><strong>What is being exchanged?</strong> Consideration must be identified for each party.</li>
+  <li><strong>What are the conditions to performance?</strong> Distinguish between conditions (must occur before duty arises) and covenants (breach gives rise to damages).</li>
+  <li><strong>Where are the risk allocations?</strong> Indemnification, limitations on liability, insurance requirements.</li>
+  <li><strong>What happens on default?</strong> Trigger events, cure periods, remedies available, cross-defaults.</li>
+  <li><strong>How does it end?</strong> Term, termination rights, survival of specific clauses post-termination.</li>
+  <li><strong>Who wins ties?</strong> Governing law, forum, arbitration &mdash; because ambiguity is inevitable.</li>
+</ul>
+
+<h2>7. Smart contracts and legal contracts &mdash; the alignment problem</h2>
+<p>A smart contract (code that executes on a blockchain) and a legal contract (paper signed by parties) are different things. In serious tokenized-securities structures they must reference each other:</p>
+<ul>
+  <li>The <strong>legal contract</strong> (LLC operating agreement, subscription agreement) is the source of truth for rights and obligations.</li>
+  <li>The <strong>smart contract</strong> is the execution layer that enforces certain of those rights automatically (transfer restrictions, distributions, cap-table updates).</li>
+  <li>If they conflict, the legal contract wins. Courts have no obligation to defer to on-chain state where the operative document says otherwise.</li>
+  <li>Well-drafted structures include an <strong>on-chain / off-chain reconciliation clause</strong> in the operating agreement: the legal document acknowledges the smart contract as the operating ledger of record but preserves the parties' underlying legal rights in the event of a divergence.</li>
+</ul>
+
+<h2>Further reading</h2>
+<ul>
+  <li><a href="./rwa-fundamentals.html">How RWA Actually Works</a> &mdash; how legal + smart contracts interact in practice</li>
+  <li><a href="/smart-contracts/">Smart Contract Templates</a> &mdash; open-source contract libraries</li>
+  <li><a href="/lexicon/">Lexicon</a> &mdash; formal definitions of every legal term used here</li>
+</ul>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div><h4>Unykorn Legal</h4><p>&copy; 2026 Unykorn LLC. Not legal advice.</p></div>
+    <div><h4>Sections</h4><p><a href="/library/">Library</a> &middot; <a href="/lexicon/">Lexicon</a> &middot; <a href="/jurisdictions/">Jurisdictions</a></p><p><a href="/smart-contracts/">Smart Contracts</a> &middot; <a href="/deals/">Deals</a> &middot; <a href="/system/">System</a></p></div>
+    <div><h4>Source</h4><p><a href="https://github.com/FTHTrading/legal">Repository</a></p></div>
+  </div>
+</footer>
+
+</body>
+</html>

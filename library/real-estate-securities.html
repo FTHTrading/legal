@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Real-Estate Securities &mdash; Unykorn Legal</title>
+<meta name="description" content="Fractionalized REITs, single-asset SPVs, CMBS tranching, construction-draw escrow, and the tokenization patterns that survive attorney review." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../_ds/tokens.css" />
+<link rel="stylesheet" href="../_ds/layout.css" />
+<link rel="stylesheet" href="../_ds/components.css" />
+<link rel="stylesheet" href="../_ds/shell.css" />
+<link rel="stylesheet" href="../_ds/print.css" media="print" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="/" class="topbar-brand">Unykorn&nbsp;<span class="mark">Legal</span></a>
+    <nav class="topbar-nav">
+      <a href="/library/">Library</a><a href="/lexicon/">Lexicon</a><a href="/jurisdictions/">Jurisdictions</a><a href="/smart-contracts/">Smart Contracts</a><a href="/deals/">Deals</a><a href="/system/">System</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="crumbs">
+  <a href="/">Home</a><span class="sep">/</span><a href="/library/">Library</a><span class="sep">/</span><span class="current">Real-Estate Securities</span>
+</nav>
+
+<section class="subhero">
+  <div class="subhero-inner">
+    <div class="eyebrow">Discipline Brief &middot; ~11 min read</div>
+    <h1>Real-Estate Securities</h1>
+    <p class="lede">Every real-estate deal that raises capital from outside investors is a securities transaction. This brief covers the operative structures &mdash; SPV, REIT, DST, tokenized fractional &mdash; and the patterns that pass regulatory review versus the ones that fail it.</p>
+  </div>
+</section>
+
+<main class="content-wide">
+
+<h2>1. The default: a single-asset SPV</h2>
+<p>For 90% of active real-estate raises &mdash; a specific property, a specific development, a specific bridge loan &mdash; the operating structure is a single-asset SPV: a limited liability company formed to hold exactly one asset (or one linked asset pool) and to accept investor capital via a Reg D 506(c) offering.</p>
+<p>The typical structure:</p>
+<ul>
+  <li><strong>Sponsor entity</strong> (the operating company) forms the SPV and serves as its Manager.</li>
+  <li><strong>SPV</strong> holds fee title (or leasehold) to the property.</li>
+  <li><strong>Investors</strong> hold membership units (Class A) with pro-rata economic rights.</li>
+  <li><strong>Sponsor</strong> holds a separate class (Class B, or "promote") entitled to a share of upside above a preferred return hurdle.</li>
+  <li><strong>Debt</strong> (if any) is secured by the property, non-recourse to investors, and often carved out with bad-boy guaranties from the sponsor.</li>
+</ul>
+<p>This is the pattern the Unykorn Legal Ops <a href="/system/#workflow">SPV-in-a-Box</a> tool generates end-to-end.</p>
+
+<h2>2. The alternative: pooled vehicles (funds, REITs, DSTs)</h2>
+<div class="split">
+  <div class="col do">
+    <h3>Private Real-Estate Fund</h3>
+    <p>Multi-asset pooled vehicle. Master LP + GP (or LLC + Manager). Investors commit capital to be deployed across a diversified portfolio. Blind-pool or committed-pipeline. Typical horizon 7&ndash;10 years with 3-year investment period. Reg D + 3(c)(1) or 3(c)(7) exclusions from ICA registration.</p>
+    <p><strong>Best for:</strong> institutional capital, diversification-seeking investors, sponsors with pipeline visibility.</p>
+  </div>
+  <div class="col do">
+    <h3>Non-Traded REIT</h3>
+    <p>Real Estate Investment Trust that files a public offering (S-11 or 1-A) but doesn't list on an exchange. Retail-accessible. Must distribute at least 90% of taxable income to shareholders. Subject to SEC reporting. Tokenized versions increasingly common.</p>
+    <p><strong>Best for:</strong> retail distribution, tax-efficient income, sponsor with scale + audit readiness.</p>
+  </div>
+  <div class="col do">
+    <h3>Delaware Statutory Trust (DST)</h3>
+    <p>Pass-through vehicle designed for 1031-exchange investors. Beneficial interests treated as direct property ownership for tax purposes. Highly rigid: no reinvestment, no new debt, no new investors after closing. Purely a passive-hold structure.</p>
+    <p><strong>Best for:</strong> 1031 buyers seeking to defer capital gains from a prior sale, with a stabilized income-producing asset.</p>
+  </div>
+  <div class="col do">
+    <h3>Qualified Opportunity Fund</h3>
+    <p>SPV or fund that invests in property in a Qualified Opportunity Zone. Investors defer capital gains and eliminate tax on new appreciation after 10-year hold. Requires 90% of assets deployed in QOZ property, substantial improvement requirement, active-business rules.</p>
+    <p><strong>Best for:</strong> investors with recent capital gains + development-stage assets in QOZ census tracts.</p>
+  </div>
+</div>
+
+<h2>3. CMBS tranching &mdash; the debt-side structure</h2>
+<p>Commercial Mortgage-Backed Securities are the primary vehicle for institutional real-estate debt at scale. A CMBS transaction packages a pool of commercial mortgages into a trust, which issues bonds (tranches) with progressively lower priority claims on the underlying cash flow.</p>
+<table>
+  <thead><tr><th>Tranche</th><th>Priority</th><th>Rating (typical)</th><th>Yield</th></tr></thead>
+  <tbody>
+    <tr><td>Senior (A / AAA)</td><td>1st in line for interest + principal</td><td>AAA / AA</td><td>Lowest &mdash; treasury + spread</td></tr>
+    <tr><td>Mezzanine (B)</td><td>Subordinated to Senior</td><td>A / BBB</td><td>Middle &mdash; premium over senior</td></tr>
+    <tr><td>Preferred Equity (C)</td><td>Subordinated to all debt, priority over common equity</td><td>Below investment grade</td><td>Equity-like return, ideally 15%+</td></tr>
+    <tr><td>Common Equity</td><td>Residual claim after all above are paid</td><td>Unrated</td><td>Highest expected return, first loss</td></tr>
+  </tbody>
+</table>
+<p>The <a href="/system/">Unykorn Legal Ops System</a> supports CMBS tranching in the SPV structure &mdash; see the <code>cmbs</code> field on the deal record.</p>
+
+<h2>4. Construction-draw escrow &mdash; the "milestone-locked" pattern</h2>
+<p>For ground-up development deals, investor capital is not deployed all at once. It is placed into escrow and released against milestone-completion attestations. The typical draw sequence:</p>
+<ol>
+  <li>Site preparation + entitlements complete</li>
+  <li>Foundation + framing to slab</li>
+  <li>Vertical construction to weather-tight shell</li>
+  <li>MEP + interior buildout</li>
+  <li>Certificate of occupancy + punch list</li>
+</ol>
+<p>Each draw requires: (i) an inspector or drone/BIM oracle attestation that the milestone is complete; (ii) a mechanic's-lien waiver from the general contractor and each material sub; (iii) an owner's-representative sign-off; and (iv) proof that construction insurance and worker's-comp are current.</p>
+<p>Smart-contract-based draw escrow implements this on-chain: multi-sig approvers plus attested oracle input plus signed waiver hashes.</p>
+
+<h2>5. Tokenization patterns for real estate</h2>
+<div class="grid-2">
+  <div class="card">
+    <h3>Fractionalized single-asset</h3>
+    <p>SPV holds one property. Units are tokenized on ERC-3643 or ERC-1400. Each token represents a fractional membership interest. Best for high-value single assets ($5M-$50M range).</p>
+  </div>
+  <div class="card">
+    <h3>Tokenized REIT shares</h3>
+    <p>Existing REIT (private or non-traded public) issues digital shares alongside or instead of paper. Share ledger lives on-chain. See Securitize + REIT sponsors.</p>
+  </div>
+  <div class="card">
+    <h3>Tokenized loan participation</h3>
+    <p>Underlying commercial mortgage loan is participated to multiple lenders via tokenized participation certificates. Enables secondary trading between qualified purchasers.</p>
+  </div>
+  <div class="card">
+    <h3>Tokenized rent stream</h3>
+    <p>Tokens represent the right to receive a portion of net rental income. Structured as revenue-share (not equity), potentially simpler securities profile depending on structure.</p>
+  </div>
+</div>
+
+<h2>6. The compliance layer &mdash; what changes vs. traditional</h2>
+<p>A tokenized real-estate offering adds three requirements on top of a traditional 506(c) SPV raise:</p>
+<ul>
+  <li><strong>On-chain transfer restrictions.</strong> The token must enforce the 1-year holding period, accredited-only transferability, and Manager consent. ERC-3643 with compliance modules is the standard implementation.</li>
+  <li><strong>ONCHAINID identity.</strong> Every token holder must have an on-chain identity claim proving accredited status. Verification is typically outsourced to a claim issuer (Verite, ONCHAINID, Circle Verite).</li>
+  <li><strong>State securities-agent status for the token infrastructure provider.</strong> The technical vendor (Securitize, INX, Prometheum, Texture Capital) often takes on registered broker-dealer or transfer-agent status. Confirm before selecting.</li>
+</ul>
+
+<h2>7. Tax posture</h2>
+<p>Most real-estate SPVs elect partnership taxation (Subchapter K). This means:</p>
+<ul>
+  <li>The SPV files Form 1065 annually; each Member receives a Schedule K-1.</li>
+  <li>Losses and deductions (depreciation, mortgage interest) flow through to Members' individual returns.</li>
+  <li>Distributions are generally not taxable events (they reduce basis first).</li>
+  <li>Ordinary rental income, capital gains on eventual sale, and Section 1231 gain each get separate treatment.</li>
+</ul>
+<p>Tokenized structures do not change this &mdash; the token is just a certificate representing the K-1-eligible membership interest. The K-1 still goes to the wallet-associated legal entity.</p>
+
+<h2>Further reading</h2>
+<ul>
+  <li><a href="./rwa-fundamentals.html">How RWA Actually Works</a> &mdash; the broader RWA framework</li>
+  <li><a href="/system/#workflow">SPV-in-a-Box</a> &mdash; end-to-end formation + Reg D 506(c) packet</li>
+  <li><a href="/smart-contracts/">Smart Contract Templates</a> &mdash; ERC-3643, construction-draw escrow contracts</li>
+  <li><a href="/deals/">Active Deals</a> &mdash; real-estate RWA protocols currently in production</li>
+</ul>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div><h4>Unykorn Legal</h4><p>&copy; 2026 Unykorn LLC. Not legal advice.</p></div>
+    <div><h4>Sections</h4><p><a href="/library/">Library</a> &middot; <a href="/lexicon/">Lexicon</a> &middot; <a href="/jurisdictions/">Jurisdictions</a></p><p><a href="/smart-contracts/">Smart Contracts</a> &middot; <a href="/deals/">Deals</a> &middot; <a href="/system/">System</a></p></div>
+    <div><h4>Source</h4><p><a href="https://github.com/FTHTrading/legal">Repository</a></p></div>
+  </div>
+</footer>
+
+</body>
+</html>

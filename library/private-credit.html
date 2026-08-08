@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Private Credit &amp; Tokenized Credit &mdash; Unykorn Legal</title>
+<meta name="description" content="Direct lending, mezzanine, trade finance, revenue-based finance, and the on-chain credit protocols building institutional-scale credit rails." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../_ds/tokens.css" />
+<link rel="stylesheet" href="../_ds/layout.css" />
+<link rel="stylesheet" href="../_ds/components.css" />
+<link rel="stylesheet" href="../_ds/shell.css" />
+<link rel="stylesheet" href="../_ds/print.css" media="print" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="/" class="topbar-brand">Unykorn&nbsp;<span class="mark">Legal</span></a>
+    <nav class="topbar-nav"><a href="/library/">Library</a><a href="/lexicon/">Lexicon</a><a href="/jurisdictions/">Jurisdictions</a><a href="/smart-contracts/">Smart Contracts</a><a href="/deals/">Deals</a><a href="/system/">System</a></nav>
+  </div>
+</header>
+
+<nav class="crumbs"><a href="/">Home</a><span class="sep">/</span><a href="/library/">Library</a><span class="sep">/</span><span class="current">Private Credit</span></nav>
+
+<section class="subhero">
+  <div class="subhero-inner">
+    <div class="eyebrow">Discipline Brief &middot; ~10 min read</div>
+    <h1>Private Credit &amp; Tokenized Credit</h1>
+    <p class="lede">Private credit has grown from a $200B niche in 2010 to a $1.7T+ asset class today. Tokenization is now bringing it on-chain at institutional scale. This brief covers the sub-strategies, the risk profile, and how the on-chain credit protocols work.</p>
+  </div>
+</section>
+
+<main class="content-wide">
+
+<h2>1. What private credit is</h2>
+<p>Private credit is debt issued outside of public markets &mdash; loans made directly by non-bank lenders (specialty finance companies, private-credit funds, insurance companies, family offices) to companies or assets. It's the alternative to a syndicated bank loan or a public bond issuance.</p>
+<p>The core sub-strategies:</p>
+<table>
+  <thead><tr><th>Strategy</th><th>Typical borrower</th><th>Yield</th><th>Risk profile</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Direct lending (senior secured)</strong></td><td>Middle-market PE-owned company ($10M-$100M EBITDA)</td><td>SOFR + 5-7%</td><td>1st lien, sponsor-backed, covenanted</td></tr>
+    <tr><td><strong>Mezzanine</strong></td><td>Same borrower, subordinated tranche</td><td>10-14%</td><td>Subordinated to senior, often with equity kicker</td></tr>
+    <tr><td><strong>Distressed / special situations</strong></td><td>Company in workout or bankruptcy</td><td>15-25%+</td><td>High expected return, high loss probability</td></tr>
+    <tr><td><strong>Trade finance</strong></td><td>Importers/exporters needing short-term working capital</td><td>8-15%</td><td>Short-duration, collateralized by inventory / receivables</td></tr>
+    <tr><td><strong>Invoice / receivable finance</strong></td><td>SMB with slow-paying customers</td><td>10-20%</td><td>Very short duration, obligor-diversified</td></tr>
+    <tr><td><strong>Revenue-based finance</strong></td><td>Recurring-revenue software business</td><td>15-25% IRR target</td><td>Return tied to revenue percentage, not fixed schedule</td></tr>
+    <tr><td><strong>Asset-based lending</strong></td><td>Company with hard-asset collateral</td><td>SOFR + 4-8%</td><td>Loan-to-value dictated, monitored monthly</td></tr>
+  </tbody>
+</table>
+
+<h2>2. Why credit tokenizes well</h2>
+<p>Credit has natural properties that make it easier to tokenize than equity:</p>
+<ul>
+  <li><strong>Cash flows are contractual.</strong> A loan pays a predetermined stream. Token-holder rights are cleaner to define than equity.</li>
+  <li><strong>Payment mechanics are automatable.</strong> Interest can be paid on schedule via smart contract from a designated funding wallet.</li>
+  <li><strong>Underwriting is standardizable.</strong> LTV, DSCR, covenant compliance are all computable metrics that can be monitored on-chain.</li>
+  <li><strong>Secondary trading has natural demand.</strong> Institutions constantly rebalance credit exposure. Tokenization reduces settlement time from T+3 (traditional) to T+0 (on-chain).</li>
+</ul>
+
+<h2>3. The on-chain credit protocols</h2>
+<p>Five protocols dominate on-chain credit as of 2026:</p>
+
+<div class="grid-2">
+  <div class="card">
+    <h3>Goldfinch</h3>
+    <p>Emerging-market credit &mdash; loans originated in Africa, Southeast Asia, LatAm. Underwriting by specialized "backers" who evaluate borrowers. Senior/junior tranche structure. Yield to senior LPs typically 8-13%.</p>
+  </div>
+  <div class="card">
+    <h3>Centrifuge</h3>
+    <p>Asset-backed credit tokenization. Real-world receivables (invoices, mortgages, trade finance) tokenized into pools, financed by liquidity providers. Now expanded to permissionless V3.</p>
+  </div>
+  <div class="card">
+    <h3>Maple Finance</h3>
+    <p>Institutional undercollateralized lending. Delegates pool capital, underwrite institutional borrowers (crypto market makers, prime brokers). Focus on quality of borrower rather than collateral.</p>
+  </div>
+  <div class="card">
+    <h3>Aave Horizon (RWA)</h3>
+    <p>Aave's institutional RWA pool &mdash; permissioned participation, KYC'd, focused on real-world collateral for on-chain borrowing. Tokenized T-bills as primary collateral in initial version.</p>
+  </div>
+  <div class="card">
+    <h3>Clearpool</h3>
+    <p>Unsecured institutional lending with dynamic pool rates. Borrowers create single-borrower pools; LPs deposit. Interest rate float based on utilization.</p>
+  </div>
+  <div class="card">
+    <h3>TrueFi</h3>
+    <p>Unsecured lending to KYC'd institutional borrowers. Earlier entrant that pivoted after 2022 borrower defaults. Now operating with stricter underwriting + insurance.</p>
+  </div>
+</div>
+
+<p>See the full <a href="/deals/">Active Deals</a> registry for current AUM, yield, and regulatory status of each.</p>
+
+<h2>4. The tokenized-treasury layer (adjacent)</h2>
+<p>Related but distinct: the tokenized US Treasury / money-market fund category. These are not "credit" in the traditional sense &mdash; they hold government paper &mdash; but they use the same on-chain issuance rails and often serve as the reserve asset for tokenized-credit protocols.</p>
+<ul>
+  <li><strong>Ondo (OUSG, USDY).</strong> Tokenized short-term Treasury exposure. USDY is a yield-bearing stablecoin equivalent.</li>
+  <li><strong>Superstate (USTB, USCC).</strong> Registered investment company (1940 Act mutual fund) with on-chain share registry.</li>
+  <li><strong>Franklin Templeton (BENJI).</strong> First SEC-registered fund with a public blockchain share class.</li>
+  <li><strong>Hashnote (USYC).</strong> Institutional short-duration credit / T-bill exposure.</li>
+  <li><strong>BlackRock (BUIDL).</strong> Institutional cash-management fund with Securitize as transfer agent.</li>
+</ul>
+
+<h2>5. Legal structure &mdash; issuing a tokenized-credit fund</h2>
+<p>For a US operator issuing a tokenized private-credit fund, the typical stack:</p>
+<ul>
+  <li><strong>Fund entity:</strong> Delaware LP or LLC, master + feeder for tax-efficient structuring.</li>
+  <li><strong>Adviser entity:</strong> Delaware LLC, registered as ERA (Exempt Reporting Adviser) under 203(m) if AUM under $150M; full RIA registration above.</li>
+  <li><strong>Offering:</strong> Rule 506(c) private placement + 3(c)(1) or 3(c)(7) exclusion from ICA registration.</li>
+  <li><strong>Token infrastructure:</strong> Securitize, INX, or similar transfer-agent-registered platform for the on-chain share ledger.</li>
+  <li><strong>Custody:</strong> Qualified custodian for the tokens (Anchorage, BitGo Trust, Fireblocks under state trust charter).</li>
+  <li><strong>Administration:</strong> Independent fund administrator for NAV calculation, subscriptions/redemptions, K-1 preparation.</li>
+</ul>
+
+<h2>Further reading</h2>
+<ul>
+  <li><a href="./rwa-fundamentals.html">How RWA Actually Works</a> &mdash; the broader RWA framework</li>
+  <li><a href="./real-estate-securities.html">Real-Estate Securities</a> &mdash; adjacent discipline</li>
+  <li><a href="/deals/">Active Deals</a> &mdash; live credit protocols + tokenized funds</li>
+  <li><a href="/lexicon/">Lexicon</a> &mdash; every term with formal definition</li>
+</ul>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div><h4>Unykorn Legal</h4><p>&copy; 2026 Unykorn LLC. Not legal advice.</p></div>
+    <div><h4>Sections</h4><p><a href="/library/">Library</a> &middot; <a href="/lexicon/">Lexicon</a> &middot; <a href="/jurisdictions/">Jurisdictions</a></p><p><a href="/smart-contracts/">Smart Contracts</a> &middot; <a href="/deals/">Deals</a> &middot; <a href="/system/">System</a></p></div>
+    <div><h4>Source</h4><p><a href="https://github.com/FTHTrading/legal">Repository</a></p></div>
+  </div>
+</footer>
+
+</body>
+</html>

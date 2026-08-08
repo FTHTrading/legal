@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Smart Contract Templates &mdash; Unykorn Legal</title>
+<meta name="description" content="Open-license template registry for tokenized securities: ERC-3643, ERC-1400, SAFTs, token warrants, vault contracts, escrow, waterfalls, and staking." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../_ds/tokens.css" />
+<link rel="stylesheet" href="../_ds/layout.css" />
+<link rel="stylesheet" href="../_ds/components.css" />
+<link rel="stylesheet" href="../_ds/shell.css" />
+<link rel="stylesheet" href="../_ds/print.css" media="print" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="/" class="topbar-brand">Unykorn&nbsp;<span class="mark">Legal</span></a>
+    <nav class="topbar-nav"><a href="/library/">Library</a><a href="/lexicon/">Lexicon</a><a href="/jurisdictions/">Jurisdictions</a><a href="/smart-contracts/">Smart Contracts</a><a href="/deals/">Deals</a><a href="/system/">System</a></nav>
+  </div>
+</header>
+
+<nav class="crumbs"><a href="/">Home</a><span class="sep">/</span><span class="current">Smart Contracts</span></nav>
+
+<section class="subhero">
+  <div class="subhero-inner">
+    <div class="eyebrow">Section 04 &middot; Template Registry</div>
+    <h1>Open-source smart contract templates.</h1>
+    <p class="lede">Curated registry of production-grade smart contract standards and templates used across tokenized securities, RWA structures, and DeFi primitives. Every entry links to the canonical implementation and specifies its license.</p>
+  </div>
+</section>
+
+<main class="content-wide">
+
+<div class="callout">
+  <span class="cta-label">Roadmap &middot; smartcontract.unykorn.ai</span>
+  <p>A dedicated subdomain (<code>smartcontract.unykorn.ai</code>) will host expanded reference implementations, ABI documentation, and audit reports for each template. This page is the index for now; deep pages ship as we build them.</p>
+</div>
+
+<h2>Permissioned Security Token Standards</h2>
+
+<div class="card">
+  <h3><span class="badge b-cat-templates">ERC-3643</span> Tokeny T-REX &mdash; Permissioned Security Tokens <span class="badge b-lic-industry">GPL-3.0</span></h3>
+  <p>The dominant standard for regulated security tokens. Every holder requires an on-chain identity (ONCHAINID) with verifiable claims. Every transfer is validated against configurable compliance modules (jurisdiction, accreditation, transfer amount, holding period) before execution.</p>
+  <p><strong>Use for:</strong> Reg D 506(c) tokens, MiCA asset-referenced tokens, tokenized fund shares with KYC-gated participation.</p>
+  <p><strong>Canonical:</strong> <a href="https://github.com/TokenySolutions/T-REX">github.com/TokenySolutions/T-REX</a></p>
+  <div class="meta">Adopted by: Securitize, INX, Prometheum, Backed, multiple institutional issuers. EIP-3643 approved 2023.</div>
+</div>
+
+<div class="card">
+  <h3><span class="badge b-cat-templates">ERC-1400</span> Partitioned Security Tokens <span class="badge b-lic-industry">Apache-2.0</span></h3>
+  <p>Earlier security-token standard supporting partitioning (multiple tranches with different rules), forced transfers, operator control, and document management on-chain. Widely implemented despite non-final EIP status.</p>
+  <p><strong>Use for:</strong> Multi-tranche debt securities, tokenized preferred equity, structured products with holder-class distinctions.</p>
+  <p><strong>Canonical:</strong> <a href="https://github.com/ethereum/eips/issues/1411">EIP-1400</a> (spec); <a href="https://github.com/ConsenSys/UniversalToken">ConsenSys UniversalToken</a> (reference impl)</p>
+</div>
+
+<h2>Convertible &amp; Pre-Issuance Instruments</h2>
+
+<div class="card">
+  <h3><span class="badge b-cat-templates">SAFT</span> Simple Agreement for Future Tokens <span class="badge b-lic-public">Public</span></h3>
+  <p>Investment agreement in which purchasers pay for future delivery of tokens once a network launches. Structured as a security at signing (under Reg D) with delivery of (potentially non-security) utility tokens at network launch.</p>
+  <p><strong>Use for:</strong> Pre-launch protocol financings; institutional participation in early-stage token projects.</p>
+  <p><strong>Reference:</strong> <a href="https://www.cooleygo.com/documents/simple-agreement-for-future-tokens/">Cooley GO SAFT Framework</a>; <a href="https://coinbase.com/legal/safts">Coinbase SAFT template</a></p>
+</div>
+
+<div class="card">
+  <h3><span class="badge b-cat-templates">Token Warrant</span> Rights to Future Tokens <span class="badge b-lic-industry">Apache-2.0</span></h3>
+  <p>Convertible instrument giving the holder the right to receive tokens on a defined trigger event (typically token generation event or protocol launch). Typically issued alongside an equity SAFE for hybrid equity+token deals.</p>
+  <p><strong>Use for:</strong> Venture financings of companies building token-based protocols where the company entity is separate from the token issuer.</p>
+  <p><strong>Reference:</strong> <a href="https://github.com/a16z/token-warrant-templates">a16z Token Warrant Templates</a></p>
+</div>
+
+<div class="card">
+  <h3><span class="badge b-cat-templates">SAFE</span> Simple Agreement for Future Equity <span class="badge b-lic-public">CC0</span></h3>
+  <p>Y Combinator's convertible-instrument standard for early-stage equity financings. Post-money and pre-money variants. Not debt; converts to equity on a defined trigger event (typically priced round).</p>
+  <p><strong>Use for:</strong> Pre-seed and seed rounds; entity-level financing complement to token warrants.</p>
+  <p><strong>Reference:</strong> <a href="https://www.ycombinator.com/documents">Y Combinator SAFE Documents</a></p>
+</div>
+
+<h2>Vaults &amp; Yield Primitives</h2>
+
+<div class="card">
+  <h3><span class="badge b-cat-templates">ERC-4626</span> Tokenized Vault Standard <span class="badge b-lic-public">MIT</span></h3>
+  <p>Standard interface for yield-bearing vaults: deposit an underlying token, receive vault-share tokens; withdraw by burning shares; NAV per share updates with underlying performance. Foundation of the yield-primitives DeFi layer.</p>
+  <p><strong>Use for:</strong> Tokenized fund shares (money-market, credit, real-estate), yield-bearing stablecoin wrappers, LP-token normalization.</p>
+  <p><strong>Canonical:</strong> <a href="https://eips.ethereum.org/EIPS/eip-4626">EIP-4626</a>; OpenZeppelin reference implementation at <a href="https://github.com/OpenZeppelin/openzeppelin-contracts">openzeppelin-contracts</a></p>
+</div>
+
+<div class="card">
+  <h3><span class="badge b-cat-templates">Morpho Blue</span> Isolated Lending Vaults <span class="badge b-lic-industry">BUSL-1.1</span></h3>
+  <p>Permissionless isolated lending-market factory. Each market has its own collateral asset, borrow asset, LLTV, oracle, and IRM. Non-upgradeable; minimalist trust model. MetaMorpho vaults on top provide managed exposure across multiple markets.</p>
+  <p><strong>Use for:</strong> On-chain private-credit markets, RWA-collateralized lending, institutional yield strategies.</p>
+  <p><strong>Canonical:</strong> <a href="https://github.com/morpho-org/morpho-blue">github.com/morpho-org/morpho-blue</a></p>
+</div>
+
+<h2>Custody &amp; Multi-Sig</h2>
+
+<div class="card">
+  <h3><span class="badge b-cat-templates">Safe (Gnosis Safe)</span> Multi-Sig Wallet <span class="badge b-lic-industry">GPL-3.0</span></h3>
+  <p>The dominant multi-signature wallet standard. Configurable m-of-n approval, modules for extended functionality (spending limits, session keys, delegation), and formal-verification history. Foundation of institutional on-chain custody.</p>
+  <p><strong>Use for:</strong> SPV treasury custody, DAO treasuries, multi-approver spending controls, guardian-based recovery.</p>
+  <p><strong>Canonical:</strong> <a href="https://github.com/safe-global/safe-smart-account">github.com/safe-global/safe-smart-account</a></p>
+</div>
+
+<h2>Escrow &amp; Milestone Release</h2>
+
+<div class="card">
+  <h3><span class="badge b-cat-templates">OpenZeppelin Escrow</span> Simple Payment Escrow <span class="badge b-lic-public">MIT</span></h3>
+  <p>Reference implementations of payment escrow (hold funds pending beneficiary claim), conditional escrow (release on off-chain event), and refund escrow (support for cancellation and refund flows).</p>
+  <p><strong>Use for:</strong> Simple payment holds, subscription-with-hold patterns, dispute-resolution intermediaries.</p>
+  <p><strong>Canonical:</strong> <a href="https://docs.openzeppelin.com/contracts/5.x/api/utils#Escrow">OpenZeppelin Escrow docs</a></p>
+</div>
+
+<div class="card">
+  <h3><span class="badge b-cat-templates">Milestone Escrow</span> Attested Multi-Milestone Release <span class="badge b-lic-internal">Internal (planned)</span></h3>
+  <p>Multi-party escrow releasing funds against attested milestone completion. Requires signed oracle input (inspector, drone/BIM, mechanic's-lien waiver hash). Multi-sig approval on release. Reserved for construction-draw and phased-project financing.</p>
+  <p><strong>Use for:</strong> Ground-up development draws, project-finance milestone payments, staged-delivery contracts.</p>
+  <p><strong>Status:</strong> Reference implementation coming to <code>smartcontract.unykorn.ai</code>.</p>
+</div>
+
+<h2>Distribution Waterfalls</h2>
+
+<div class="card">
+  <h3><span class="badge b-cat-templates">0xSplits</span> Configurable Payment Splits <span class="badge b-lic-industry">Apache-2.0</span></h3>
+  <p>Immutable smart contract that receives payments and distributes them per configured recipient shares. Supports controlled + immutable variants, and split-of-splits patterns. Battle-tested in NFT royalty and creator-economy contexts.</p>
+  <p><strong>Use for:</strong> Fund distribution waterfalls (pref return + catch-up + carried interest), royalty splits among creators/rightholders.</p>
+  <p><strong>Canonical:</strong> <a href="https://github.com/0xSplits">github.com/0xSplits</a></p>
+</div>
+
+<div class="card">
+  <h3><span class="badge b-cat-templates">Superfluid Streams</span> Continuous Payment Streaming <span class="badge b-lic-industry">MIT</span></h3>
+  <p>Constant-flow money-streaming primitive. Recipient balance updates in real time based on stream rate. Enables continuous-vesting, salary-streaming, and subscription patterns without discrete transactions.</p>
+  <p><strong>Use for:</strong> Investor distribution streaming (in stablecoin), employee compensation flows, subscription revenue.</p>
+  <p><strong>Canonical:</strong> <a href="https://github.com/superfluid-finance/protocol-monorepo">github.com/superfluid-finance/protocol-monorepo</a></p>
+</div>
+
+<h2>Vesting &amp; Cliff Schedules</h2>
+
+<div class="card">
+  <h3><span class="badge b-cat-templates">OpenZeppelin VestingWallet</span> Linear Vesting with Cliff <span class="badge b-lic-public">MIT</span></h3>
+  <p>Reference implementation of time-based vesting. Supports linear vesting after a cliff period. Composable with any ERC-20 or ETH.</p>
+  <p><strong>Use for:</strong> Founder / employee token vesting, investor-lockup enforcement, team allocation schedules.</p>
+  <p><strong>Canonical:</strong> <a href="https://docs.openzeppelin.com/contracts/5.x/api/finance#VestingWallet">OpenZeppelin VestingWallet docs</a></p>
+</div>
+
+<div class="card">
+  <h3><span class="badge b-cat-templates">Sablier</span> Streaming Token Distributions <span class="badge b-lic-industry">GPL-3.0</span></h3>
+  <p>Advanced streaming and vesting primitive with LockUp (cliff), LockUp Dynamic (custom curve), and LockUp Tranched (staged) variants. Cancelable + transferable streams; audit-verified.</p>
+  <p><strong>Use for:</strong> Sophisticated vesting programs, employee token grants with custom curves, tokenized-payroll systems.</p>
+  <p><strong>Canonical:</strong> <a href="https://github.com/sablier-labs">github.com/sablier-labs</a></p>
+</div>
+
+<h2>Identity &amp; Compliance</h2>
+
+<div class="card">
+  <h3><span class="badge b-cat-templates">ONCHAINID</span> On-Chain Identity Contracts <span class="badge b-lic-industry">GPL-3.0</span></h3>
+  <p>ERC-734 / ERC-735-based on-chain identity system. Holds verifiable claims issued by claim issuers (accredited-investor status, KYC-completion, jurisdictional residence). Required for holders of ERC-3643 permissioned tokens.</p>
+  <p><strong>Use for:</strong> Permissioned-token holder identity, KYC-gated protocol access, compliance-scoped whitelists.</p>
+  <p><strong>Canonical:</strong> <a href="https://github.com/onchain-id/solidity">github.com/onchain-id/solidity</a></p>
+</div>
+
+<div class="card">
+  <h3><span class="badge b-cat-templates">Circle Verite</span> Verifiable Credentials <span class="badge b-lic-industry">Apache-2.0</span></h3>
+  <p>W3C Verifiable Credentials framework for privacy-preserving KYC + accreditation attestation. Selective-disclosure enabled. Interoperable with ONCHAINID and DID-based identity systems.</p>
+  <p><strong>Use for:</strong> Cross-protocol compliance credentials, privacy-preserving accreditation, cross-chain identity portability.</p>
+  <p><strong>Canonical:</strong> <a href="https://github.com/centrehq/verite">github.com/centrehq/verite</a></p>
+</div>
+
+<h2>Governance</h2>
+
+<div class="card">
+  <h3><span class="badge b-cat-templates">OpenZeppelin Governor</span> On-Chain DAO Governance <span class="badge b-lic-public">MIT</span></h3>
+  <p>Modular on-chain governance framework. Supports Compound-Bravo-style proposal + voting + timelock execution. Composable modules for voting power (token weight, ERC-20Votes, ERC-721Votes) and quorum rules.</p>
+  <p><strong>Use for:</strong> DAO LLC governance execution layer, protocol treasury management, investor-vehicle governance where on-chain voting is preferred.</p>
+  <p><strong>Canonical:</strong> <a href="https://docs.openzeppelin.com/contracts/5.x/api/governance">OpenZeppelin Governance docs</a></p>
+</div>
+
+<h2>Bridges &amp; Cross-Chain</h2>
+
+<div class="card">
+  <h3><span class="badge b-cat-templates">Chainlink CCIP</span> Cross-Chain Interoperability Protocol <span class="badge b-lic-industry">Custom</span></h3>
+  <p>Permissioned cross-chain messaging and token-transfer standard. Programmable token transfers between supported chains with integrated risk-management network. Reference for institutional cross-chain applications.</p>
+  <p><strong>Use for:</strong> Multi-chain token distribution, cross-chain RWA settlement, unified compliance across chain deployments.</p>
+  <p><strong>Canonical:</strong> <a href="https://docs.chain.link/ccip">docs.chain.link/ccip</a></p>
+</div>
+
+<h2>How to select a template</h2>
+<ol>
+  <li><strong>Match to legal structure.</strong> If your legal instrument is a Reg D 506(c) security, use ERC-3643 with active compliance modules. If it's a utility token post-network-launch, ERC-20 with SAFT delivery may be appropriate.</li>
+  <li><strong>Prefer audited canonical implementations.</strong> Use OpenZeppelin, Tokeny, Sablier, 0xSplits, Superfluid canonical repos over unofficial forks unless you have specific reason.</li>
+  <li><strong>Match the security model to the trust model.</strong> Multi-sig for treasuries. Non-upgradeable for maximum-trust primitives (Morpho Blue-style). Upgradeable proxies only when governance is truly decentralized or where regulatory requires operator control.</li>
+  <li><strong>Get an audit for anything above six figures in TVL.</strong> Trail of Bits, OpenZeppelin, ConsenSys Diligence, Halborn, Zellic are the current top-tier firms.</li>
+  <li><strong>Get a legal opinion.</strong> Especially for permissioned tokens and any token that could be construed as a security. See the <a href="/system/">Legal Ops System</a> for the workflow.</li>
+</ol>
+
+<div class="callout">
+  <span class="cta-label">Contribute a template</span>
+  <p>Missing a standard or template? Submit a PR at <a href="https://github.com/FTHTrading/legal">github.com/FTHTrading/legal</a>. Every accepted entry must include: canonical repo link, license identifier, and one production use case.</p>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div><h4>Unykorn Legal</h4><p>&copy; 2026 Unykorn LLC. Not legal advice.</p></div>
+    <div><h4>Sections</h4><p><a href="/library/">Library</a> &middot; <a href="/lexicon/">Lexicon</a> &middot; <a href="/jurisdictions/">Jurisdictions</a></p><p><a href="/smart-contracts/">Smart Contracts</a> &middot; <a href="/deals/">Deals</a> &middot; <a href="/system/">System</a></p></div>
+    <div><h4>Source</h4><p><a href="https://github.com/FTHTrading/legal">Repository</a></p></div>
+  </div>
+</footer>
+
+</body>
+</html>

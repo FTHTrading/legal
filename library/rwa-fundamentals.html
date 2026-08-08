@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>How RWA Actually Works &mdash; Unykorn Legal</title>
+<meta name="description" content="Real-World-Asset tokenization end-to-end: what a token represents, custody separation, transfer restrictions, oracle attestation, and the four-stage capital lifecycle." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../_ds/tokens.css" />
+<link rel="stylesheet" href="../_ds/layout.css" />
+<link rel="stylesheet" href="../_ds/components.css" />
+<link rel="stylesheet" href="../_ds/shell.css" />
+<link rel="stylesheet" href="../_ds/print.css" media="print" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="/" class="topbar-brand">Unykorn&nbsp;<span class="mark">Legal</span></a>
+    <nav class="topbar-nav">
+      <a href="/library/">Library</a>
+      <a href="/lexicon/">Lexicon</a>
+      <a href="/jurisdictions/">Jurisdictions</a>
+      <a href="/smart-contracts/">Smart Contracts</a>
+      <a href="/deals/">Deals</a>
+      <a href="/system/">System</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="crumbs">
+  <a href="/">Home</a><span class="sep">/</span><a href="/library/">Library</a><span class="sep">/</span><span class="current">How RWA Actually Works</span>
+</nav>
+
+<section class="subhero">
+  <div class="subhero-inner">
+    <div class="eyebrow">Foundation Brief &middot; ~12 min read</div>
+    <h1>How RWA Actually Works</h1>
+    <p class="lede">Real-World-Asset tokenization is not a magic technology. It is a legal structure with a database attached to it. This brief walks through what the token represents, where the asset actually lives, and how value moves through the system.</p>
+  </div>
+</section>
+
+<main class="content-wide">
+
+<h2>1. What "RWA" actually means</h2>
+<p>"Real-World Asset" tokenization means representing a legal claim to an off-chain asset &mdash; real estate, private credit, gold, invoices, treasuries, royalty streams &mdash; as a token on a blockchain. The token is not the asset. The token is a <strong>digital certificate of ownership</strong> in something that lives in the physical or legal world.</p>
+<p>The three things that must be true simultaneously for RWA to work:</p>
+<ol>
+  <li><strong>A legal entity holds the underlying asset.</strong> Typically an SPV (Special Purpose Vehicle) &mdash; a limited liability company formed for the sole purpose of holding one asset or one asset pool.</li>
+  <li><strong>The token represents a legally-enforceable claim against that entity.</strong> Either as an equity interest, a debt claim, or a beneficial interest in the assets held.</li>
+  <li><strong>The transfer of the token effects a transfer of the underlying claim under applicable law.</strong> This is the hardest part. It typically requires the LLC operating agreement to expressly permit token-based transfer.</li>
+</ol>
+<p>A token that fails any of these three tests is not real RWA &mdash; it is a database entry with a marketing story on top.</p>
+
+<h2>2. The two custody layers (do not confuse them)</h2>
+<p>Every RWA structure has two distinct custodians, and confusing them is the single most common failure mode in the industry:</p>
+<div class="split">
+  <div class="col do">
+    <h3>Physical / Asset Custodian</h3>
+    <p>Holds the underlying real-world asset. Examples: LBMA-approved vault (gold), title-insurance escrow (real estate), qualified custodian for securities (Anchorage, BitGo Trust), warehouse (commodities).</p>
+    <p>Their job: physical safekeeping of the actual asset.</p>
+  </div>
+  <div class="col do">
+    <h3>Digital-Asset Custodian</h3>
+    <p>Holds the private keys that control the tokens on the blockchain. Examples: Fireblocks, Copper, BitGo, Anchorage, Coinbase Custody.</p>
+    <p>Their job: cryptographic safekeeping of the tokens (and the tokens' controlling keys).</p>
+  </div>
+</div>
+<div class="callout critical">
+  <span class="cta-label">Load-Bearing Distinction</span>
+  <p>In any investor material or offering document, both custodians must be named explicitly. Conflating them &mdash; saying "Fireblocks custodies our gold" when Fireblocks actually holds the token that represents gold held at a separate vault &mdash; is Rule 10b-5 anti-fraud exposure. Attorneys reviewing PPMs and subscription documents will look for this specific error first.</p>
+</div>
+
+<h2>3. The four-stage capital lifecycle</h2>
+<p>Every RWA structure follows the same lifecycle. If any stage is unclear, the structure is not investable at scale.</p>
+
+<ol class="steps">
+  <li>
+    <h4>Origination &mdash; the asset gets acquired</h4>
+    <p>The SPV closes on the underlying asset (buys the property, funds the loan, takes delivery of the gold). Investor capital is deployed. Physical custodian takes possession.</p>
+  </li>
+  <li>
+    <h4>Tokenization &mdash; the digital claim gets issued</h4>
+    <p>Tokens are minted on-chain representing the SPV's cap table (or debt facility). Token supply is fixed and tied to the invested capital. Digital-asset custodian holds the initial token allocation before distribution to investors.</p>
+  </li>
+  <li>
+    <h4>Operation &mdash; the asset produces cash flow</h4>
+    <p>Rent, interest, royalties, appreciation. Cash flow accrues to the SPV. An oracle or independent administrator attests to the asset's condition, valuation, and cash-flow performance on a defined cadence (monthly, quarterly).</p>
+  </li>
+  <li>
+    <h4>Distribution &mdash; token holders get paid</h4>
+    <p>Cash flow is distributed to token holders pro rata. Typically in stablecoin (USDC, USDT) or in the return-of-capital token. Distribution triggers K-1 reporting (for US-taxed partnership SPVs) or 1099 reporting (for US-taxed corporate or fund vehicles).</p>
+  </li>
+</ol>
+
+<h2>4. Oracle attestation &mdash; the trust anchor</h2>
+<p>The token lives on-chain, but the asset lives off-chain. The bridge between the two is the <strong>oracle attestation</strong>: a periodic signed statement from an independent third party asserting the current state of the asset.</p>
+<p>Serious RWA structures require at least three attestations:</p>
+<ul>
+  <li><strong>Proof of existence.</strong> The asset still exists and is under the physical custodian's control. Vault inventory count, title-registry lookup, warehouse receipt.</li>
+  <li><strong>Proof of valuation.</strong> Independent appraisal or mark-to-market pricing from an unaffiliated source. For real estate: broker's opinion of value or full appraisal on annual cycle. For commodities: reference price from LBMA / CME / similar.</li>
+  <li><strong>Proof of encumbrance status.</strong> No liens, judgments, or third-party claims have been recorded against the asset since the last attestation.</li>
+</ul>
+<p>The attestation is typically signed by a licensed appraiser, an independent administrator, or a specialized attestation firm (e.g., BDO, Grant Thornton, Withum for the reserve-attestation market). The signed attestation is often posted publicly (or committed to on-chain) so token holders can verify without asking permission.</p>
+
+<h2>5. Transfer restrictions &mdash; why "permissionless" is a myth for real securities</h2>
+<p>Every US-regulated RWA token embeds transfer restrictions. A token issued under Regulation D 506(c) cannot legally trade freely; it can only be transferred to another accredited investor after a 1-year holding period (under Rule 144), and even then only with issuer consent and typically with an attorney opinion letter.</p>
+<p>The two dominant technical standards enforce this at the smart-contract level:</p>
+<ul>
+  <li><strong>ERC-3643 (T-REX).</strong> Every token holder must have an on-chain identity (ONCHAINID) with verifiable claims (accredited status, KYC, jurisdiction). Every transfer is validated against a set of compliance modules before it executes. If the transferee doesn't have the required claims, the transfer reverts.</li>
+  <li><strong>ERC-1400.</strong> Tokens are partitioned into tranches, each with its own transfer rules. Supports forced transfers (for court-ordered reallocation), operator-controlled minting/burning, and document management on-chain.</li>
+</ul>
+
+<h2>6. The regulatory pathways</h2>
+<p>For a US-issued RWA token, the operative exemption almost always is one of:</p>
+<table>
+  <thead><tr><th>Exemption</th><th>Investor limit</th><th>Solicitation</th><th>Best for</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Reg D 506(b)</strong></td><td>Unlimited accredited + up to 35 sophisticated non-accredited</td><td>No general solicitation</td><td>Warm-network raises</td></tr>
+    <tr><td><strong>Reg D 506(c)</strong></td><td>Unlimited accredited only, verified</td><td>General solicitation permitted</td><td>Public marketing, waitlist funnels</td></tr>
+    <tr><td><strong>Reg A+ Tier 2</strong></td><td>Up to $75M/year; retail investors permitted with income/net-worth caps</td><td>General solicitation permitted (post-qualification)</td><td>Retail-scale RWA (must file 1-A + audit)</td></tr>
+    <tr><td><strong>Reg CF</strong></td><td>Up to $5M/year; retail with per-investor limits</td><td>Via registered funding portal only</td><td>Community-scale raises</td></tr>
+    <tr><td><strong>Reg S</strong></td><td>Non-US persons only</td><td>Offshore &mdash; no US directed selling</td><td>Global raises paired with a US exemption</td></tr>
+  </tbody>
+</table>
+<p>Most institutional RWA tokens use <strong>Rule 506(c)</strong> because it permits marketing and doesn't cap raise size &mdash; but the accredited-verification burden is real. See <a href="/system/#tools">Section 06 &middot; System</a> for the Rule 501(a) verification framework the Unykorn Legal Ops System implements.</p>
+
+<h2>7. What breaks in practice</h2>
+<p>The failure modes we see repeatedly in intake diligence on new RWA structures:</p>
+<div class="split">
+  <div class="col dont">
+    <h3>Common failure modes</h3>
+    <ul>
+      <li><strong>Operating agreement doesn't allow token transfer.</strong> Token trades but the legal claim doesn't follow. Buyer owns a JPEG.</li>
+      <li><strong>Physical custody unspecified.</strong> "The gold is in a vault" &mdash; which vault? Under whose name? With what insurance?</li>
+      <li><strong>Oracle single-source.</strong> One party attests both existence and valuation, or the attestor is affiliated with the sponsor.</li>
+      <li><strong>Same signatory on both sides of the true-sale.</strong> Kills bankruptcy remoteness of the SPV. Assets go back to the sponsor's estate on default.</li>
+      <li><strong>Transfer restrictions not enforced on-chain.</strong> Token trades freely, exposing the sponsor to Section 5 registration liability.</li>
+    </ul>
+  </div>
+  <div class="col do">
+    <h3>What survives review</h3>
+    <ul>
+      <li>Op agmt expressly recognizes token-based transfer as effective</li>
+      <li>Physical custodian named + insured + independent</li>
+      <li>Digital-asset custodian named separately + not affiliated with sponsor</li>
+      <li>At least two independent attestors (or one attestor + one on-chain verifier)</li>
+      <li>ERC-3643 or ERC-1400 with active compliance modules</li>
+      <li>Signatory separation: SPV-side signer is not sponsor-side signer</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Further reading</h2>
+<ul>
+  <li><a href="./genius-act.html">The GENIUS Act (2025)</a> &mdash; federal stablecoin framework</li>
+  <li><a href="./real-estate-securities.html">Real-Estate Securities</a> &mdash; tokenization patterns for property</li>
+  <li><a href="/lexicon/">Lexicon</a> &mdash; every term in this brief with formal definition</li>
+  <li><a href="/smart-contracts/">Smart Contract Templates</a> &mdash; ERC-3643, ERC-1400, and vault contracts</li>
+  <li><a href="/deals/">Active Deals</a> &mdash; RWA protocols currently in production</li>
+</ul>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <h4>Unykorn Legal</h4>
+      <p>&copy; 2026 Unykorn LLC. Not legal advice.</p>
+    </div>
+    <div>
+      <h4>Sections</h4>
+      <p><a href="/library/">Library</a> &middot; <a href="/lexicon/">Lexicon</a> &middot; <a href="/jurisdictions/">Jurisdictions</a></p>
+      <p><a href="/smart-contracts/">Smart Contracts</a> &middot; <a href="/deals/">Deals</a> &middot; <a href="/system/">System</a></p>
+    </div>
+    <div>
+      <h4>Source</h4>
+      <p><a href="https://github.com/FTHTrading/legal">Repository</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

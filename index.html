@@ -3,775 +3,150 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>FTHTrading / legal — Document Assembly & Diligence for Private Placements</title>
-<meta name="description" content="Open-source legal operations stack for Reg D 506(c) private placements, SPV formation, and ongoing compliance. Document assembly, corpus retrieval, and diligence — with attorney sign-off built in." />
+<title>Unykorn Legal &mdash; Global Legal Infrastructure for Tokenized Securities &amp; RWA</title>
+<meta name="description" content="Open legal operations, education library, jurisdictional guides, smart-contract templates, and active-issuance registry for tokenized securities and real-world assets globally." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="_ds/tokens.css" />
 <link rel="stylesheet" href="_ds/layout.css" />
 <link rel="stylesheet" href="_ds/components.css" />
+<link rel="stylesheet" href="_ds/shell.css" />
 <link rel="stylesheet" href="_ds/print.css" media="print" />
 </head>
 <body>
 
-<!-- ═══════════════ TOP BAR ═══════════════ -->
 <header class="topbar">
   <div class="topbar-inner">
-    <a href="#top" class="topbar-brand">FTHTrading&nbsp;<span class="mark">legal</span></a>
+    <a href="/" class="topbar-brand">Unykorn&nbsp;<span class="mark">Legal</span></a>
     <nav class="topbar-nav">
-      <a href="#overview">Overview</a>
-      <a href="#tools">Tools</a>
-      <a href="#templates">Templates</a>
-      <a href="#workflow">SPV-in-a-Box</a>
-      <a href="#boundaries">Boundary</a>
+      <a href="/library/">Library</a>
+      <a href="/lexicon/">Lexicon</a>
+      <a href="/jurisdictions/">Jurisdictions</a>
+      <a href="/smart-contracts/">Smart Contracts</a>
+      <a href="/deals/">Active Deals</a>
+      <a href="/system/">System</a>
       <a href="https://github.com/FTHTrading/legal">GitHub</a>
     </nav>
   </div>
 </header>
 
-<!-- ═══════════════ HERO (BAND A) ═══════════════ -->
 <section class="hero" id="top">
   <div class="hero-inner">
-    <div class="eyebrow">FTHTrading &middot; Legal Operations Platform</div>
-    <h1>Document assembly, corpus retrieval,<br />and diligence &mdash; ready for attorney sign-off.</h1>
+    <div class="eyebrow">Unykorn LLC &middot; Global Legal Infrastructure</div>
+    <h1>The public reference for<br />tokenized securities &amp; real-world assets.</h1>
     <p class="lede">
-      An open-source legal operations stack for Reg D 506(c) private placements, SPV formation,
-      and ongoing compliance. Built on public regulatory data. Every artifact ships with a
-      Review Manifest for the attorney of record.
+      Six connected sections: an <strong>education library</strong> covering RWA fundamentals,
+      the GENIUS Act, and every operating discipline; a working <strong>lexicon</strong> of
+      securities and tokenization terminology; a <strong>jurisdictions</strong> map for
+      global regulatory posture; open <strong>smart-contract templates</strong>; a live
+      registry of <strong>active deals and protocols</strong>; and the open-source
+      <strong>Unykorn Legal Ops System</strong> itself.
     </p>
     <div class="hero-stats">
+      <div class="hero-stat"><span class="num">6</span><span class="label">Sections</span></div>
       <div class="hero-stat"><span class="num">25</span><span class="label">MCP Tools</span></div>
-      <div class="hero-stat"><span class="num">17</span><span class="label">Templates</span></div>
-      <div class="hero-stat"><span class="num">12</span><span class="label">PPM Sections</span></div>
+      <div class="hero-stat"><span class="num">17</span><span class="label">Doc Templates</span></div>
       <div class="hero-stat"><span class="num">9</span><span class="label">DD Providers</span></div>
-      <div class="hero-stat"><span class="num">9</span><span class="label">Blue Sky States</span></div>
       <div class="hero-stat"><span class="num">24</span><span class="label">Regs Indexed</span></div>
+      <div class="hero-stat"><span class="num">100%</span><span class="label">Open</span></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ MAIN LAYOUT ═══════════════ -->
-<main class="page">
+<main class="section-hub">
+  <h2>Explore</h2>
+  <p class="lede">Every section is public, cited to primary sources, and built on free federal APIs. Not legal advice. Every artifact requires attorney sign-off via the Review Manifest.</p>
 
-  <!-- ─────────── SIDEBAR TOC ─────────── -->
-  <aside class="toc" aria-label="Table of contents">
-    <h2>Contents</h2>
-    <ol>
-      <li><a href="#overview">Overview</a></li>
-      <li><a href="#boundaries">The Boundary</a></li>
-      <li><a href="#architecture">Architecture</a></li>
-      <li><a href="#tools">MCP Tools (25)</a>
-        <ul class="sub">
-          <li><a href="#tools-corpus">Corpus retrieval</a></li>
-          <li><a href="#tools-dd">Diligence</a></li>
-          <li><a href="#tools-templates">Templates &amp; assembly</a></li>
-          <li><a href="#tools-filings">Filings &amp; compliance</a></li>
-          <li><a href="#tools-workflow">Review &amp; workflow</a></li>
-        </ul>
-      </li>
-      <li><a href="#templates">Template Library (17)</a></li>
-      <li><a href="#workflow">SPV-in-a-Box</a></li>
-      <li><a href="#diligence">Diligence Layer</a></li>
-      <li><a href="#corpus">Regulatory Corpus</a></li>
-      <li><a href="#bluesky">Blue Sky Coverage</a></li>
-      <li><a href="#compliance">Compliance Calendar</a></li>
-      <li><a href="#manifest">Review Manifest</a></li>
-      <li><a href="#datasources">Data Sources</a></li>
-      <li><a href="#quickstart">Quick Start</a></li>
-      <li><a href="#extending">Extending</a></li>
-      <li><a href="#repo">Repo Layout</a></li>
-    </ol>
-  </aside>
+  <div class="hub-grid">
 
-  <!-- ─────────── CONTENT ─────────── -->
-  <div class="content">
+    <a class="hub-card new" href="/library/">
+      <div class="hub-eyebrow">Section 01</div>
+      <h3>Library</h3>
+      <p>RWA fundamentals, the GENIUS Act, real-estate securities, private credit, tokenization patterns, contract law primer, and every operating discipline.</p>
+      <div class="hub-cta">Read the library</div>
+    </a>
 
-    <!-- ═══ 1. OVERVIEW ═══ -->
-    <section id="overview">
-      <h2><span class="anchor">01</span>Overview</h2>
-      <p>
-        This is a production-grade document assembly, corpus retrieval, and diligence engine designed to sit
-        inside a private-capital operator's workflow. It runs as a local MCP (Model Context Protocol) server
-        on port 9077, exposing 25 tools that generate real legal artifacts, run parallel background checks
-        against public federal databases, and package everything with an attorney-review manifest.
-      </p>
-      <p>
-        It is not a lawyer replacement. It is a lawyer <em>enabler</em> &mdash; the work that used to take
-        20&ndash;40 hours of associate time on drafting and diligence for a typical SPV formation and
-        Reg D 506(c) raise, this system does in seconds. The attorney then reviews the packet, signs
-        the manifest, and files. Estimated bill reduction: <strong>$13K&ndash;$26K per packet</strong>
-        at $650/hour.
-      </p>
+    <a class="hub-card new" href="/lexicon/">
+      <div class="hub-eyebrow">Section 02</div>
+      <h3>Lexicon</h3>
+      <p>A working dictionary of securities, tokenization, custody, structuring, and compliance terminology &mdash; with primary-source citations for every entry.</p>
+      <div class="hub-cta">Browse the lexicon</div>
+    </a>
 
-      <div class="callout safe">
-        <span class="cta-label">What ships in the box</span>
-        <p>WY LLC formation packet (Articles + Operating Agreement + Initial Resolutions), Reg D 506(c)
-        Subscription Agreement, Rule 501(a) Accredited Investor Questionnaire, 12-section Private
-        Placement Memorandum, 9-state Blue Sky notice-filing plan, parallel diligence packet on
-        Manager and Issuer, entity-specific compliance calendar, and a signed-off Review Manifest
-        for every document generated.</p>
-      </div>
-    </section>
+    <a class="hub-card new" href="/jurisdictions/">
+      <div class="hub-eyebrow">Section 03</div>
+      <h3>Jurisdictions</h3>
+      <p>Regulator, key statutes, and current posture for the US federal + state layer plus the UK FCA, EU MiCA, Singapore MAS, DIFC, ADGM, HK SFC, and Swiss FINMA.</p>
+      <div class="hub-cta">Open the map</div>
+    </a>
 
-    <!-- ═══ 2. THE BOUNDARY ═══ -->
-    <section id="boundaries">
-      <h2><span class="anchor">02</span>The Boundary &mdash; UPL Discipline</h2>
-      <p>
-        The line between what this system does and what a licensed attorney does is the load-bearing
-        design decision of the entire project. Every US state prohibits the unauthorized practice of
-        law (UPL) &mdash; and every attorney-general's office in the country is actively enforcing it
-        against automated tools that claim to provide legal advice. This system is built to stay on
-        the right side of that line, every time.
-      </p>
+    <a class="hub-card new" href="/smart-contracts/">
+      <div class="hub-eyebrow">Section 04</div>
+      <h3>Smart Contracts</h3>
+      <p>Open-license template registry: ERC-3643 permissioned securities, ERC-1400 partitioned tokens, SAFTs, token warrants, vaults, escrow, waterfalls, staking.</p>
+      <div class="hub-cta">See templates</div>
+    </a>
 
-      <div class="split">
-        <div class="col do">
-          <h3>What the system does</h3>
-          <ul>
-            <li>Assembles documents from pre-audited templates by substituting facts</li>
-            <li>Retrieves the current text of any CFR section, USC section, or SEC filing</li>
-            <li>Runs parallel screens against OFAC, GLEIF, SAM.gov, CourtListener, FINRA, IAPD, EDGAR</li>
-            <li>Packages provenance: which template, which source, which retrieval timestamp</li>
-            <li>Computes state notice-filing manifests from an audited reference dataset</li>
-            <li>Tracks recurring obligations against known statutory deadlines</li>
-          </ul>
-        </div>
-        <div class="col dont">
-          <h3>What the system does NOT do</h3>
-          <ul>
-            <li>Render legal opinions on whether an exemption applies to specific facts</li>
-            <li>Advise whether a specific investor qualifies as accredited</li>
-            <li>Advise whether a Rule 506(d) disqualifying event applies to a covered person</li>
-            <li>Draft opinions of counsel or reliance letters</li>
-            <li>File anything with any regulator on behalf of the operator</li>
-            <li>Provide tax, ERISA, or investment advice</li>
-          </ul>
-        </div>
-      </div>
+    <a class="hub-card new" href="/deals/">
+      <div class="hub-eyebrow">Section 05</div>
+      <h3>Active Deals &amp; Protocols</h3>
+      <p>Public registry of live RWA protocols and tokenized-issuance vehicles: Ondo, Goldfinch, Centrifuge, Maple, Aave Horizon, Superstate, Franklin BENJI, and more.</p>
+      <div class="hub-cta">View registry</div>
+    </a>
 
-      <div class="callout critical">
-        <span class="cta-label">Load-Bearing Artifact</span>
-        <p>Every generated document ships with a <a href="#manifest">Review Manifest</a> that lists
-        template provenance, fact sources, cited regulations, attached diligence, and a checklist
-        for the attorney of record to sign. The attorney signing is the person rendering the legal
-        opinion &mdash; not the system.</p>
-      </div>
-    </section>
+    <a class="hub-card new" href="/system/">
+      <div class="hub-eyebrow">Section 06</div>
+      <h3>Legal Ops System</h3>
+      <p>The open-source MCP server that powers all this: 25 tools, 17 templates, 9 diligence providers, SPV-in-a-Box workflow, and Review Manifest for attorney sign-off.</p>
+      <div class="hub-cta">Read the docs</div>
+    </a>
 
-    <!-- ═══ 3. ARCHITECTURE ═══ -->
-    <section id="architecture">
-      <h2><span class="anchor">03</span>System Architecture</h2>
-      <p>Six functional layers stacked on top of the FTH MCP Hub, each independently testable.</p>
+  </div>
 
-      <div class="diagram">
-┌────────────────────────────────────────────────────────────────┐
-│  Layer 6 · Flagship Workflows            spv-in-a-box.ts       │
-│  End-to-end orchestration                                      │
-├────────────────────────────────────────────────────────────────┤
-│  Layer 5 · Review Manifests              manifest.ts           │
-│  Attorney sign-off artifact per document                       │
-├────────────────────────────────────────────────────────────────┤
-│  Layer 4 · Document Assembly             templates.ts          │
-│  Registry · Substitution · Composition · Provenance            │
-├────────────────────────────────────────────────────────────────┤
-│  Layer 3 · Diligence Orchestrator        dd.ts                 │
-│  Parallel screens · Severity · Red flags · Persistence         │
-├────────────────────────────────────────────────────────────────┤
-│  Layer 2 · Diligence Providers   OFAC · GLEIF · SAM · Courts   │
-│                                  FINRA · IAPD · EDGAR          │
-├────────────────────────────────────────────────────────────────┤
-│  Layer 1 · Regulatory Corpus     eCFR · SEC EDGAR · NASAA      │
-│                                  (all free federal APIs)       │
-├────────────────────────────────────────────────────────────────┤
-│  Layer 0 · Infrastructure        Fetch · Cache · Hash · Types  │
-└────────────────────────────────────────────────────────────────┘
-                            │
-                            ▼
-              FTH MCP Hub  (:9077 /mcp/invoke)
-                            │
-                            ▼
-                Operator (curl, Claude, agent)
-      </div>
-    </section>
+  <hr class="divider" />
 
-    <!-- ═══ 4. MCP TOOLS ═══ -->
-    <section id="tools">
-      <h2><span class="anchor">04</span>MCP Tools</h2>
-      <p>25 tools grouped by function. All accessible via <code>POST /mcp/invoke</code>.</p>
+  <h2>Discipline coverage</h2>
+  <p class="lede">Not every discipline lives in a single tab &mdash; each is threaded across all six sections. This is the map.</p>
 
-      <h3 id="tools-corpus">Corpus retrieval &nbsp;<span class="badge b-cat-corpus">6 tools</span></h3>
-      <table>
-        <thead>
-          <tr><th style="width:30%">Tool</th><th>Purpose</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>legal_edgar_search</code></td><td>SEC EDGAR full-text search &mdash; filter by form type, date range</td></tr>
-          <tr><td><code>legal_edgar_company</code></td><td>Look up company by name substring &rarr; CIK</td></tr>
-          <tr><td><code>legal_edgar_filings</code></td><td>List recent filings for a specific CIK</td></tr>
-          <tr><td><code>legal_edgar_document</code></td><td>Fetch primary document of a filing, optional plaintext conversion</td></tr>
-          <tr><td><code>legal_cfr_pinpoint</code></td><td>Pull specific CFR citation (e.g. <code>17 CFR § 230.506(c)</code>) from eCFR</td></tr>
-          <tr><td><code>legal_cfr_by_topic</code></td><td>List indexed regs by topic (<code>reg_d</code>, <code>resale</code>, <code>reg_s</code>, <code>fincen_boi</code>, ...)</td></tr>
-        </tbody>
-      </table>
+  <div class="grid-3">
+    <div class="card"><h3><span class="badge b-cat-templates">Real Estate</span></h3><p>Multifamily, hospitality, industrial, storage, CMBS tranching, construction-draw escrow, tokenized REIT + fractionalized single-asset structures.</p></div>
+    <div class="card"><h3><span class="badge b-cat-templates">Private Credit</span></h3><p>Direct lending, mezzanine, distressed, revenue-based finance, trade finance, invoice factoring, and tokenized credit funds.</p></div>
+    <div class="card"><h3><span class="badge b-cat-templates">Private Equity &amp; VC</span></h3><p>Buyouts, growth equity, venture capital &mdash; NVCA model docs, SAFEs, token warrants, side letters, LPA framework.</p></div>
+    <div class="card"><h3><span class="badge b-cat-corpus">Stablecoins</span></h3><p>GENIUS Act (2025) framework, payment vs. security classification, 1:1 reserve regime, OCC + state pathways, foreign issuer rules.</p></div>
+    <div class="card"><h3><span class="badge b-cat-corpus">Digital Securities</span></h3><p>ERC-3643 (T-REX), ERC-1400 partitioned tokens, ONCHAINID identity, transfer-restriction contracts, compliance modules.</p></div>
+    <div class="card"><h3><span class="badge b-cat-workflow">Precious Metals &amp; Commodities</span></h3><p>Vault-backed gold/silver programs, LBMA good-delivery, warehouse receipts, oil &amp; gas royalty tokenization.</p></div>
+    <div class="card"><h3><span class="badge b-cat-workflow">Energy &amp; Infrastructure</span></h3><p>Solar SPV structures, PPA-backed offtake, SREC monetization, BESS financing, IRA/OBBBA tax credit optimization.</p></div>
+    <div class="card"><h3><span class="badge b-cat-dd">Sports, Media, IP</span></h3><p>Athlete NIL vehicles, music-catalog royalty streams, film-slate financing, IP-licensing SPVs, brand-royalty tokens.</p></div>
+    <div class="card"><h3><span class="badge b-cat-filings">Federal &amp; Grant Capital</span></h3><p>SAM.gov integration, UEI/CAGE verification, ITC/PTC monetization, grant-flow routing, government-contract securitization.</p></div>
+  </div>
 
-      <h3 id="tools-dd">Diligence &nbsp;<span class="badge b-cat-dd">4 tools</span></h3>
-      <table>
-        <thead>
-          <tr><th style="width:30%">Tool</th><th>Purpose</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>legal_dd_screen_entity</code></td><td>Full DD packet: OFAC + GLEIF + SAM + CourtListener + EDGAR presence, in parallel</td></tr>
-          <tr><td><code>legal_dd_screen_person</code></td><td>Full DD packet: OFAC + FINRA BrokerCheck + SEC IAPD + CourtListener, in parallel</td></tr>
-          <tr><td><code>legal_dd_ofac_only</code></td><td>Fast OFAC/CSL sanctions check &mdash; no other providers</td></tr>
-          <tr><td><code>legal_dd_get_packet</code></td><td>Retrieve stored diligence packet by run_id for re-review</td></tr>
-        </tbody>
-      </table>
-
-      <h3 id="tools-templates">Templates &amp; assembly &nbsp;<span class="badge b-cat-templates">6 tools</span></h3>
-      <table>
-        <thead>
-          <tr><th style="width:30%">Tool</th><th>Purpose</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>legal_template_list</code></td><td>List all templates with source, license, regulatory basis metadata</td></tr>
-          <tr><td><code>legal_template_get</code></td><td>Get template body + variable definitions</td></tr>
-          <tr><td><code>legal_template_reload</code></td><td>Reload templates from disk after adding new files</td></tr>
-          <tr><td><code>legal_document_assemble</code></td><td>Merge facts into a single template &rarr; AssembledDocument</td></tr>
-          <tr><td><code>legal_document_compose</code></td><td>Compose multiple templates into one document (e.g. 12-section PPM)</td></tr>
-          <tr><td><code>legal_document_get</code></td><td>Retrieve stored generated document by ID</td></tr>
-        </tbody>
-      </table>
-
-      <h3 id="tools-filings">Filings &amp; compliance &nbsp;<span class="badge b-cat-filings">6 tools</span></h3>
-      <table>
-        <thead>
-          <tr><th style="width:30%">Tool</th><th>Purpose</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>legal_blue_sky_manifest</code></td><td>Build state notice-filing plan for a 506 offering across investor states</td></tr>
-          <tr><td><code>legal_blue_sky_state_info</code></td><td>Reference info for one state (fee, deadline, administrator, quirks)</td></tr>
-          <tr><td><code>legal_entity_register</code></td><td>Register entity for compliance calendar tracking</td></tr>
-          <tr><td><code>legal_entity_list</code></td><td>List all registered entities</td></tr>
-          <tr><td><code>legal_entity_get</code></td><td>Get one entity's compliance record</td></tr>
-          <tr><td><code>legal_compliance_calendar</code></td><td>Upcoming obligations for one entity or all &mdash; Form D, Blue Sky, BOI, K-1, ...</td></tr>
-        </tbody>
-      </table>
-
-      <h3 id="tools-workflow">Review &amp; workflow &nbsp;<span class="badge b-cat-workflow">3 tools</span></h3>
-      <table>
-        <thead>
-          <tr><th style="width:30%">Tool</th><th>Purpose</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>legal_manifest_build</code></td><td>Build Review Manifest for a generated document (attorney handoff)</td></tr>
-          <tr><td><code>legal_manifest_get</code></td><td>Retrieve stored Review Manifest</td></tr>
-          <tr><td><code>legal_spv_in_a_box</code></td><td><strong>Flagship.</strong> End-to-end SPV formation + Reg D 506(c) offering packet</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- ═══ 5. TEMPLATE LIBRARY ═══ -->
-    <section id="templates">
-      <h2><span class="anchor">05</span>Template Library</h2>
-      <p>
-        17 templates covering WY LLC formation, Reg D 506(c) subscription documents, and a full
-        12-section Private Placement Memorandum. Every template carries a license badge and
-        cites its regulatory basis in front matter.
-      </p>
-
-      <h3>Wyoming LLC formation packet</h3>
-      <div class="grid-2">
-        <div class="card">
-          <h3><code>wy-llc-articles</code> <span class="badge b-lic-public">Public Domain</span></h3>
-          <p>Articles of Organization per Wyo. Stat. § 17-29-201. Statutory minimum fields.</p>
-          <div class="meta">Source: WY Secretary of State &middot; Jurisdiction: WY</div>
-        </div>
-        <div class="card">
-          <h3><code>wy-llc-operating-agreement</code> <span class="badge b-lic-industry">Industry Standard</span></h3>
-          <p>Manager-managed, single-class membership. Includes capital account bookkeeping, distribution waterfall, indemnification, transfer restrictions, dissolution.</p>
-          <div class="meta">Source: Orrick + NVCA reference material &middot; Jurisdiction: WY</div>
-        </div>
-        <div class="card">
-          <h3><code>wy-llc-initial-resolutions</code> <span class="badge b-lic-internal">Internal</span></h3>
-          <p>Initial Written Consent granting banking authority, EIN application authority, and adopting the Operating Agreement.</p>
-          <div class="meta">Corporate housekeeping pattern &middot; Jurisdiction: WY</div>
-        </div>
-      </div>
-
-      <h3>Reg D 506(c) subscription documents</h3>
-      <div class="grid-2">
-        <div class="card">
-          <h3><code>reg-d-506c-subscription</code> <span class="badge b-lic-sec">SEC Filing Public</span></h3>
-          <p>Subscription Agreement for Rule 506(c). Includes reasonable-steps verification framework
-          required by 506(c)(2)(ii), restrictive-legend acknowledgments, AML/OFAC reps, CTA
-          beneficial-ownership acknowledgment.</p>
-          <div class="meta">17 CFR § 230.506(c) &middot; § 230.501(a) &middot; § 230.502</div>
-        </div>
-        <div class="card">
-          <h3><code>reg-d-506c-aiq</code> <span class="badge b-lic-sec">SEC Filing Public</span></h3>
-          <p>Accredited Investor Questionnaire covering all Rule 501(a) categories: income &amp; net-worth,
-          2020 professional-certification expansion (Series 7/65/82), knowledgeable-employee,
-          family-office/family-client, plus entity categories B1-B9. Verification-documentation
-          section C1-C6.</p>
-          <div class="meta">17 CFR § 230.501(a) &middot; § 230.506(c)(2)(ii)</div>
-        </div>
-      </div>
-
-      <h3>Private Placement Memorandum (12 sections)</h3>
-      <p>All PPM sections composable via <code>legal_document_compose</code>. All license
-      <span class="badge b-lic-sec">SEC Filing Public</span> &mdash; structural patterns drawn from
-      actual SEC EDGAR-filed private placements.</p>
-      <table>
-        <thead><tr><th style="width:30%">Section</th><th>Contents</th></tr></thead>
-        <tbody>
-          <tr><td><code>ppm-cover</code></td><td>Cover page + cautionary legends (Sec Act, transferability, no-approval, forward-looking)</td></tr>
-          <tr><td><code>ppm-summary-terms</code></td><td>Term-sheet summary + how-to-subscribe checklist</td></tr>
-          <tr><td><code>ppm-risk-factors</code></td><td>Universal + asset-class-specific + digital-asset + international risks</td></tr>
-          <tr><td><code>ppm-use-of-proceeds</code></td><td>Itemized budget table, offering expenses, manager fee, reserves</td></tr>
-          <tr><td><code>ppm-business-description</code></td><td>Business narrative, material agreements, key operational metrics</td></tr>
-          <tr><td><code>ppm-management</code></td><td>Manager entity, key personnel bios, fiduciary duties</td></tr>
-          <tr><td><code>ppm-conflicts-of-interest</code></td><td>Structural + transactional + deal-specific conflicts + resolution framework</td></tr>
-          <tr><td><code>ppm-securities-and-plan</code></td><td>Voting/distribution rights, transfer restrictions, plan of distribution</td></tr>
-          <tr><td><code>ppm-bad-actor</code></td><td>Rule 506(d) covered-person representations + 506(e) disclosure</td></tr>
-          <tr><td><code>ppm-tax-considerations</code></td><td>Subchapter K pass-through, allocations, PTP, UBTI, ECI, audit regime</td></tr>
-          <tr><td><code>ppm-erisa</code></td><td>Benefit Plan Investor considerations, plan-assets regulation, prohibited transactions</td></tr>
-          <tr><td><code>ppm-additional-info</code></td><td>Rule 502(b)(2)(v) inquiry rights, contact info, exhibits index</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- ═══ 6. SPV-IN-A-BOX ═══ -->
-    <section id="workflow">
-      <h2><span class="anchor">06</span>SPV-in-a-Box &mdash; Flagship Workflow</h2>
-      <p>
-        A single tool call produces the full formation + offering packet for a WY-formed Reg D 506(c)
-        SPV. Given the deal facts, it composes documents, runs parallel diligence, generates the
-        Blue Sky plan, registers the entity for compliance tracking, and writes review manifests
-        for attorney sign-off &mdash; all in seconds.
-      </p>
-
-      <ol class="steps">
-        <li>
-          <h4>Diligence in parallel with assembly</h4>
-          <p>The system kicks off diligence on Manager and Issuer concurrently with document
-          composition. Total wall time is bound by the slowest DD provider, not sequential steps.</p>
-        </li>
-        <li>
-          <h4>Formation packet</h4>
-          <p>Assembles Articles of Organization, Manager-Managed Operating Agreement, and Initial
-          Written Consent. Each fact insertion is provenance-tagged for the manifest.</p>
-        </li>
-        <li>
-          <h4>Subscription documents</h4>
-          <p>Assembles the Reg D 506(c) Subscription Agreement and Rule 501(a) Accredited Investor
-          Questionnaire, correctly citing the verification framework of 506(c)(2)(ii).</p>
-        </li>
-        <li>
-          <h4>Private Placement Memorandum</h4>
-          <p>Composes the 12-section PPM in a single pass. Asset-class-specific risk blocks are
-          conditionally included based on the <code>assetClass</code>, <code>usesLeverage</code>,
-          <code>usesDigitalAssets</code>, and <code>hasInternationalComponent</code> flags.</p>
-        </li>
-        <li>
-          <h4>Blue Sky manifest</h4>
-          <p>Generates the state-by-state notice-filing plan for every state where investors reside.
-          Includes fees, deadlines, EFD availability, and state-specific quirks (e.g. NY Martin Act
-          broker-dealer position, FL cover-page legend).</p>
-        </li>
-        <li>
-          <h4>Entity registration &amp; compliance calendar</h4>
-          <p>Registers the newly formed entity and computes all upcoming ongoing obligations
-          &mdash; WY annual report, Form D annual amendment, BOI, K-1 delivery targets, IRS 1065,
-          annual OFAC re-screen.</p>
-        </li>
-        <li>
-          <h4>Review manifest for every document</h4>
-          <p>Writes a Review Manifest (JSON + Markdown) for each document, listing template
-          provenance, fact sources, cited regulations, attached diligence packets, and the
-          attorney sign-off block. This is the artifact the attorney signs.</p>
-        </li>
-      </ol>
-
-      <div class="callout">
-        <span class="cta-label">Output location</span>
-        <p>The packet lands at <code>data/legal-ops/generated/spv-&lt;packetId&gt;/</code> with a
-        top-level <code>README.md</code>, all documents as Markdown, and structured JSON for each
-        diligence packet + Blue Sky manifest + compliance calendar.</p>
-      </div>
-    </section>
-
-    <!-- ═══ 7. DILIGENCE LAYER ═══ -->
-    <section id="diligence">
-      <h2><span class="anchor">07</span>Diligence Layer</h2>
-      <p>Seven parallel providers, one unified severity model, red-flag surfacing.</p>
-
-      <table>
-        <thead><tr><th>Provider</th><th>What it catches</th><th>Auth</th></tr></thead>
-        <tbody>
-          <tr>
-            <td><span class="badge b-critical">OFAC / CSL</span></td>
-            <td>Sanctions matches: SDN, FSE, SSI, BIS Entity/Denied/Unverified/MEU, State Debarred/Nonproliferation</td>
-            <td>None</td>
-          </tr>
-          <tr>
-            <td><span class="badge b-info">GLEIF</span></td>
-            <td>ISO 17442 Legal Entity Identifier &mdash; verifies entity exists, jurisdiction, active status</td>
-            <td>None</td>
-          </tr>
-          <tr>
-            <td><span class="badge b-info">SAM.gov</span></td>
-            <td>Federal entity registration + <strong>federal exclusions list</strong> (debarment/suspension)</td>
-            <td>Free API key</td>
-          </tr>
-          <tr>
-            <td><span class="badge b-high">CourtListener</span></td>
-            <td>Federal dockets (active + closed) and published opinions; flags SEC-caption enforcement actions</td>
-            <td>None (optional token)</td>
-          </tr>
-          <tr>
-            <td><span class="badge b-high">FINRA BrokerCheck</span></td>
-            <td>Broker/dealer &amp; broker-representative status; disclosure events (complaints, actions, criminal)</td>
-            <td>None</td>
-          </tr>
-          <tr>
-            <td><span class="badge b-high">SEC IAPD</span></td>
-            <td>Investment-adviser &amp; IAR status; ADV disclosures</td>
-            <td>None</td>
-          </tr>
-          <tr>
-            <td><span class="badge b-info">SEC EDGAR</span></td>
-            <td>Filer presence &mdash; confirms subject is a public/registered filer</td>
-            <td>User-Agent</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h3>Unified severity model</h3>
-      <p>Every provider returns a <code>DiligenceHit</code> with severity. The orchestrator computes overall packet severity as the max, flagging <em>incomplete</em> if half or more providers errored.</p>
-
-      <table>
-        <thead><tr><th>Severity</th><th>Triggers</th><th>Recommended action</th></tr></thead>
-        <tbody>
-          <tr><td><span class="badge b-critical">critical</span></td><td>Exact OFAC match, SEC enforcement caption</td><td>Block. Do not proceed without counsel review.</td></tr>
-          <tr><td><span class="badge b-high">high</span></td><td>Strong fuzzy OFAC match, active adverse federal docket, FINRA disclosure on file</td><td>Escalate. Attorney review before proceeding.</td></tr>
-          <tr><td><span class="badge b-medium">medium</span></td><td>Weak fuzzy match, historical federal record, LEI inactive</td><td>Verify context. Confirm party role in litigation.</td></tr>
-          <tr><td><span class="badge b-low">low</span></td><td>Presence-only matches (registered broker, active adviser, no disclosures)</td><td>Note in file.</td></tr>
-          <tr><td><span class="badge b-info">info</span></td><td>No match found</td><td>Clean.</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- ═══ 8. REGULATORY CORPUS ═══ -->
-    <section id="corpus">
-      <h2><span class="anchor">08</span>Regulatory Corpus</h2>
-      <p>24 regulations pre-indexed with pinpoint citations. Direct fetch via eCFR API returns
-      current text with retrieval timestamp for provenance.</p>
-
-      <table>
-        <thead><tr><th>Topic</th><th>Citations</th><th>Purpose</th></tr></thead>
-        <tbody>
-          <tr>
-            <td><span class="badge b-cat-corpus">reg_d</span></td>
-            <td><code>17 CFR § 230.500-508</code></td>
-            <td>Private-placement exemption framework (Rule 504, 506(b), 506(c), definitions, Form D)</td>
-          </tr>
-          <tr>
-            <td><span class="badge b-cat-corpus">resale</span></td>
-            <td><code>17 CFR § 230.144</code>, <code>144A</code></td>
-            <td>Resale exemptions including QIB private resales</td>
-          </tr>
-          <tr>
-            <td><span class="badge b-cat-corpus">reg_s</span></td>
-            <td><code>17 CFR § 230.901-904</code></td>
-            <td>Offshore-offering exemption framework</td>
-          </tr>
-          <tr>
-            <td><span class="badge b-cat-corpus">ia_exempt</span></td>
-            <td><code>17 CFR § 275.203(l)-1</code>, <code>203(m)-1</code></td>
-            <td>VC fund adviser + private-fund adviser exemptions</td>
-          </tr>
-          <tr>
-            <td><span class="badge b-cat-corpus">ia_disclosure</span></td>
-            <td><code>17 CFR § 275.204-3</code></td>
-            <td>ADV Part 2 brochure delivery</td>
-          </tr>
-          <tr>
-            <td><span class="badge b-cat-corpus">broker_dealer</span></td>
-            <td><code>17 CFR § 240.3a4-1</code></td>
-            <td>Issuer-associated-person safe harbor from BD registration</td>
-          </tr>
-          <tr>
-            <td><span class="badge b-cat-corpus">fincen_boi</span></td>
-            <td><code>31 CFR § 1010.230</code>, <code>1010.380</code></td>
-            <td>Beneficial ownership + CTA reporting</td>
-          </tr>
-          <tr>
-            <td><span class="badge b-cat-corpus">fincen_msb</span></td>
-            <td><code>31 CFR § 1022.320</code></td>
-            <td>MSB suspicious-transaction reporting</td>
-          </tr>
-          <tr>
-            <td><span class="badge b-cat-corpus">fincen_bsa</span></td>
-            <td><code>31 CFR § 1010.310-330</code></td>
-            <td>BSA record-keeping and reporting</td>
-          </tr>
-          <tr>
-            <td><span class="badge b-cat-corpus">ofac</span></td>
-            <td><code>31 CFR § 501</code></td>
-            <td>Reporting, procedures, and penalties</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- ═══ 9. BLUE SKY COVERAGE ═══ -->
-    <section id="bluesky">
-      <h2><span class="anchor">09</span>Blue Sky Coverage</h2>
-      <p>9-state reference dataset covering ~80% of the deals a typical US operator sees.
-      Every state entry is <em>a starting point</em> &mdash; the system flags that fees and deadlines
-      must be confirmed against each administrator's current published schedule before filing.</p>
-
-      <table>
-        <thead>
-          <tr><th>State</th><th>Fee</th><th>Deadline</th><th>EFD?</th><th>Notes</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>WY</strong> Wyoming</td><td>$200</td><td>15 days</td><td>Yes</td><td>Accredited-only offerings may be exempt from notice filing under W.S. § 17-4-406(a)</td></tr>
-          <tr><td><strong>DE</strong> Delaware</td><td>$0</td><td>15 days</td><td>Yes</td><td>Courtesy Form D copy only &mdash; easiest state</td></tr>
-          <tr><td><strong>GA</strong> Georgia</td><td>$250</td><td>15 days</td><td>Yes</td><td>Administratively active &mdash; ensure Form U-2 properly executed</td></tr>
-          <tr><td><strong>CA</strong> California</td><td>$300-[redacted]</td><td>15 days</td><td>Yes</td><td>Fee tiered by offering size. Most likely to send follow-up on 506(c) solicitation practices</td></tr>
-          <tr><td><strong>NY</strong> New York</td><td>$300</td><td>15 days</td><td>Yes</td><td><strong>Martin Act BD position:</strong> compensated intermediaries may need NY BD registration despite Rule 3a4-1</td></tr>
-          <tr><td><strong>FL</strong> Florida</td><td>$200</td><td>15 days</td><td>Yes</td><td>Specific F.S. § 517.061(11)(a)5 legend required on cover materials to FL residents</td></tr>
-          <tr><td><strong>TX</strong> Texas</td><td>$500</td><td>15 days</td><td>Yes</td><td>Highest fee. Otherwise efficient.</td></tr>
-          <tr><td><strong>IL</strong> Illinois</td><td>$100</td><td>15 days</td><td>Yes</td><td>Straightforward and low-fee</td></tr>
-          <tr><td><strong>MA</strong> Massachusetts</td><td>$300</td><td>15 days</td><td>Yes</td><td>Administratively engaged &mdash; expect potential follow-up</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- ═══ 10. COMPLIANCE CALENDAR ═══ -->
-    <section id="compliance">
-      <h2><span class="anchor">10</span>Compliance Calendar</h2>
-      <p>11 obligation types tracked automatically per entity. Each obligation carries its
-      regulatory basis, computed deadline, action steps, and estimated cost.</p>
-
-      <table>
-        <thead><tr><th>Obligation</th><th>Frequency</th><th>Basis</th></tr></thead>
-        <tbody>
-          <tr><td>WY LLC Annual Report</td><td>Anniversary month</td><td>Wyo. Stat. § 17-29-209</td></tr>
-          <tr><td>DE Corp Franchise Tax + Annual Report</td><td>March 1</td><td>8 Del. C. § 502, § 503</td></tr>
-          <tr><td>DE LLC Annual Tax</td><td>June 1</td><td>6 Del. C. § 18-1107</td></tr>
-          <tr><td>GA LLC/Corp Annual Registration</td><td>April 1</td><td>O.C.G.A. § 14-2-1622 / § 14-11-1103</td></tr>
-          <tr><td>Form D Annual Amendment</td><td>12 months while offering open</td><td>17 CFR § 230.503(a)(3)</td></tr>
-          <tr><td>Blue Sky Amendment (per state)</td><td>Annual, tracks SEC amendment</td><td>State law</td></tr>
-          <tr><td>Initial FinCEN BOI Report</td><td>30 days from formation</td><td>31 CFR § 1010.380</td></tr>
-          <tr><td>FinCEN BOI Update</td><td>30 days from any change</td><td>31 CFR § 1010.380(a)(2)</td></tr>
-          <tr><td>IRS Form 1065 (partnership)</td><td>15th day of 3rd month after FYE</td><td>IRC § 6031, § 6072(b)</td></tr>
-          <tr><td>K-1 Delivery to Members</td><td>Target: 90 days after FYE</td><td>Operating agreement + practice</td></tr>
-          <tr><td>FBAR (foreign accounts)</td><td>April 15 (auto-extension Oct 15)</td><td>31 U.S.C. § 5314; 31 CFR § 1010.350</td></tr>
-          <tr><td>Annual OFAC Re-screen</td><td>Annual</td><td>OFAC compliance best practice</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- ═══ 11. REVIEW MANIFEST ═══ -->
-    <section id="manifest">
-      <h2><span class="anchor">11</span>Review Manifest &mdash; The Attorney Handoff</h2>
-      <p>
-        Every document generated by this system ships with a Review Manifest. This is the
-        artifact the attorney reviews and signs. It contains everything an attorney needs to
-        decide whether to rely on the document, and everything a court or regulator would want
-        to see if the reliance is later questioned.
-      </p>
-
-      <div class="grid-2">
-        <div class="card">
-          <h3>Template provenance</h3>
-          <p>Every template that fed into the document, its source (SEC filing, NVCA, YC, statutory
-          form), its license, its version, and its jurisdiction.</p>
-        </div>
-        <div class="card">
-          <h3>Fact provenance</h3>
-          <p>Every fact merged into the document, tagged as <code>user_input</code>,
-          <code>dd_result</code>, <code>calculation</code>, or <code>template_default</code>.</p>
-        </div>
-        <div class="card">
-          <h3>Regulations cited</h3>
-          <p>Every CFR / USC citation in the document, with URL to eCFR and retrieval timestamp
-          &mdash; so the attorney can confirm the current text hasn't changed since assembly.</p>
-        </div>
-        <div class="card">
-          <h3>Diligence packets attached</h3>
-          <p>Full DD results on every subject relevant to the document, with severity, red flags,
-          and provider-level detail. Preserved for attorney review.</p>
-        </div>
-        <div class="card">
-          <h3>Reviewer notes</h3>
-          <p>System-emitted warnings: missing variables, close-but-not-exact fuzzy matches,
-          provider errors, deprecated citations. All surfaced for attorney attention.</p>
-        </div>
-        <div class="card">
-          <h3>Attorney sign-off block</h3>
-          <p>Structured checklist plus fields for attorney name, bar number, state of admission,
-          signature, and date. The signing attorney is the person of record for legal reliance.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ 12. DATA SOURCES ═══ -->
-    <section id="datasources">
-      <h2><span class="anchor">12</span>Data Sources</h2>
-      <p>Every regulatory and diligence data source is a public federal API. No vendor lock-in,
-      no black-box aggregators, no legally-questionable scrapers.</p>
-
-      <table>
-        <thead><tr><th>API</th><th>Auth</th><th>Rate Limit</th><th>Purpose</th></tr></thead>
-        <tbody>
-          <tr><td>SEC EDGAR</td><td>User-Agent</td><td>10 req/s</td><td>Filings + full-text search</td></tr>
-          <tr><td>Cornell LII (eCFR)</td><td>None</td><td>Unlimited</td><td>CFR text + amendment history</td></tr>
-          <tr><td>Consolidated Screening List</td><td>None</td><td>Unlimited</td><td>OFAC + BIS + State sanctions</td></tr>
-          <tr><td>GLEIF</td><td>None</td><td>Unlimited</td><td>LEI + entity metadata</td></tr>
-          <tr><td>CourtListener</td><td>Optional token</td><td>5,000/day unauth</td><td>Federal dockets + opinions</td></tr>
-          <tr><td>SAM.gov</td><td>Free key</td><td>1,000/day</td><td>Federal entity + exclusions</td></tr>
-          <tr><td>FINRA BrokerCheck</td><td>None</td><td>Soft</td><td>Broker-dealer background</td></tr>
-          <tr><td>SEC IAPD</td><td>None</td><td>Soft</td><td>Investment adviser background</td></tr>
-          <tr><td>NASAA EFD</td><td>N/A (portal)</td><td>N/A</td><td>State notice filing hub</td></tr>
-        </tbody>
-      </table>
-
-      <p>Everything caches to disk with sane TTLs. First fetch may take a few seconds; every
-      subsequent call to the same resource is instant.</p>
-    </section>
-
-    <!-- ═══ 13. QUICK START ═══ -->
-    <section id="quickstart">
-      <h2><span class="anchor">13</span>Quick Start</h2>
-
-      <h3>1. Install and start the hub</h3>
-<pre><code>cd fth-mcp-hub
-pnpm install
-pnpm dev
-# Hub listens on http://localhost:9077</code></pre>
-
-      <h3>2. Run a single tool</h3>
-<pre><code>curl -X POST http://localhost:9077/mcp/invoke \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "tool": "legal_cfr_pinpoint",
-    "arguments": { "citation": "17 CFR § 230.506(c)" }
-  }'</code></pre>
-
-      <h3>3. Run the flagship SPV-in-a-Box workflow</h3>
-<pre><code>curl -X POST http://localhost:9077/mcp/invoke \
-  -H 'Content-Type: application/json' \
-  -d @spv-input.json
-# Returns full packet; documents saved to data/legal-ops/generated/spv-&lt;id&gt;/</code></pre>
-
-      <h3>4. Check compliance calendar</h3>
-<pre><code>curl -X POST http://localhost:9077/mcp/invoke \
-  -H 'Content-Type: application/json' \
-  -d '{ "tool": "legal_compliance_calendar", "arguments": {} }'
-# Returns upcoming obligations sorted by days-until-due</code></pre>
-
-      <div class="callout">
-        <span class="cta-label">Optional environment variables</span>
-        <pre style="margin-top:0.5rem;"><code>SEC_USER_AGENT=yourapp/1.0 (you@yourdomain.com) YourCo
-COURTLISTENER_TOKEN=&lt;from courtlistener.com/help/api/rest/&gt;
-SAM_API_KEY=&lt;free from sam.gov/data-services/&gt;</code></pre>
-      </div>
-    </section>
-
-    <!-- ═══ 14. EXTENDING ═══ -->
-    <section id="extending">
-      <h2><span class="anchor">14</span>Extending the System</h2>
-
-      <div class="grid-2">
-        <div class="card">
-          <h3>New template</h3>
-          <p>Drop a <code>.md</code> file in <code>templates/legal/&lt;packet&gt;/</code> with YAML front
-          matter (see <code>wy-llc/articles-of-organization.md</code> for the reference format).
-          Call <code>legal_template_reload</code>. Zero code required.</p>
-        </div>
-        <div class="card">
-          <h3>New DD provider</h3>
-          <p>Add <code>dd-&lt;name&gt;.ts</code> exporting <code>screen&lt;Name&gt;(subject) → Promise&lt;DiligenceHit&gt;</code>.
-          Wire into <code>dd.ts</code>'s <code>screenEntity</code> or <code>screenPerson</code>.
-          Follow the OFAC provider for the pattern.</p>
-        </div>
-        <div class="card">
-          <h3>New corpus source</h3>
-          <p>Add <code>corpus-&lt;name&gt;.ts</code>. Use the eCFR / EDGAR files as reference for
-          cache + typed responses + <code>Citation</code>-object emission.</p>
-        </div>
-        <div class="card">
-          <h3>New end-to-end workflow</h3>
-          <p>Add an orchestrator (like <code>spv-in-a-box.ts</code>) that composes
-          <code>assemble</code> + <code>screenEntity</code>/<code>screenPerson</code> +
-          <code>buildManifest</code>. Register as a tool in <code>legal-ops.ts</code>.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ 15. REPO LAYOUT ═══ -->
-    <section id="repo">
-      <h2><span class="anchor">15</span>Repo Layout</h2>
-<pre><code>fth-mcp-hub/
-├── src/servers/
-│   ├── legal-ops.ts               ← MCP dispatcher + tool manifest (25 tools)
-│   └── legal-ops/
-│       ├── types.ts               ← All shared types
-│       ├── util.ts                ← HTTP + cache + hash + paths
-│       ├── corpus-edgar.ts        ← SEC EDGAR client
-│       ├── corpus-cfr.ts          ← eCFR / regulation index
-│       ├── dd-ofac.ts             ← OFAC / Consolidated Screening List
-│       ├── dd-gleif.ts            ← GLEIF LEI lookup
-│       ├── dd-courtlistener.ts    ← Federal court records
-│       ├── dd-sam.ts              ← SAM.gov entity + exclusions
-│       ├── dd-finra.ts            ← FINRA BrokerCheck + SEC IAPD
-│       ├── dd.ts                  ← Unified DD orchestrator
-│       ├── templates.ts           ← Registry + assembly engine
-│       ├── blue-sky.ts            ← State notice-filing manifest
-│       ├── compliance-calendar.ts ← Ongoing obligation tracker
-│       ├── manifest.ts            ← Review manifest generator
-│       ├── spv-in-a-box.ts        ← Flagship workflow
-│       ├── __smoke__.ts           ← Smoke tests
-│       └── README.md              ← Operator reference
-├── templates/legal/
-│   ├── wy-llc/                    ← 3 templates
-│   ├── reg-d-506c/                ← 2 templates
-│   └── ppm/                       ← 12 templates
-└── data/legal-ops/                ← Corpus cache · DD packets ·
-                                    Generated docs · Manifests</code></pre>
-    </section>
-
-  </div><!-- /content -->
 </main>
 
-<!-- ═══════════════ FOOTER (BAND A) ═══════════════ -->
 <footer class="footer">
   <div class="footer-inner">
     <div>
-      <h4>FTHTrading / legal</h4>
-      <p>An open-source legal operations stack for private-capital operators.</p>
-      <p>Document assembly, corpus retrieval, and diligence &mdash; with attorney sign-off built in.</p>
-      <p style="margin-top: 1rem; opacity: 0.7;">&copy; 2026 UnyKorn LLC. Content under this repo is provided as open reference material. Not legal advice.</p>
+      <h4>Unykorn Legal</h4>
+      <p>Open legal infrastructure for tokenized securities and real-world assets.</p>
+      <p>Operated by <strong>Unykorn LLC</strong> (Wyoming) &mdash; EIN 42-3536633 &middot; LEI 2549008J7LUHSQ73SI26 &middot; D-U-N-S 145059107.</p>
+      <p style="margin-top: 1rem; opacity: 0.7;">&copy; 2026 Unykorn LLC. All content provided as open reference material. Not legal advice.</p>
     </div>
     <div>
-      <h4>Resources</h4>
-      <p><a href="https://github.com/FTHTrading/legal">GitHub Repository</a></p>
+      <h4>Sections</h4>
+      <p><a href="/library/">Library</a></p>
+      <p><a href="/lexicon/">Lexicon</a></p>
+      <p><a href="/jurisdictions/">Jurisdictions</a></p>
+      <p><a href="/smart-contracts/">Smart Contracts</a></p>
+      <p><a href="/deals/">Active Deals</a></p>
+      <p><a href="/system/">System</a></p>
+    </div>
+    <div>
+      <h4>Source</h4>
+      <p><a href="https://github.com/FTHTrading/legal">Repository</a></p>
+      <p><a href="/NOTICE-NOT-LEGAL-ADVICE.html">UPL Notice</a></p>
       <p><a href="https://www.sec.gov/edgar">SEC EDGAR</a></p>
       <p><a href="https://www.ecfr.gov/">eCFR</a></p>
       <p><a href="https://www.efdnasaa.org/">NASAA EFD</a></p>
-    </div>
-    <div>
-      <h4>Data providers</h4>
-      <p><a href="https://www.trade.gov/consolidated-screening-list">Trade.gov CSL</a></p>
-      <p><a href="https://www.gleif.org/">GLEIF</a></p>
-      <p><a href="https://www.courtlistener.com/">CourtListener</a></p>
-      <p><a href="https://sam.gov/data-services/">SAM.gov</a></p>
-      <p><a href="https://brokercheck.finra.org/">FINRA BrokerCheck</a></p>
-      <p><a href="https://adviserinfo.sec.gov/">SEC IAPD</a></p>
     </div>
   </div>
 </footer>

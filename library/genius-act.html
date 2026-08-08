@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The GENIUS Act (2025) &mdash; Unykorn Legal</title>
+<meta name="description" content="Guiding and Establishing National Innovation for U.S. Stablecoins Act &mdash; the first federal stablecoin regulatory framework. Reserve regime, dual chartering, foreign issuers, and what it means for tokenized RWA." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../_ds/tokens.css" />
+<link rel="stylesheet" href="../_ds/layout.css" />
+<link rel="stylesheet" href="../_ds/components.css" />
+<link rel="stylesheet" href="../_ds/shell.css" />
+<link rel="stylesheet" href="../_ds/print.css" media="print" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="/" class="topbar-brand">Unykorn&nbsp;<span class="mark">Legal</span></a>
+    <nav class="topbar-nav">
+      <a href="/library/">Library</a><a href="/lexicon/">Lexicon</a><a href="/jurisdictions/">Jurisdictions</a><a href="/smart-contracts/">Smart Contracts</a><a href="/deals/">Deals</a><a href="/system/">System</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="crumbs">
+  <a href="/">Home</a><span class="sep">/</span><a href="/library/">Library</a><span class="sep">/</span><span class="current">The GENIUS Act (2025)</span>
+</nav>
+
+<section class="subhero">
+  <div class="subhero-inner">
+    <div class="eyebrow">Regulatory Brief &middot; ~10 min read</div>
+    <h1>The GENIUS Act (2025)</h1>
+    <p class="lede">The Guiding and Establishing National Innovation for U.S. Stablecoins Act &mdash; signed into law July 18, 2025. The first federal framework specifically regulating payment stablecoins. This brief walks through what it does, what it doesn't do, and what it means for anyone issuing, holding, or using tokenized dollars.</p>
+  </div>
+</section>
+
+<main class="content-wide">
+
+<h2>1. What the GENIUS Act does</h2>
+<p>The GENIUS Act creates the first US federal statutory regime for <strong>payment stablecoins</strong> &mdash; digital tokens designed to hold a stable value relative to the US dollar and used for payments and settlement. Before this law, stablecoin issuers operated under a patchwork of state money-transmitter licenses, state trust charters, and OCC national trust charters. The GENIUS Act sets a federal floor.</p>
+<p>The core requirements for a "permitted payment stablecoin issuer" are:</p>
+<ul>
+  <li><strong>1:1 backing.</strong> Every outstanding stablecoin token must be backed by an equivalent value of high-quality liquid assets held in reserve.</li>
+  <li><strong>Eligible reserves.</strong> Cash, insured demand deposits at banks, US Treasury bills with residual maturity of 93 days or less, repurchase agreements collateralized by such Treasuries, and reverse repos.</li>
+  <li><strong>Segregated custody.</strong> Reserves must be held for the benefit of token holders, segregated from the issuer's own operating assets, and structured so that in issuer insolvency, reserves pass to token holders ahead of general creditors.</li>
+  <li><strong>Monthly reserve attestations.</strong> Independent public accounting firm must attest to reserve composition and adequacy monthly. Attestations must be published.</li>
+  <li><strong>Redemption rights.</strong> Token holders have a legal right to redeem tokens for the underlying reserve value at par, on demand, subject to reasonable procedures.</li>
+  <li><strong>Anti-money-laundering compliance.</strong> Issuers are treated as financial institutions under the Bank Secrecy Act. Customer identification, sanctions screening, and suspicious-activity reporting are required.</li>
+</ul>
+
+<h2>2. The dual chartering pathway</h2>
+<p>Unlike most federal financial regulation, GENIUS creates a genuine choice between federal and state pathways. This is politically significant and operationally consequential.</p>
+
+<div class="split">
+  <div class="col do">
+    <h3>Federal Path &mdash; OCC</h3>
+    <p>Larger issuers (with more than $10 billion in outstanding stablecoins) must charter with the Office of the Comptroller of the Currency as either a national bank or a national trust. OCC exam authority applies. Full federal supervision.</p>
+    <p><strong>Best for:</strong> Circle (USDC), PayPal (PYUSD), tokenized deposit rails from money-center banks.</p>
+  </div>
+  <div class="col do">
+    <h3>State Path &mdash; State Regulator</h3>
+    <p>Smaller issuers may charter at the state level, provided the state has an approved regulatory regime substantially equivalent to the federal floor. New York, Wyoming, Nevada, and a handful of other states are expected to qualify.</p>
+    <p><strong>Best for:</strong> Regional issuers, specialty tokenized-cash products, protocol-specific stablecoins.</p>
+  </div>
+</div>
+
+<h2>3. What the GENIUS Act does <em>not</em> do</h2>
+<p>Read carefully &mdash; the exclusions are as consequential as the inclusions.</p>
+<ul>
+  <li><strong>It does not regulate algorithmic stablecoins.</strong> Non-reserve-backed stablecoins (Terra-style algorithmic designs) are effectively prohibited from operating in the US under this framework &mdash; they cannot qualify as "permitted payment stablecoins."</li>
+  <li><strong>It does not touch commodity stablecoins.</strong> Tokens backed by gold, oil, or other physical commodities are outside its scope. Those remain in the RWA regulatory regime (typically security or commodity, depending on structure).</li>
+  <li><strong>It does not preempt state money-transmitter licensing for wallets and exchanges.</strong> Only the issuer is regulated at the federal level. Wallet providers, exchanges, and payment platforms remain subject to state MTL/BitLicense rules.</li>
+  <li><strong>It does not resolve the securities question for yield-bearing stablecoins.</strong> Stablecoins that pay interest to holders (rebasing tokens, yield-bearing wrappers) remain in a grey zone &mdash; likely securities under Howey, and outside the GENIUS Act's "payment stablecoin" definition.</li>
+  <li><strong>It does not authorize interest payments to holders.</strong> The Act's definition of "payment stablecoin" excludes any token that pays interest, dividends, or other returns to holders.</li>
+</ul>
+
+<h2>4. Foreign issuers &mdash; the extraterritorial reach</h2>
+<p>Non-US stablecoin issuers (Tether being the primary example) can continue to operate in the US only if:</p>
+<ul>
+  <li>They comply with the equivalent federal standards, and</li>
+  <li>They accept US regulatory oversight (with OCC as the primary supervisor for large foreign issuers), or</li>
+  <li>Their home jurisdiction has been deemed substantially equivalent by Treasury.</li>
+</ul>
+<p>Non-compliant foreign stablecoins face progressive exclusion: first from US-regulated exchanges, then from US-facing payment services, then from US persons entirely. Enforcement is expected to phase in over 18&ndash;36 months from enactment.</p>
+
+<h2>5. What this means for RWA</h2>
+<p>The GENIUS Act is stablecoin regulation, not RWA regulation &mdash; but the impact on RWA is significant:</p>
+<ol>
+  <li><strong>Settlement rails are formalized.</strong> RWA token distributions can now be paid in a federally-regulated stablecoin with clear legal status. This resolves the "what currency do we distribute in" question that has plagued institutional RWA adoption.</li>
+  <li><strong>Bank-issued tokenized deposits become viable.</strong> Under the OCC pathway, money-center banks can issue tokenized-deposit stablecoins backed by their own reserves. Expect JPMorgan (JPMD), Citi Token Services, BNY Mellon, and others to expand aggressively.</li>
+  <li><strong>The yield-bearing question stays open.</strong> Ondo's USDY, Superstate's USTB, Franklin's BENJI, Hashnote's USYC &mdash; all remain in the securities regulatory regime, not the GENIUS regime. They are tokenized money-market funds under 1940-Act rules, not stablecoins under GENIUS.</li>
+  <li><strong>Cross-border settlement gets clearer.</strong> USD-denominated RWA distributions to foreign holders can now be routed through compliant stablecoin rails without triggering money-service-business licensing at the issuer level.</li>
+</ol>
+
+<h2>6. The politically-important pieces</h2>
+<p>Beyond the operational rules, GENIUS embeds three policy choices worth noting:</p>
+<ul>
+  <li><strong>No federal CBDC preemption.</strong> The Act expressly preserves state authority over stablecoin activity and does not authorize a federal-reserve retail CBDC. This is a deliberate rejection of the "central-bank digital currency" path favored by some other jurisdictions.</li>
+  <li><strong>Bankruptcy priority for holders.</strong> In issuer insolvency, token holders come ahead of the issuer's general unsecured creditors. This is a materially stronger position than users of most other US financial services (compare to bank depositors above FDIC limits).</li>
+  <li><strong>Reserve-yield goes to issuers.</strong> The Act permits issuers to earn interest on the reserves backing outstanding tokens. That yield is the primary revenue model for stablecoin issuers &mdash; and the Act explicitly protects it.</li>
+</ul>
+
+<h2>7. Timeline &amp; enforcement</h2>
+<ul>
+  <li><strong>July 18, 2025.</strong> Signed into law.</li>
+  <li><strong>18 months.</strong> Primary compliance date for domestic issuers to obtain federal or state charter under the new framework.</li>
+  <li><strong>36 months.</strong> Full phase-out of non-compliant foreign stablecoins from US-regulated venues.</li>
+  <li><strong>Ongoing.</strong> OCC, Federal Reserve, and Treasury are issuing implementing rules through 2026&ndash;2027. Watch for reserve-composition clarifications and cross-jurisdictional equivalence determinations.</li>
+</ul>
+
+<h2>Further reading</h2>
+<ul>
+  <li><a href="./rwa-fundamentals.html">How RWA Actually Works</a> &mdash; the broader RWA framework</li>
+  <li><a href="/jurisdictions/">Jurisdictions</a> &mdash; how other countries regulate stablecoins (MiCA in EU, MAS in Singapore, FCA in UK)</li>
+  <li><a href="/deals/">Active Deals</a> &mdash; live stablecoin issuers and their current regulatory posture</li>
+  <li><a href="/lexicon/">Lexicon</a> &mdash; every term in this brief with formal definition</li>
+</ul>
+
+<div class="callout">
+  <span class="cta-label">Source note</span>
+  <p>This brief summarizes the operative provisions of the Guiding and Establishing National Innovation for U.S. Stablecoins Act (P.L. 119-something, enacted July 18, 2025). It is reference material only. Any specific compliance question &mdash; particularly around issuer chartering, reserve composition, cross-jurisdictional recognition, or the boundary between payment stablecoins and yield-bearing tokens &mdash; requires review by counsel with active federal financial regulatory practice. Implementing regulations from OCC, Federal Reserve, and Treasury continue to be issued through 2026&ndash;2027; check current text before relying on the Act alone.</p>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div><h4>Unykorn Legal</h4><p>&copy; 2026 Unykorn LLC. Not legal advice.</p></div>
+    <div><h4>Sections</h4><p><a href="/library/">Library</a> &middot; <a href="/lexicon/">Lexicon</a> &middot; <a href="/jurisdictions/">Jurisdictions</a></p><p><a href="/smart-contracts/">Smart Contracts</a> &middot; <a href="/deals/">Deals</a> &middot; <a href="/system/">System</a></p></div>
+    <div><h4>Source</h4><p><a href="https://github.com/FTHTrading/legal">Repository</a></p></div>
+  </div>
+</footer>
+
+</body>
+</html>

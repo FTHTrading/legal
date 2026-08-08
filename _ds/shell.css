@@ -1,0 +1,189 @@
+/* ============================================================
+   Shared page shell — used by every subpage (hub landing, library,
+   lexicon, jurisdictions, smart-contracts, deals). Extends the
+   base tokens + layout + components.
+   ============================================================ */
+
+/* Hub landing / cards grid */
+
+.section-hub {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+}
+.section-hub h2 {
+  font-family: var(--font-serif);
+  font-size: var(--fs-h1);
+  margin: 0 0 0.5rem 0;
+  color: var(--band-a-bg);
+  letter-spacing: -0.3px;
+}
+.section-hub .lede {
+  color: var(--band-c-fg-dim);
+  font-size: 1.1rem;
+  margin: 0 0 2.5rem 0;
+  max-width: 720px;
+}
+
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+@media (max-width: 900px) { .hub-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 620px) { .hub-grid { grid-template-columns: 1fr; } }
+
+.hub-card {
+  background: var(--band-c-bg-alt);
+  border: 1px solid var(--band-c-rule);
+  border-radius: var(--page-radius);
+  padding: 1.5rem 1.5rem 1.25rem;
+  text-decoration: none !important;
+  color: inherit;
+  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+}
+.hub-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--band-b-accent);
+  color: inherit;
+}
+.hub-card .hub-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--band-b-accent);
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+.hub-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  margin: 0 0 0.6rem 0;
+  color: var(--band-a-bg);
+}
+.hub-card p {
+  color: var(--band-c-fg-dim);
+  font-size: 0.94rem;
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+.hub-card .hub-cta {
+  margin-top: auto;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--band-b-accent);
+  letter-spacing: 0.3px;
+}
+.hub-card .hub-cta::after {
+  content: " →";
+  transition: transform 120ms ease;
+  display: inline-block;
+}
+.hub-card:hover .hub-cta::after { transform: translateX(3px); }
+
+/* Section index card variants */
+
+.hub-card.new {
+  border-left: 4px solid var(--band-b-accent);
+}
+.hub-card.wip {
+  border-left: 4px solid var(--sev-medium);
+}
+.hub-card.wip::after {
+  content: "In Progress";
+  position: absolute;
+  top: 0.6rem;
+  right: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 1.5px;
+  color: var(--sev-medium);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.hub-card {
+  position: relative;
+}
+
+/* Breadcrumb */
+
+.crumbs {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 0;
+  font-family: var(--font-sans);
+  font-size: 0.83rem;
+  color: var(--band-c-fg-dim);
+}
+.crumbs a { color: var(--band-c-fg-dim); text-decoration: none; }
+.crumbs a:hover { color: var(--band-b-accent); text-decoration: underline; }
+.crumbs .sep { margin: 0 0.5rem; color: var(--band-c-rule); }
+.crumbs .current { color: var(--band-a-bg); font-weight: 500; }
+
+/* Subpage hero (smaller than home hero) */
+
+.subhero {
+  background: linear-gradient(135deg, var(--band-a-bg) 0%, var(--band-a-bg-2) 100%);
+  color: var(--band-a-fg);
+  padding: 3rem 1.25rem 2.5rem;
+  border-bottom: 4px solid var(--band-b-accent);
+}
+.subhero-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.subhero .eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--band-a-fg-dim);
+  margin-bottom: 0.6rem;
+}
+.subhero h1 {
+  font-family: var(--font-serif);
+  font-size: var(--fs-h1);
+  line-height: 1.15;
+  margin: 0 0 0.75rem 0;
+  color: white;
+  letter-spacing: -0.3px;
+}
+.subhero .lede {
+  font-size: 1.1rem;
+  max-width: 720px;
+  color: var(--band-a-fg);
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* Content wrapper for subpages (no sidebar, wider) */
+
+.content-wide {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+.content-wide h2 {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  margin: 2.5rem 0 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--band-a-bg);
+  letter-spacing: -0.3px;
+}
+.content-wide h2:first-child { margin-top: 0; }
+.content-wide h3 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--band-a-bg);
+}
+.content-wide p { margin: 0 0 1rem 0; }
+.content-wide ul, .content-wide ol { margin: 0 0 1rem 1.5rem; }
+.content-wide li { margin: 0.35rem 0; }

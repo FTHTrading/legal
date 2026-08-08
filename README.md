@@ -1,110 +1,64 @@
-# FTHTrading / legal
+# Unykorn Legal
 
-**Open-source legal operations stack for private-capital operators.**
-Document assembly, corpus retrieval, and diligence — with attorney sign-off built in.
+**Global legal infrastructure for tokenized securities and real-world assets.**
 
-## What this is
-
-A production-grade in-house legal-ops engine that:
-
-- **Assembles documents** from pre-audited templates by substituting facts
-  (WY LLC formation, Reg D 506(c) subscription, 12-section PPM)
-- **Retrieves regulatory text** on demand via free federal APIs (eCFR, SEC EDGAR)
-- **Runs parallel diligence** against 7 public providers (OFAC, GLEIF, SAM, CourtListener, FINRA, IAPD, EDGAR)
-- **Generates Blue Sky notice-filing plans** for 9 states
-- **Tracks ongoing compliance** — Form D amendments, franchise tax, BOI, K-1, FBAR, OFAC re-screens
-- **Ships every artifact with a Review Manifest** for attorney sign-off
-
-Estimated attorney bill reduction per SPV formation + Reg D 506(c) raise: **$13K–$26K** at $650/hour.
+Six connected sections: an education library, a working lexicon, a
+jurisdictional regulatory map, an open smart-contract template registry,
+a live registry of active RWA protocols and deals, and the open-source
+Unykorn Legal Ops System that powers all of it.
 
 ## Live site
 
-**https://fthtrading.github.io/legal/** — full documentation with table of contents.
+**https://legal.unykorn.ai** — full public reference.
 
-## What this is NOT
+## Sections
 
-A lawyer replacement. Every artifact ships with a required attorney-review manifest.
-The attorney signing the manifest is the person of record for the legal opinion — not the system.
+| Section | Path | What's inside |
+|---------|------|--------------|
+| **01 · Library** | [`/library/`](https://legal.unykorn.ai/library/) | RWA fundamentals, GENIUS Act, real-estate securities, contract law primer, every operating discipline |
+| **02 · Lexicon** | [`/lexicon/`](https://legal.unykorn.ai/lexicon/) | Working dictionary of securities, tokenization, custody, structuring, and compliance terminology |
+| **03 · Jurisdictions** | [`/jurisdictions/`](https://legal.unykorn.ai/jurisdictions/) | US federal + state layer plus UK FCA, EU MiCA, Singapore MAS, DIFC, ADGM, HK SFC, Swiss FINMA |
+| **04 · Smart Contracts** | [`/smart-contracts/`](https://legal.unykorn.ai/smart-contracts/) | ERC-3643, ERC-1400, SAFTs, token warrants, vaults, escrow, waterfalls, staking |
+| **05 · Active Deals** | [`/deals/`](https://legal.unykorn.ai/deals/) | Live RWA protocols: Ondo, Goldfinch, Centrifuge, Maple, Aave Horizon, Superstate, Franklin BENJI, more |
+| **06 · System** | [`/system/`](https://legal.unykorn.ai/system/) | Unykorn Legal Ops MCP server: 25 tools, 17 templates, 9 DD providers, SPV-in-a-Box workflow |
 
 ## Repo contents
 
 | Path | Purpose |
 |------|---------|
-| `index.html` | Full public documentation — one-page site with sidebar TOC |
-| `_ds/` | Design system CSS: tokens, layout, components, print |
-| `_assets/` | Images and icons |
+| `index.html` | Home / hub |
+| `system/` | Legal Ops MCP System reference (was original index) |
+| `library/` `lexicon/` `jurisdictions/` `smart-contracts/` `deals/` | Content sections |
+| `_ds/` | Design system CSS (tokens, layout, components, shell, print) |
+| `_assets/` | Sample inputs, images, downloads |
+| `CNAME` | `legal.unykorn.ai` (GitHub Pages custom domain) |
 | `.nojekyll` | Serves `_ds/` correctly through GitHub Pages |
+
+## About Unykorn LLC
+
+**Unykorn LLC** &mdash; Wyoming LLC, EIN 42-3536633, D-U-N-S 145059107,
+GLEIF LEI 2549008J7LUHSQ73SI26, ISO MIC UBEC, WY Filing ID 2026-002019968.
+
+Sole active operating entity; historical UNYKORN 7777 INC. deprecated 2026-08-07.
 
 ## Source code
 
-The engine itself lives in the `fth-mcp-hub` repository under
-`src/servers/legal-ops/` and `templates/legal/`. This repo publishes the
+The engine that powers the System section lives in the `fth-mcp-hub` repository
+under `src/servers/legal-ops/` and `templates/legal/`. This repo publishes the
 operator-facing documentation only.
-
-## Tool inventory
-
-**25 MCP tools** across 5 categories:
-
-- **Corpus retrieval (6):** `legal_edgar_*`, `legal_cfr_*`
-- **Diligence (4):** `legal_dd_*`
-- **Templates & assembly (6):** `legal_template_*`, `legal_document_*`
-- **Filings & compliance (6):** `legal_blue_sky_*`, `legal_entity_*`, `legal_compliance_calendar`
-- **Review & workflow (3):** `legal_manifest_*`, `legal_spv_in_a_box`
-
-## Template inventory
-
-**17 templates** with open-license provenance:
-
-- **WY LLC packet (3):** Articles of Organization, Manager-Managed Operating Agreement, Initial Written Consent
-- **Reg D 506(c) (2):** Subscription Agreement, Accredited Investor Questionnaire (all Rule 501(a) categories)
-- **PPM (12):** Cover, Summary, Risk Factors, Use of Proceeds, Business, Management, Conflicts, Securities & Plan, Bad Actor, Tax, ERISA, Additional Info
-
-## Data sources
-
-Every regulatory and diligence data source is a public federal API:
-
-| API | Auth | Free |
-|-----|------|------|
-| SEC EDGAR | User-Agent | Yes |
-| Cornell LII (eCFR) | None | Yes |
-| Consolidated Screening List | None | Yes |
-| GLEIF | None | Yes |
-| CourtListener | Optional token | Yes |
-| SAM.gov | Free API key | Yes |
-| FINRA BrokerCheck | None | Yes |
-| SEC IAPD | None | Yes |
-
-No vendor lock-in. No black-box aggregators. No scrapers.
-
-## Quick start
-
-```bash
-# 1. Get the source (separate repo)
-git clone https://github.com/FTHTrading/fth-mcp-hub
-
-# 2. Install
-cd fth-mcp-hub && pnpm install
-
-# 3. Start the hub
-pnpm dev
-# Hub listens on http://localhost:9077
-
-# 4. Try a tool
-curl -X POST http://localhost:9077/mcp/invoke \
-  -H 'Content-Type: application/json' \
-  -d '{"tool":"legal_cfr_pinpoint","arguments":{"citation":"17 CFR § 230.506(c)"}}'
-```
 
 ## License
 
-Documentation in this repo: MIT.
-See individual template front matter for template-specific license provenance:
-`public-domain`, `sec-filing-public`, `free-industry-standard`, `internal`.
+Documentation in this repo: MIT (see `LICENSE`).
+Individual smart-contract templates and legal doc templates carry per-file
+license provenance: `public-domain`, `sec-filing-public`, `free-industry-standard`,
+`apache-2.0`, `cc0`, `cc-by`, or `internal`.
 
 ## Not legal advice
 
 Nothing in this repository constitutes legal advice, tax advice, ERISA advice,
-or investment advice. This is a document-assembly and diligence system. Every
-artifact requires review and sign-off by a licensed attorney qualified in the
-relevant jurisdiction. The attorney signing the Review Manifest is the person
-rendering the legal opinion.
+or investment advice. Every generated artifact requires review and sign-off by
+a licensed attorney qualified in the relevant jurisdiction. The attorney
+signing the Review Manifest is the person rendering the legal opinion.
+
+See [NOTICE-NOT-LEGAL-ADVICE.md](./NOTICE-NOT-LEGAL-ADVICE.md).
