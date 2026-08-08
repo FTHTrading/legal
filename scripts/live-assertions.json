@@ -8,6 +8,38 @@
         {
           "token": "Last reviewed 2026-08-08",
           "why": "footer stamp added in commit b136323 — its absence is the tell that a pre-fix copy is being served"
+        },
+        {
+          "token": "How the sections connect",
+          "why": "professional flow diagram section header — must appear on home"
+        },
+        {
+          "token": "About Unykorn LLC",
+          "why": "About section header on home"
+        },
+        {
+          "token": "License &amp; rules of use",
+          "why": "dual-license section on home (rendered as encoded ampersand in HTML source)"
+        },
+        {
+          "token": "MIT LICENSE (default)",
+          "why": "MIT license card in the License section"
+        },
+        {
+          "token": "APACHE 2.0 (alternative)",
+          "why": "Apache-2.0 alternative license card"
+        },
+        {
+          "token": "Deploy pipeline",
+          "why": "three-gate deploy pipeline section header"
+        },
+        {
+          "token": "Gate 1: marker-check",
+          "why": "deploy pipeline SVG references first gate"
+        },
+        {
+          "token": "Gate 2: verify-live",
+          "why": "deploy pipeline SVG references second gate"
         }
       ],
       "absent": [

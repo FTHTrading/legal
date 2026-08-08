@@ -9,8 +9,8 @@ place; a third is manual pending a Cloudflare token.
 ### 1. Pre-merge: internal-marker check (automatic, blocking)
 
 `.github/workflows/internal-marker-check.yml` scans every file in the Pages
-publish root for the classification marker `· **Internal**`. Any hit fails
-the build.
+publish root for a specific classification marker (see that workflow file
+for the exact byte sequence). Any hit fails the build.
 
 **Background:** on 2026-08-07 two documents carrying this marker were
 published to the site, exposing pricing negotiation reasoning and named
@@ -89,7 +89,8 @@ verify-live workflow waits 60s, then hits bare canonical URLs
 
 - **Never** verify with a cache-buster query string (`?v=99`). It verifies
   the origin, not what the reader gets.
-- **Never** commit a document carrying `· **Internal**` to any branch
+- **Never** commit a document carrying the internal-classification marker
+  (see `internal-marker-check.yml` for the exact byte sequence) to any branch
   that ships. The marker-check will block; if it somehow doesn't (path in
   ignore-regex), assume the check is silently broken and file an issue.
 - **Never** delete an assertion from `live-assertions.json` because it's

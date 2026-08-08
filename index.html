@@ -55,7 +55,108 @@
 </section>
 
 <main class="section-hub">
-  <h2>Explore</h2>
+
+<!-- ==================================================================== -->
+<!-- Table of contents anchors                                             -->
+<!-- ==================================================================== -->
+<nav aria-label="On this page" style="background:#f4f6fb;border-left:3px solid #3c4a63;padding:14px 18px;margin:8px 0 32px;font-size:14px;">
+  <strong style="text-transform:uppercase;letter-spacing:0.08em;font-size:12px;color:#3c4a63;">On this page</strong>
+  <div style="margin-top:8px;line-height:1.9;">
+    <a href="#how-it-connects" style="margin-right:14px;">How it connects</a>
+    <a href="#sections" style="margin-right:14px;">Sections</a>
+    <a href="#disciplines" style="margin-right:14px;">Discipline coverage</a>
+    <a href="#pipeline" style="margin-right:14px;">Deploy pipeline</a>
+    <a href="#about" style="margin-right:14px;">About</a>
+    <a href="#license">License &amp; rules</a>
+  </div>
+</nav>
+
+<!-- ==================================================================== -->
+<!-- Flow diagram: how the six sections connect                            -->
+<!-- ==================================================================== -->
+<section id="how-it-connects" style="margin:40px 0;">
+  <h2>How the sections connect</h2>
+  <p class="lede">The site is not a flat menu of pages &mdash; it is a workflow. A sponsor reads the <strong>Library</strong> to understand the asset class, uses the <strong>Lexicon</strong> to translate terms, checks the <strong>Jurisdictions</strong> map for regulatory posture, adopts a <strong>Smart Contract</strong> template, watches <strong>Active Deals</strong> for peer benchmarks, and drives the whole flow through the open-source <strong>Legal Ops System</strong>.</p>
+
+  <div style="background:#f7f8fa;border:1px solid #d8dde8;border-radius:8px;padding:32px 24px;margin:24px 0;overflow-x:auto;">
+    <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:900px;height:auto;display:block;margin:0 auto;font-family:Inter,system-ui,sans-serif;">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#3c4a63"/>
+        </marker>
+        <marker id="arrow-dashed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a5a00"/>
+        </marker>
+      </defs>
+
+      <!-- Row 1: Library, Lexicon, Jurisdictions -->
+      <g>
+        <rect x="20"  y="30" width="180" height="70" rx="8" fill="#e6f0ff" stroke="#3c4a63" stroke-width="1.5"/>
+        <text x="110" y="58" text-anchor="middle" font-size="15" font-weight="600" fill="#0b1220">📚 Library</text>
+        <text x="110" y="80" text-anchor="middle" font-size="12" fill="#3c4a63">01 &middot; education briefs</text>
+
+        <rect x="240" y="30" width="180" height="70" rx="8" fill="#e6f0ff" stroke="#3c4a63" stroke-width="1.5"/>
+        <text x="330" y="58" text-anchor="middle" font-size="15" font-weight="600" fill="#0b1220">📖 Lexicon</text>
+        <text x="330" y="80" text-anchor="middle" font-size="12" fill="#3c4a63">02 &middot; term dictionary</text>
+
+        <rect x="460" y="30" width="180" height="70" rx="8" fill="#fff4d9" stroke="#8a5a00" stroke-width="1.5"/>
+        <text x="550" y="58" text-anchor="middle" font-size="15" font-weight="600" fill="#0b1220">🗺 Jurisdictions</text>
+        <text x="550" y="80" text-anchor="middle" font-size="12" fill="#8a5a00">03 &middot; regulatory posture</text>
+
+        <rect x="680" y="30" width="200" height="70" rx="8" fill="#fff4d9" stroke="#8a5a00" stroke-width="1.5"/>
+        <text x="780" y="58" text-anchor="middle" font-size="15" font-weight="600" fill="#0b1220">📜 Smart Contracts</text>
+        <text x="780" y="80" text-anchor="middle" font-size="12" fill="#8a5a00">04 &middot; template registry</text>
+      </g>
+
+      <!-- Arrows row 1 -->
+      <line x1="200" y1="65" x2="240" y2="65" stroke="#3c4a63" stroke-width="1.5" marker-end="url(#arrow)"/>
+      <line x1="420" y1="65" x2="460" y2="65" stroke="#3c4a63" stroke-width="1.5" marker-end="url(#arrow)"/>
+      <line x1="640" y1="65" x2="680" y2="65" stroke="#3c4a63" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+      <!-- Row 2: Active Deals, Legal Ops System -->
+      <g>
+        <rect x="240" y="160" width="180" height="70" rx="8" fill="#d9f0e0" stroke="#10633a" stroke-width="1.5"/>
+        <text x="330" y="188" text-anchor="middle" font-size="15" font-weight="600" fill="#0b1220">🏛 Active Deals</text>
+        <text x="330" y="210" text-anchor="middle" font-size="12" fill="#10633a">05 &middot; live protocols</text>
+
+        <rect x="460" y="160" width="180" height="70" rx="8" fill="#f0d9ff" stroke="#5a1a8a" stroke-width="1.5"/>
+        <text x="550" y="188" text-anchor="middle" font-size="15" font-weight="600" fill="#0b1220">⚙️ Legal Ops System</text>
+        <text x="550" y="210" text-anchor="middle" font-size="12" fill="#5a1a8a">06 &middot; MCP + templates + DD</text>
+      </g>
+
+      <!-- Down + across arrows from row 1 to row 2 -->
+      <path d="M 780 100 L 780 130 L 420 130 L 420 160" fill="none" stroke="#3c4a63" stroke-width="1.5" marker-end="url(#arrow)"/>
+      <line x1="420" y1="195" x2="460" y2="195" stroke="#3c4a63" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+      <!-- Feedback loop from System back to Library (dashed) -->
+      <path d="M 550 160 L 550 128 L 110 128 L 110 100" fill="none" stroke="#8a5a00" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow-dashed)"/>
+      <text x="640" y="123" font-size="11" fill="#8a5a00" font-style="italic">feedback: findings inform future briefs</text>
+    </svg>
+  </div>
+
+  <div class="grid-2" style="margin-top:12px;">
+    <div style="padding:12px 16px;background:#e6f0ff;border-left:3px solid #3c4a63;border-radius:4px;">
+      <strong style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#3c4a63;">🟦 Education</strong>
+      <p style="margin:6px 0 0;font-size:14px;">Library + Lexicon &mdash; you learn the shape of the asset class and the working vocabulary counsel uses.</p>
+    </div>
+    <div style="padding:12px 16px;background:#fff4d9;border-left:3px solid #8a5a00;border-radius:4px;">
+      <strong style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#8a5a00;">🟨 Reference</strong>
+      <p style="margin:6px 0 0;font-size:14px;">Jurisdictions + Smart Contracts &mdash; regulator posture and the code templates that map to it.</p>
+    </div>
+    <div style="padding:12px 16px;background:#d9f0e0;border-left:3px solid #10633a;border-radius:4px;">
+      <strong style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#10633a;">🟩 Live</strong>
+      <p style="margin:6px 0 0;font-size:14px;">Active Deals &mdash; the current issuance registry: Ondo, Centrifuge, Maple, Aave Horizon, BUIDL, BENJI.</p>
+    </div>
+    <div style="padding:12px 16px;background:#f0d9ff;border-left:3px solid #5a1a8a;border-radius:4px;">
+      <strong style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#5a1a8a;">🟪 Operator</strong>
+      <p style="margin:6px 0 0;font-size:14px;">Legal Ops System &mdash; the open-source MCP server that drives DD, template assembly, and Blue Sky filings.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<h2 id="sections">Explore</h2>
   <p class="lede">Every section is public, cited to primary sources, and built on free federal APIs. Not legal advice. Every artifact requires attorney sign-off via the Review Manifest.</p>
 
   <div class="hub-grid">
@@ -122,6 +223,115 @@
   </div>
 
   <hr class="divider" />
+
+<!-- ==================================================================== -->
+<!-- Deploy pipeline diagram                                               -->
+<!-- ==================================================================== -->
+<section id="pipeline" style="margin:40px 0;">
+  <h2>Deploy pipeline</h2>
+  <p class="lede">Three gates enforce that what ships is what a reader sees. In the 2026-08-07/08 incidents, two failure modes surfaced: internal-marked documents accidentally published, and fixes that were in HEAD still serving pre-fix content at the canonical URL. Gate 1 blocks the first; Gates 2+3 close the second.</p>
+
+  <div style="background:#f7f8fa;border:1px solid #d8dde8;border-radius:8px;padding:24px;margin:24px 0;overflow-x:auto;">
+    <svg viewBox="0 0 900 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:900px;height:auto;display:block;margin:0 auto;font-family:Inter,system-ui,sans-serif;">
+      <defs>
+        <marker id="arrow-pipe" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#3c4a63"/>
+        </marker>
+      </defs>
+
+      <rect x="10"  y="50" width="140" height="60" rx="6" fill="#e6f0ff" stroke="#3c4a63"/>
+      <text x="80" y="78" text-anchor="middle" font-size="14" font-weight="600">git push</text>
+      <text x="80" y="96" text-anchor="middle" font-size="11" fill="#3c4a63">to main</text>
+
+      <line x1="150" y1="80" x2="180" y2="80" stroke="#3c4a63" stroke-width="1.5" marker-end="url(#arrow-pipe)"/>
+
+      <rect x="180" y="50" width="180" height="60" rx="6" fill="#fdf1d9" stroke="#8a5a00"/>
+      <text x="270" y="72" text-anchor="middle" font-size="13" font-weight="600">Gate 1: marker-check</text>
+      <text x="270" y="90" text-anchor="middle" font-size="11" fill="#8a5a00">blocks internal-only docs</text>
+      <text x="270" y="104" text-anchor="middle" font-size="11" fill="#8a5a00">from Pages publish root</text>
+
+      <line x1="360" y1="80" x2="390" y2="80" stroke="#3c4a63" stroke-width="1.5" marker-end="url(#arrow-pipe)"/>
+
+      <rect x="390" y="50" width="160" height="60" rx="6" fill="#e6f0ff" stroke="#3c4a63"/>
+      <text x="470" y="72" text-anchor="middle" font-size="13" font-weight="600">Pages build + deploy</text>
+      <text x="470" y="92" text-anchor="middle" font-size="11" fill="#3c4a63">GitHub Pages</text>
+
+      <line x1="550" y1="80" x2="580" y2="80" stroke="#3c4a63" stroke-width="1.5" marker-end="url(#arrow-pipe)"/>
+
+      <rect x="580" y="50" width="180" height="60" rx="6" fill="#fdf1d9" stroke="#8a5a00"/>
+      <text x="670" y="72" text-anchor="middle" font-size="13" font-weight="600">Gate 2: verify-live</text>
+      <text x="670" y="90" text-anchor="middle" font-size="11" fill="#8a5a00">bare-URL assertions</text>
+      <text x="670" y="104" text-anchor="middle" font-size="11" fill="#8a5a00">against served response</text>
+
+      <line x1="760" y1="80" x2="790" y2="80" stroke="#3c4a63" stroke-width="1.5" marker-end="url(#arrow-pipe)"/>
+
+      <rect x="790" y="50" width="100" height="60" rx="6" fill="#d9f0e0" stroke="#10633a"/>
+      <text x="840" y="78" text-anchor="middle" font-size="13" font-weight="600">✅ shipped</text>
+      <text x="840" y="96" text-anchor="middle" font-size="11" fill="#10633a">&amp; verified</text>
+    </svg>
+  </div>
+  <p style="font-size:14px;color:#3c4a63;">Full operator runbook in <a href="https://github.com/FTHTrading/legal/blob/main/DEPLOY.md">DEPLOY.md</a> &middot; assertion catalog in <a href="https://github.com/FTHTrading/legal/blob/main/scripts/live-assertions.json">scripts/live-assertions.json</a>.</p>
+</section>
+
+<hr class="divider" />
+
+<!-- ==================================================================== -->
+<!-- About + License section                                               -->
+<!-- ==================================================================== -->
+<section id="about" style="margin:40px 0;">
+  <h2>About Unykorn LLC</h2>
+  <p class="lede">Unykorn LLC is the sole active operating entity behind this project. Wyoming limited liability company, filed 2026-07-01.</p>
+
+  <table style="border-collapse:collapse;width:100%;max-width:640px;font-size:14px;margin:16px 0;">
+    <tr style="border-bottom:1px solid #d8dde8;"><td style="padding:8px 12px;font-weight:600;width:200px;">Legal name</td><td style="padding:8px 12px;">Unykorn LLC</td></tr>
+    <tr style="border-bottom:1px solid #d8dde8;"><td style="padding:8px 12px;font-weight:600;">Jurisdiction</td><td style="padding:8px 12px;">Wyoming (US)</td></tr>
+    <tr style="border-bottom:1px solid #d8dde8;"><td style="padding:8px 12px;font-weight:600;">Filed</td><td style="padding:8px 12px;">2026-07-01</td></tr>
+    <tr style="border-bottom:1px solid #d8dde8;"><td style="padding:8px 12px;font-weight:600;">EIN</td><td style="padding:8px 12px;">42-3536633</td></tr>
+    <tr style="border-bottom:1px solid #d8dde8;"><td style="padding:8px 12px;font-weight:600;">D-U-N-S</td><td style="padding:8px 12px;">145059107</td></tr>
+    <tr style="border-bottom:1px solid #d8dde8;"><td style="padding:8px 12px;font-weight:600;">WY Filing ID</td><td style="padding:8px 12px;">2026-002019968</td></tr>
+    <tr><td style="padding:8px 12px;font-weight:600;">GLEIF LEI &middot; ISO MIC</td><td style="padding:8px 12px;color:#8a5a00;"><em>not registered</em></td></tr>
+  </table>
+
+  <p style="font-size:13px;color:#3c4a63;">Historical entity <strong>UNYKORN 7777 INC.</strong> was deprecated 2026-08-07. All operations live under Unykorn LLC.</p>
+</section>
+
+<hr class="divider" />
+
+<!-- ==================================================================== -->
+<!-- License & rules section                                               -->
+<!-- ==================================================================== -->
+<section id="license" style="margin:40px 0;">
+  <h2>License &amp; rules of use</h2>
+  <p class="lede">This site and repository are dual-licensed at the recipient's option &mdash; choose whichever your legal or engineering counsel prefers.</p>
+
+  <div class="grid-2" style="margin-top:24px;">
+    <div style="border:1px solid #d8dde8;border-radius:8px;padding:20px;">
+      <div style="display:inline-block;background:#e6f0ff;border:1px solid #3c4a63;border-radius:12px;padding:2px 10px;font-size:12px;font-weight:700;letter-spacing:0.04em;color:#0b1220;">🅼 MIT LICENSE (default)</div>
+      <p style="margin-top:12px;">Use, copy, modify, distribute, sublicense &mdash; commercial use permitted &mdash; preserve the copyright and permission notices.</p>
+      <p><strong>Best for:</strong> forking a single template, embedding a snippet, or building on top with maximum freedom.</p>
+      <p><a href="https://github.com/FTHTrading/legal/blob/main/LICENSE">Read LICENSE &rarr;</a></p>
+    </div>
+    <div style="border:1px solid #d8dde8;border-radius:8px;padding:20px;">
+      <div style="display:inline-block;background:#f0d9ff;border:1px solid #5a1a8a;border-radius:12px;padding:2px 10px;font-size:12px;font-weight:700;letter-spacing:0.04em;color:#0b1220;">🅐 APACHE 2.0 (alternative)</div>
+      <p style="margin-top:12px;">Same permissions as MIT plus an <strong>explicit patent-license grant</strong> and a <strong>NOTICE-file requirement</strong>. Contributions become Apache-2.0 automatically.</p>
+      <p><strong>Best for:</strong> enterprise adopters that require a patent grant, or forks that accept external contributions.</p>
+      <p><a href="https://github.com/FTHTrading/legal/blob/main/LICENSE-APACHE-2.0">Read LICENSE-APACHE-2.0 &rarr;</a></p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:32px;">Rules of use (both licenses)</h3>
+  <ol style="line-height:1.7;">
+    <li><strong>Not legal advice.</strong> Nothing here is legal, tax, ERISA, or investment advice. Every artifact requires review and sign-off by a licensed attorney qualified in the relevant jurisdiction. See <a href="/notice/">Notice &mdash; Not Legal Advice</a>.</li>
+    <li><strong>Attorney of record.</strong> The attorney signing the Review Manifest is the person rendering the legal opinion. Unykorn LLC provides scrivener and screening tools that operate under attorney direction; Unykorn LLC does not practice law.</li>
+    <li><strong>No endorsement.</strong> External links (protocols, custodians, regulators, third-party data) are references. Unykorn LLC does not endorse, control, or take responsibility for their accuracy or continued operation.</li>
+    <li><strong>Freshness discipline.</strong> Every published claim carries a primary-source URL and a <code>verified_on</code> date. A claim missing either is a bug &mdash; <a href="https://github.com/FTHTrading/legal/issues">open an issue</a>.</li>
+    <li><strong>Per-file template overrides.</strong> Individual smart-contract templates and legal doc templates in <code>_assets/</code> may carry their own per-file license (<code>public-domain</code>, <code>sec-filing-public</code>, <code>free-industry-standard</code>, <code>apache-2.0</code>, <code>cc0</code>, <code>cc-by</code>, or <code>internal</code>). When a per-file license exists, it governs.</li>
+    <li><strong>No warranty.</strong> As stated in both LICENSE files: THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.</li>
+    <li><strong>Trademarks.</strong> "Unykorn" and "Unykorn Legal" are trademarks of Unykorn LLC. The licenses grant no trademark rights.</li>
+  </ol>
+</section>
+
+<hr class="divider" />
 
 </main>
 
