@@ -1,0 +1,91 @@
+name: internal-marker-check
+
+# Fails the build if any file that will be served by GitHub Pages contains
+# the classification marker `· **Internal**`.
+#
+# BACKGROUND (2026-08-07 incident): the pricing spec (UNY-PLAT-2026-002) and
+# integration map (UNY-PLAT-2026-003) were both published with the marker
+# in their headers, exposing cost basis, negotiation reasoning, and
+# counterparty status. This check is the mechanical enforcement that ensures
+# it does not happen again.
+#
+# THE RULE: any file under the Pages publish root (i.e., anywhere in this
+# repo except .git and .github and CI-only workflow files) that carries
+# the marker `· **Internal**` (Unicode middot + double-star Internal
+# double-star) MUST NOT be committed to a branch that ships to production.
+# This check enforces that at CI time.
+#
+# EXPLICIT EXCLUSIONS:
+#   - .git/                    (git metadata, never served)
+#   - .github/                 (workflows, never served)
+#   - node_modules/            (never served, defensive)
+#   - This workflow file       (self-reference — the marker in this doc
+#                               is a description of the rule, not classified content)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  check:
+    name: Fail on `· **Internal**` marker in publish root
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Scan for classification marker
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # The literal marker Kevan uses on internal-only documents.
+          # Middot (U+00B7) + space + double-star + Internal + double-star.
+          MARKER='· **Internal**'
+
+          # Ignored paths: git internals, CI, npm/node caches, and THIS workflow
+          # file (which references the marker in a comment as documentation).
+          IGNORE_REGEX='^\.(git|github)/|/node_modules/|\.github/workflows/internal-marker-check\.yml$'
+
+          echo "Scanning repository for classification marker: $MARKER"
+          echo "Ignoring paths matching: $IGNORE_REGEX"
+          echo ""
+
+          # grep -R with fixed-string, list matching files only. Exit code 1 = no matches.
+          if MATCHES=$(grep -Rl --fixed-strings --exclude-dir=.git --exclude-dir=.github --exclude-dir=node_modules "$MARKER" . 2>/dev/null); then
+            # Further filter with the ignore regex (belt-and-braces)
+            FILTERED=$(echo "$MATCHES" | grep -Ev "$IGNORE_REGEX" || true)
+            if [ -n "$FILTERED" ]; then
+              echo "::error::CLASSIFICATION VIOLATION"
+              echo ""
+              echo "The following files contain the classification marker '· **Internal**'"
+              echo "and would be served publicly by GitHub Pages if this build were allowed"
+              echo "to proceed:"
+              echo ""
+              echo "$FILTERED" | sed 's/^/  - /'
+              echo ""
+              echo "REMEDIATION OPTIONS:"
+              echo ""
+              echo "  1. If the document IS internal: delete it from this branch, then"
+              echo "     rewrite history with git-filter-repo to purge the blobs."
+              echo "     Then contact GitHub Support to purge cached views."
+              echo ""
+              echo "  2. If the document IS intended to be public: remove the marker"
+              echo "     '· **Internal**' from the source file. Consider replacing with"
+              echo "     '· Public reference' or similar."
+              echo ""
+              echo "  3. If the file is genuinely serving as internal-only DOCUMENTATION"
+              echo "     of the marker itself (like this workflow file): add its path to"
+              echo "     the IGNORE_REGEX in .github/workflows/internal-marker-check.yml."
+              echo ""
+              echo "This check exists because on 2026-08-07 two documents marked '· **Internal**'"
+              echo "were published to legal.unykorn.ai, exposing pricing negotiation reasoning,"
+              echo "cost basis, and named counterparty status. Do not remove or weaken this check"
+              echo "without documented reason."
+              exit 1
+            fi
+          fi
+
+          echo "OK — no files under the Pages publish root carry the classification marker."
