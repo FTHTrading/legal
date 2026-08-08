@@ -34,11 +34,88 @@
 <main class="content-wide">
 
 <div class="callout">
-  <span class="cta-label">Roadmap &middot; smartcontract.unykorn.ai</span>
-  <p>A dedicated subdomain (<code>smartcontract.unykorn.ai</code>) will host expanded reference implementations, ABI documentation, and audit reports for each template. This page is the index for now; deep pages ship as we build them.</p>
+  <span class="cta-label">Live &middot; <a href="https://smartcontract.unykorn.ai" style="color: inherit;">smartcontract.unykorn.ai</a></span>
+  <p><strong>Unykorn's own Solidity library is live at <a href="https://smartcontract.unykorn.ai">smartcontract.unykorn.ai</a></strong> &mdash; 24 production-shaped contracts across 17 families (draw escrow, permissioned securities, REIT distribution, CMBS waterfalls, SREC, Chainlink oracle consumers, custody attestation registries, ERC-7540 async vaults). Every contract compiles clean under a pinned solc + vendored OpenZeppelin, ships with tests, and is drivable from the Unykorn Studio console with a hash-chained audit trail per action. MIT-licensed; source at <a href="https://github.com/FTHTrading/smart-contract-builder">github.com/FTHTrading/smart-contract-builder</a>.</p>
 </div>
 
-<h2>Permissioned Security Token Standards</h2>
+<h2 id="unykorn-library">Unykorn Contract Library</h2>
+<p>The Unykorn library at <a href="https://smartcontract.unykorn.ai">smartcontract.unykorn.ai</a> ships the following families as of v0.5. All contracts are MIT-licensed; source in <code>contracts/rwa/&lt;family&gt;/</code> and viewable directly at each linked path.</p>
+
+<div class="split">
+
+  <div class="col do">
+    <h3>Real Estate / Structured Finance</h3>
+    <ul>
+      <li><strong>Draw Escrow</strong> &mdash; milestone-indexed construction escrow with EIP-712 waiver attestation, AIA G703 milestone mapping. <a href="https://github.com/FTHTrading/smart-contract-builder/tree/main/contracts/rwa/draw-escrow">source</a></li>
+      <li><strong>CMBS Waterfall</strong> &mdash; 3-tranche cash-flow waterfall (senior / mezzanine / equity) with reserve triggers. <a href="https://github.com/FTHTrading/smart-contract-builder/blob/main/contracts/rwa/cmbs-tranche/CMBSWaterfall.sol">source</a></li>
+      <li><strong>REIT Distribution</strong> &mdash; NOI distribution token + on-chain distributor with pro-rata sweep. <a href="https://github.com/FTHTrading/smart-contract-builder/tree/main/contracts/rwa/reit-distribution">source</a></li>
+      <li><strong>Real Estate Debt Token</strong> &mdash; mortgage-note participation certificate. <a href="https://github.com/FTHTrading/smart-contract-builder/blob/main/contracts/rwa/real-estate-debt/RealEstateDebtToken.sol">source</a></li>
+      <li><strong>Fractional Property Token</strong> &mdash; ERC-20 wrapper for fractional ownership units. <a href="https://github.com/FTHTrading/smart-contract-builder/blob/main/contracts/rwa/fractional-property/FractionalPropertyToken.sol">source</a></li>
+    </ul>
+  </div>
+
+  <div class="col do">
+    <h3>Securities / Compliance</h3>
+    <ul>
+      <li><strong>Permissioned Token</strong> &mdash; ERC-3643-inspired permissioned security token with IdentityRegistry + ClaimTopicsRegistry (jurisdiction, accreditation, holding-period gating). <a href="https://github.com/FTHTrading/smart-contract-builder/tree/main/contracts/rwa/permissioned-security">source</a></li>
+      <li><strong>Custody Attestation Registry</strong> &mdash; qualified-custodian proof-of-reserve register with rotation and revocation. <a href="https://github.com/FTHTrading/smart-contract-builder/blob/main/contracts/custody/CustodyAttestationRegistry.sol">source</a></li>
+      <li><strong>Custody Reserve Guard</strong> &mdash; transfer-blocker if attested reserves fall below a token's outstanding supply. <a href="https://github.com/FTHTrading/smart-contract-builder/blob/main/contracts/custody/CustodyReserveGuard.sol">source</a></li>
+    </ul>
+  </div>
+
+  <div class="col do">
+    <h3>Private Credit / Institutional Lending</h3>
+    <ul>
+      <li><strong>Bridge Loan Tranche Pool</strong> &mdash; senior/mezz tranched bridge-loan pool with waterfall distribution. <a href="https://github.com/FTHTrading/smart-contract-builder/blob/main/contracts/rwa/bridge-loan-pool/BridgeLoanTranchePool.sol">source</a></li>
+      <li><strong>Pool Delegate Pool</strong> &mdash; Maple-style delegated credit pool with delegate-managed underwriting. <a href="https://github.com/FTHTrading/smart-contract-builder/blob/main/contracts/rwa/private-credit-pool/PoolDelegatePool.sol">source</a></li>
+      <li><strong>Invoice Factoring Pool</strong> &mdash; receivables-financing pool with obligor-diversified exposure. <a href="https://github.com/FTHTrading/smart-contract-builder/blob/main/contracts/rwa/invoice-factoring/InvoiceFactoringPool.sol">source</a></li>
+      <li><strong>Inventory Financing SPV</strong> &mdash; inventory-backed lending SPV for import/export working capital. <a href="https://github.com/FTHTrading/smart-contract-builder/blob/main/contracts/rwa/inventory-financing/InventoryFinancingSPV.sol">source</a></li>
+    </ul>
+  </div>
+
+  <div class="col do">
+    <h3>Tokenized Funds</h3>
+    <ul>
+      <li><strong>Cash Management Vault</strong> &mdash; ERC-4626-compliant institutional cash-management vault, Maple-style. <a href="https://github.com/FTHTrading/smart-contract-builder/blob/main/contracts/rwa/cash-management/CashManagementVault.sol">source</a></li>
+      <li><strong>Async Vault (ERC-7540)</strong> &mdash; asynchronous subscription/redemption vault following EIP-7540. <a href="https://github.com/FTHTrading/smart-contract-builder/blob/main/contracts/rwa/async-vault-7540/AsyncVault7540.sol">source</a></li>
+      <li><strong>Tokenized Treasury / Wrapped Treasury</strong> &mdash; T-bill-backed yield-bearing token with wrapper for cross-chain use. <a href="https://github.com/FTHTrading/smart-contract-builder/tree/main/contracts/rwa/tokenized-treasury">source</a></li>
+      <li><strong>Gold-Backed Token</strong> &mdash; bullion-backed token with vaulted-attestation reserve gating. <a href="https://github.com/FTHTrading/smart-contract-builder/blob/main/contracts/rwa/gold-backed/GoldBackedToken.sol">source</a></li>
+    </ul>
+  </div>
+
+  <div class="col do">
+    <h3>ESG / Climate / Sovereignty</h3>
+    <ul>
+      <li><strong>SREC Token</strong> &mdash; Solar Renewable Energy Certificate token with meter-attested issuance. <a href="https://github.com/FTHTrading/smart-contract-builder/blob/main/contracts/rwa/srec-token/SRECToken.sol">source</a></li>
+    </ul>
+  </div>
+
+  <div class="col do">
+    <h3>Oracles / Cross-chain</h3>
+    <ul>
+      <li><strong>Chainlink RWA Oracle</strong> &mdash; consumer that pulls RWA valuation feeds with staleness guards. <a href="https://github.com/FTHTrading/smart-contract-builder/blob/main/contracts/rwa/chainlink-oracle/RWAOracle.sol">source</a></li>
+      <li><strong>Proof of Reserve Consumer</strong> &mdash; Chainlink PoR consumer that gates supply mint against attested reserves. <a href="https://github.com/FTHTrading/smart-contract-builder/blob/main/contracts/rwa/chainlink-proof-of-reserve/ProofOfReserveConsumer.sol">source</a></li>
+      <li><strong>CCIP Bridged Token</strong> &mdash; Chainlink CCIP-integrated token for cross-chain settlement. <a href="https://github.com/FTHTrading/smart-contract-builder/blob/main/contracts/rwa/chainlink-ccip-bridge/CCIPBridgedToken.sol">source</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<p><strong>Status legend.</strong> Each contract on <a href="https://smartcontract.unykorn.ai">smartcontract.unykorn.ai</a> carries a <em>SHIPPED</em> or <em>DESIGN CONTRACT</em> badge. Shipped = compiles clean under the pinned solc, tested, deployable to Anvil via Unykorn Studio right now. Design contract = interface + integration shape defined; the corresponding step exists in Studio's executor as an unwired branch that fails loudly with a specific reason (honest v0 behaviour) pending an external dependency (Toucan bridge, BitGo Enterprise API, XRPL adapter).</p>
+
+<h2>Other Unykorn Contract Repositories</h2>
+<p>Beyond the RWA library above, additional Solidity work lives in dedicated repos for specific initiatives:</p>
+<ul>
+  <li><strong>GA-RWA-EDGE</strong> (Apache-2.0) &mdash; regulated-asset framework with 54 contracts including AMLTravelRuleGate, LDSecurityToken, ESG modules. Georgia-specific real-estate securities focus.</li>
+  <li><strong>Genesis Token &amp; Registries</strong> (MIT) &mdash; fixed-cap GENESIS ERC-20 (Polygon mainnet, deployed 2026-03-23), Treasury vesting controller, Identity / Asset / Settlement registries, x402 revenue router.</li>
+  <li><strong>FTH-Core Capital Rails</strong> (MIT) &mdash; FTHUSD, FTHVault, UNYToken, EconomicPolicyEngine. Polygon-deployed with Foundry test suite.</li>
+  <li><strong>Troptions UCC Registries</strong> (MIT) &mdash; DocumentHashRegistry (audit trail for 700M NST/TROPTIONS pledge), TroptionsReserveRegistry.</li>
+</ul>
+
+<h2>External Standards &amp; References</h2>
+<p>The following are third-party standards Unykorn contracts interoperate with or reference. Not Unykorn code; canonical repos linked with licence noted.</p>
+
+<h3>Permissioned Security Token Standards</h3>
 
 <div class="card">
   <h3><span class="badge b-cat-templates">ERC-3643</span> T-REX &mdash; Permissioned Security Tokens <span class="badge b-lic-industry">GPL-3.0</span></h3>
@@ -55,7 +132,7 @@
   <p><strong>Canonical:</strong> <a href="https://github.com/ethereum/eips/issues/1411">EIP-1400</a> (spec). Note: the historical <code>ConsenSys/UniversalToken</code> reference implementation was <strong>archived 25 March 2025</strong>. There is no currently-maintained canonical reference implementation.</p>
 </div>
 
-<h2>Convertible &amp; Pre-Issuance Instruments</h2>
+<h3>Convertible &amp; Pre-Issuance Instruments</h3>
 
 <div class="card">
   <h3><span class="badge b-cat-templates">SAFT</span> Simple Agreement for Future Tokens <span class="badge b-lic-public">Public</span></h3>
@@ -78,7 +155,7 @@
   <p><strong>Reference:</strong> <a href="https://www.ycombinator.com/documents">Y Combinator SAFE Documents</a></p>
 </div>
 
-<h2>Vaults &amp; Yield Primitives</h2>
+<h3>Vaults &amp; Yield Primitives</h3>
 
 <div class="card">
   <h3><span class="badge b-cat-templates">ERC-4626</span> Tokenized Vault Standard <span class="badge b-lic-public">MIT</span></h3>
@@ -94,7 +171,7 @@
   <p><strong>Canonical:</strong> <a href="https://github.com/morpho-org/morpho-blue">github.com/morpho-org/morpho-blue</a></p>
 </div>
 
-<h2>Custody &amp; Multi-Sig</h2>
+<h3>Custody &amp; Multi-Sig</h3>
 
 <div class="card">
   <h3><span class="badge b-cat-templates">Safe (Gnosis Safe)</span> Multi-Sig Wallet <span class="badge b-lic-industry">LGPL-3.0 (contracts)</span></h3>
@@ -103,7 +180,7 @@
   <p><strong>Canonical:</strong> <a href="https://github.com/safe-global/safe-smart-account">github.com/safe-global/safe-smart-account</a></p>
 </div>
 
-<h2>Escrow &amp; Milestone Release</h2>
+<h3>Escrow &amp; Milestone Release</h3>
 
 <div class="card">
   <h3><span class="badge b-cat-templates">OpenZeppelin Escrow</span> Simple Payment Escrow <span class="badge b-lic-public">MIT</span></h3>
@@ -119,7 +196,7 @@
   <p><strong>Status:</strong> Reference implementation coming to <code>smartcontract.unykorn.ai</code>.</p>
 </div>
 
-<h2>Distribution Waterfalls</h2>
+<h3>Distribution Waterfalls</h3>
 
 <div class="card">
   <h3><span class="badge b-cat-templates">0xSplits</span> Configurable Payment Splits <span class="badge b-lic-industry">GPL-3.0</span></h3>
@@ -136,7 +213,7 @@
   <p><strong>Canonical:</strong> <a href="https://github.com/superfluid-finance/protocol-monorepo">github.com/superfluid-finance/protocol-monorepo</a></p>
 </div>
 
-<h2>Vesting &amp; Cliff Schedules</h2>
+<h3>Vesting &amp; Cliff Schedules</h3>
 
 <div class="card">
   <h3><span class="badge b-cat-templates">OpenZeppelin VestingWallet</span> Linear Vesting with Cliff <span class="badge b-lic-public">MIT</span></h3>
@@ -153,7 +230,7 @@
   <p><strong>Canonical org:</strong> <a href="https://github.com/sablier-labs">github.com/sablier-labs</a></p>
 </div>
 
-<h2>Identity &amp; Compliance</h2>
+<h3>Identity &amp; Compliance</h3>
 
 <div class="card">
   <h3><span class="badge b-cat-templates">ONCHAINID</span> On-Chain Identity Contracts <span class="badge b-lic-industry">GPL-3.0</span></h3>
@@ -169,7 +246,7 @@
   <p><strong>Historical repo:</strong> <a href="https://github.com/centrehq/verite">github.com/centrehq/verite</a> (archived)</p>
 </div>
 
-<h2>Governance</h2>
+<h3>Governance</h3>
 
 <div class="card">
   <h3><span class="badge b-cat-templates">OpenZeppelin Governor</span> On-Chain DAO Governance <span class="badge b-lic-public">MIT</span></h3>
@@ -178,7 +255,7 @@
   <p><strong>Canonical:</strong> <a href="https://docs.openzeppelin.com/contracts/5.x/api/governance">OpenZeppelin Governance docs</a></p>
 </div>
 
-<h2>Bridges &amp; Cross-Chain</h2>
+<h3>Bridges &amp; Cross-Chain</h3>
 
 <div class="card">
   <h3><span class="badge b-cat-templates">Chainlink CCIP</span> Cross-Chain Interoperability Protocol <span class="badge b-lic-industry">BUSL-1.1</span></h3>

@@ -1,0 +1,211 @@
+{
+  "$comment": "Assertions for verify-live.sh — the forcing function that closes the deploy-vs-visible gap. Each entry: URL relative to base, plus expected present/absent tokens with rationale.  UNY-WEB-2026-001 remediation is the seed set; add rows for future fixes.",
+  "base_default": "https://legal.unykorn.ai",
+  "checks": [
+    {
+      "path": "/",
+      "present": [
+        {
+          "token": "Last reviewed 2026-08-08",
+          "why": "footer stamp added in commit b136323 — its absence is the tell that a pre-fix copy is being served"
+        }
+      ],
+      "absent": [
+        {
+          "token": "2549008J7LUHSQ73SI26",
+          "why": "LEI 2549008J7LUHSQ73SI26 does NOT belong to Unykorn LLC (belongs to Americanos Royale Divine International Trust per GLEIF). Never publish."
+        },
+        {
+          "token": "ISO MIC UBEC",
+          "why": "MIC UBEC belongs to the same GA trust as the LEI above, not to Unykorn LLC. Never publish."
+        }
+      ]
+    },
+    {
+      "path": "/smart-contracts/",
+      "present": [
+        {
+          "token": "AGPL-3.0 (contracts) / MIT (SDK only)",
+          "why": "Superfluid contract license — 2026-08-07 Kevan intake found MIT stale; AGPL is the fact"
+        },
+        {
+          "token": "Chainlink CCIP</span> Cross-Chain Interoperability Protocol <span class=\"badge b-lic-industry\">BUSL-1.1",
+          "why": "Chainlink CCIP is BUSL-1.1, not 'Custom'"
+        },
+        {
+          "token": "Morpho Blue",
+          "why": "Morpho Blue entry must include the GPL-2.0-or-later note"
+        },
+        {
+          "token": "GPL-2.0-or-later",
+          "why": "Morpho Blue license — was BUSL-1.1 pre-fix"
+        },
+        {
+          "token": "0xSplits</span> Configurable Payment Splits <span class=\"badge b-lic-industry\">GPL-3.0",
+          "why": "0xSplits is GPL-3.0, not Apache-2.0"
+        },
+        {
+          "token": "Safe (Gnosis Safe)</span> Multi-Sig Wallet <span class=\"badge b-lic-industry\">LGPL-3.0 (contracts)",
+          "why": "Safe contracts are LGPL-3.0, not GPL-3.0"
+        },
+        {
+          "token": "Deprecated (archived April 2025)",
+          "why": "Circle Verite archived-status marker — was missing pre-fix"
+        },
+        {
+          "token": "Actual license was MIT (not Apache as previously listed)",
+          "why": "Verite license correction — was Apache-2.0 pre-fix"
+        },
+        {
+          "token": "github.com/ERC-3643/ERC-3643",
+          "why": "Canonical ERC-3643 repo (TokenySolutions/T-REX archived 28 Oct 2025)"
+        },
+        {
+          "token": "Last reviewed 2026-08-08",
+          "why": "footer stamp — its absence indicates a pre-b136323 copy"
+        }
+      ],
+      "absent": [
+        {
+          "token": "Superfluid Streams</span> Continuous Payment Streaming <span class=\"badge b-lic-industry\">MIT",
+          "why": "old, incorrect Superfluid license line — must not resurface"
+        },
+        {
+          "token": "Circle Verite</span> Verifiable Credentials <span class=\"badge b-lic-industry\">Apache-2.0",
+          "why": "old, incorrect Verite license — must not resurface"
+        },
+        {
+          "token": "Roadmap &middot; smartcontract.unykorn.ai",
+          "why": "smartcontract.unykorn.ai is LIVE (24 contracts shipped); must not be described as roadmap"
+        }
+      ]
+    },
+    {
+      "path": "/smart-contracts/",
+      "$comment": "Second block on same URL — assertions specific to the Unykorn library section rewrite (2026-08-08)",
+      "present": [
+        {
+          "token": "Unykorn Contract Library",
+          "why": "H2 for Unykorn's own library — must lead the page, not the external standards"
+        },
+        {
+          "token": "smartcontract.unykorn.ai",
+          "why": "canonical Unykorn contract library subdomain referenced multiple times"
+        },
+        {
+          "token": "github.com/FTHTrading/smart-contract-builder",
+          "why": "source-of-truth repo link for Unykorn Solidity"
+        },
+        {
+          "token": "Draw Escrow",
+          "why": "Unykorn Real Estate section must list Draw Escrow"
+        },
+        {
+          "token": "CMBS Waterfall",
+          "why": "Unykorn Real Estate section must list CMBS Waterfall"
+        },
+        {
+          "token": "Permissioned Token",
+          "why": "Unykorn Securities section must list Permissioned Token"
+        },
+        {
+          "token": "Custody Attestation Registry",
+          "why": "Unykorn Securities section must list Custody Attestation Registry"
+        },
+        {
+          "token": "Bridge Loan Tranche Pool",
+          "why": "Unykorn Private Credit section must list Bridge Loan Tranche Pool"
+        },
+        {
+          "token": "SREC Token",
+          "why": "Unykorn ESG section must list SREC Token"
+        },
+        {
+          "token": "Async Vault (ERC-7540)",
+          "why": "Unykorn Tokenized Funds section must list Async Vault"
+        }
+      ],
+      "absent": [
+        {
+          "token": "This page is the index for now; deep pages ship as we build them",
+          "why": "old placeholder language claiming pages don't exist yet — they do"
+        }
+      ]
+    },
+    {
+      "path": "/notice/",
+      "present": [
+        {
+          "token": "Not Legal Advice",
+          "why": "UPL notice heading required by /notice/ existence"
+        },
+        {
+          "token": "attorney advertising",
+          "why": "attorney-advertising disclosure element (UNY-WEB-2026-001 finding)"
+        },
+        {
+          "token": "Unykorn LLC",
+          "why": "correct operating entity in the footer — UNYKORN 7777 INC. is deprecated"
+        }
+      ],
+      "absent": [
+        {
+          "token": "UNYKORN 7777 INC",
+          "why": "deprecated entity name must never surface on any published page"
+        },
+        {
+          "token": "2549008J7LUHSQ73SI26",
+          "why": "LEI not owned by Unykorn LLC — belongs to Americanos Royale Divine International Trust"
+        },
+        {
+          "token": "ISO MIC UBEC",
+          "why": "MIC not owned by Unykorn LLC — same trust as the LEI above"
+        }
+      ]
+    },
+    {
+      "path": "/lexicon/",
+      "present": [
+        {
+          "token": "Lexicon",
+          "why": "page heading present"
+        }
+      ],
+      "absent": [
+        {
+          "token": "/open-findings",
+          "why": "public queue is internal-only per corpus split — must not appear on lexicon page"
+        }
+      ]
+    },
+    {
+      "path": "/library/genius-act.html",
+      "present": [
+        {
+          "token": "Pub. L. 119-27",
+          "why": "GENIUS Act correct citation (was 'proposed' pre-fix)"
+        }
+      ],
+      "absent": []
+    },
+    {
+      "path": "/jurisdictions/",
+      "present": [
+        {
+          "token": "Unykorn LLC",
+          "why": "current operating entity in footer"
+        }
+      ],
+      "absent": [
+        {
+          "token": "UNYKORN 7777 INC",
+          "why": "deprecated entity name"
+        },
+        {
+          "token": "2549008J7LUHSQ73SI26",
+          "why": "LEI not owned by Unykorn LLC"
+        }
+      ]
+    }
+  ]
+}

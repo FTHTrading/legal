@@ -1,0 +1,48 @@
+name: verify-live
+
+# Post-deploy visibility check. Closes the deploy-vs-visible gap: even after
+# a Pages deploy completes, the bare canonical URL is what a reader sees, and
+# it must match the fixes in the repo. This workflow asserts every entry in
+# scripts/live-assertions.json against the live domain (bare URL, no
+# cache-buster). If the live response is stale, THIS BUILD FAILS.
+#
+# BACKGROUND (2026-08-08 report): /smart-contracts/ was observed serving
+# pre-fix content at the canonical URL — the fix was in git HEAD but not
+# visible. Distinguishing test showed bare == ?v=99 (no cache-key
+# stratification), so cache-buster verification would have "passed" while
+# the reader saw stale content. This workflow verifies what the reader
+# actually receives.
+#
+# TRIGGERS:
+#   - After a Pages deployment completes on main (post-deploy).
+#   - Every 6 hours (freshness against upstream drift).
+#   - Manual dispatch.
+#
+# If a bare-URL assertion fails, the log includes the recommended CF cache
+# purge command. Mint a CF token with Cache Purge scope and export it as
+# CLOUDFLARE_API_TOKEN in the repo secrets to enable auto-purge in a future
+# revision of this workflow.
+
+on:
+  workflow_run:
+    workflows: ["pages-build-deployment"]
+    types: [completed]
+    branches: [main]
+  schedule:
+    - cron: '19 */6 * * *' # every 6 hours at :19
+  workflow_dispatch:
+
+jobs:
+  verify:
+    name: Assert bare-URL content matches scripts/live-assertions.json
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Wait 60s for Pages propagation (post-deploy only)
+        if: github.event_name == 'workflow_run'
+        run: sleep 60
+
+      - name: Verify live content
+        shell: bash
+        run: bash scripts/verify-live.sh

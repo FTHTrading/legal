@@ -37,7 +37,7 @@ Unykorn Legal Ops System that powers all of it.
 ## About Unykorn LLC
 
 **Unykorn LLC** &mdash; Wyoming LLC, EIN 42-3536633, D-U-N-S 145059107,
-GLEIF LEI 2549008J7LUHSQ73SI26, ISO MIC UBEC, WY Filing ID 2026-002019968.
+WY Filing ID 2026-002019968.
 
 Sole active operating entity; historical UNYKORN 7777 INC. deprecated 2026-08-07.
 
