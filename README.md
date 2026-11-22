@@ -231,14 +231,12 @@ legal-repo/
 | ISO MIC | *(not registered)* |
 
 **Prior identifier note.** Earlier versions of this repo listed a GLEIF
-LEI (`2549008J7LUHSQ73SI26`) and MIC (`UBEC`) alongside Unykorn LLC.
-Those identifiers were removed on 2026-08-08 after a GLEIF public API
-lookup confirmed they are registered to an unrelated Georgia trust, not
-to Unykorn LLC. If regulatory reporting later requires an LEI for
+LEI and an ISO MIC alongside Unykorn LLC. Those identifiers were removed
+on 2026-08-08 after a GLEIF public API lookup confirmed they are
+registered to an unrelated Georgia trust, not to Unykorn LLC. If regulatory reporting later requires an LEI for
 Unykorn LLC, one will be applied for through a Local Operating Unit;
 until that application is confirmed, Unykorn LLC does not claim an LEI.
 
-**Historical entity.** UNYKORN 7777 INC. was deprecated on 2026-08-07.
 All operations, footers, and materials are Unykorn LLC.
 
 ---

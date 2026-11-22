@@ -238,6 +238,60 @@
           "why": "LEI not owned by Unykorn LLC"
         }
       ]
+    },
+    {
+      "path": "/deals/",
+      "present": [],
+      "absent": [
+        {
+          "token": "BitGo",
+          "why": "BitGo is no longer a counterparty; never named on any surface (2026-11-21 fix)"
+        }
+      ]
+    },
+    {
+      "path": "/library/disciplines-overview.html",
+      "present": [],
+      "absent": [
+        {
+          "token": "BitGo",
+          "why": "BitGo is no longer a counterparty; never named on any surface (2026-11-21 fix)"
+        }
+      ]
+    },
+    {
+      "path": "/library/private-credit.html",
+      "present": [],
+      "absent": [
+        {
+          "token": "BitGo",
+          "why": "BitGo is no longer a counterparty; never named on any surface (2026-11-21 fix)"
+        }
+      ]
+    },
+    {
+      "path": "/library/rwa-fundamentals.html",
+      "present": [],
+      "absent": [
+        {
+          "token": "BitGo",
+          "why": "BitGo is no longer a counterparty; never named on any surface (2026-11-21 fix)"
+        }
+      ]
+    },
+    {
+      "path": "/smart-contracts/",
+      "present": [],
+      "absent": [
+        {
+          "token": "BitGo",
+          "why": "BitGo is no longer a counterparty; never named on any surface (2026-11-21 fix)"
+        },
+        {
+          "token": "Troptions",
+          "why": "retired brand"
+        }
+      ]
     }
   ]
 }
